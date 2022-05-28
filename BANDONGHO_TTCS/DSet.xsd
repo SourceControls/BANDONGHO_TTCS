@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BANDONGHO_TTCSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BANDONGHO_TTCSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BANDONGHO_TTCS.Properties.Settings.GlobalReference.Default.BANDONGHO_TTCSConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="constrBanDongHo" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="constrBanDongHo (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BANDONGHO_TTCS.Properties.Settings.GlobalReference.Default.constrBanDongHo" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CT_KMTableAdapter" GeneratorDataComponentClassName="CT_KMTableAdapter" Name="CT_KM" UserDataComponentName="CT_KMTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.CT_KM" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.CT_KM" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[CT_KM] WHERE (([MAKM] = @Original_MAKM) AND ([MADONGHO] = @Original_MADONGHO) AND ([TYLEGIAMGIA] = @Original_TYLEGIAMGIA))</CommandText>
@@ -62,7 +62,7 @@ SELECT MAKM, MADONGHO, TYLEGIAMGIA FROM CT_KM WHERE (MADONGHO = @MADONGHO) AND (
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CT_PDTableAdapter" GeneratorDataComponentClassName="CT_PDTableAdapter" Name="CT_PD" UserDataComponentName="CT_PDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.CT_PD" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.CT_PD" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[CT_PD] WHERE (([MAPHIEUDAT] = @Original_MAPHIEUDAT) AND ([MADONGHO] = @Original_MADONGHO) AND ([DONGIA] = @Original_DONGIA) AND ([SOLUONG] = @Original_SOLUONG))</CommandText>
@@ -120,7 +120,7 @@ SELECT MAPHIEUDAT, MADONGHO, DONGIA, SOLUONG FROM CT_PD WHERE (MADONGHO = @MADON
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CT_PNTableAdapter" GeneratorDataComponentClassName="CT_PNTableAdapter" Name="CT_PN" UserDataComponentName="CT_PNTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.CT_PN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.CT_PN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[CT_PN] WHERE (([ID_CTPN] = @Original_ID_CTPN) AND ([MAPN] = @Original_MAPN) AND ([MADONGHO] = @Original_MADONGHO) AND ((@IsNull_SOLUONG = 1 AND [SOLUONG] IS NULL) OR ([SOLUONG] = @Original_SOLUONG)) AND ((@IsNull_DONGIA = 1 AND [DONGIA] IS NULL) OR ([DONGIA] = @Original_DONGIA)))</CommandText>
@@ -185,7 +185,7 @@ SELECT ID_CTPN, MAPN, MADONGHO, SOLUONG, DONGIA FROM CT_PN WHERE (MADONGHO = @MA
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DONGHOTableAdapter" GeneratorDataComponentClassName="DONGHOTableAdapter" Name="DONGHO" UserDataComponentName="DONGHOTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.DONGHO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.DONGHO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[DONGHO] WHERE (([MADONGHO] = @Original_MADONGHO) AND ([TENDONGHO] = @Original_TENDONGHO) AND ([GIA] = @Original_GIA) AND ([SLTON] = @Original_SLTON) AND ((@IsNull_HINHANH = 1 AND [HINHANH] IS NULL) OR ([HINHANH] = @Original_HINHANH)) AND ((@IsNull_MAHANG = 1 AND [MAHANG] IS NULL) OR ([MAHANG] = @Original_MAHANG)) AND ([MALOAI] = @Original_MALOAI))</CommandText>
@@ -265,7 +265,7 @@ SELECT MADONGHO, TENDONGHO, GIA, SLTON, MOTA, HINHANH, MAHANG, MALOAI FROM DONGH
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HANGDONGHOTableAdapter" GeneratorDataComponentClassName="HANGDONGHOTableAdapter" Name="HANGDONGHO" UserDataComponentName="HANGDONGHOTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.HANGDONGHO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.HANGDONGHO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[HANGDONGHO] WHERE (([MAHANG] = @Original_MAHANG) AND ([TENHANG] = @Original_TENHANG))</CommandText>
@@ -313,7 +313,7 @@ SELECT MAHANG, TENHANG FROM HANGDONGHO WHERE (MAHANG = @MAHANG)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HOADONTableAdapter" GeneratorDataComponentClassName="HOADONTableAdapter" Name="HOADON" UserDataComponentName="HOADONTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.HOADON" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.HOADON" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[HOADON] WHERE (([MAHOADON] = @Original_MAHOADON) AND ([NGAYIN] = @Original_NGAYIN) AND ([TONGTIEN] = @Original_TONGTIEN) AND ([MAPHIEUDAT] = @Original_MAPHIEUDAT))</CommandText>
@@ -371,7 +371,7 @@ SELECT MAHOADON, NGAYIN, TONGTIEN, MAPHIEUDAT FROM HOADON WHERE (MAHOADON = @MAH
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KHACHHANGTableAdapter" GeneratorDataComponentClassName="KHACHHANGTableAdapter" Name="KHACHHANG" UserDataComponentName="KHACHHANGTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.KHACHHANG" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.KHACHHANG" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[KHACHHANG] WHERE (([MAKH] = @Original_MAKH) AND ([HOTENKH] = @Original_HOTENKH) AND ([CMND] = @Original_CMND) AND ([GIOITINH] = @Original_GIOITINH) AND ([NGAYSINH] = @Original_NGAYSINH) AND ([DIACHI] = @Original_DIACHI) AND ([SDT] = @Original_SDT) AND ([EMAIL] = @Original_EMAIL))</CommandText>
@@ -449,7 +449,7 @@ SELECT MAKH, HOTENKH, CMND, GIOITINH, NGAYSINH, DIACHI, SDT, EMAIL FROM KHACHHAN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KHUYENMAITableAdapter" GeneratorDataComponentClassName="KHUYENMAITableAdapter" Name="KHUYENMAI" UserDataComponentName="KHUYENMAITableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.KHUYENMAI" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.KHUYENMAI" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[KHUYENMAI] WHERE (([MAKM] = @Original_MAKM) AND ([TENKM] = @Original_TENKM) AND ([NGAYBD] = @Original_NGAYBD) AND ([NGAYKT] = @Original_NGAYKT))</CommandText>
@@ -507,7 +507,7 @@ SELECT MAKM, TENKM, NGAYBD, NGAYKT FROM KHUYENMAI WHERE (MAKM = @MAKM)</CommandT
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LOAIDONGHOTableAdapter" GeneratorDataComponentClassName="LOAIDONGHOTableAdapter" Name="LOAIDONGHO" UserDataComponentName="LOAIDONGHOTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.LOAIDONGHO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.LOAIDONGHO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[LOAIDONGHO] WHERE (([MALOAI] = @Original_MALOAI) AND ([TENLOAI] = @Original_TENLOAI))</CommandText>
@@ -558,7 +558,7 @@ SELECT MALOAI, TENLOAI, MOTA FROM LOAIDONGHO WHERE (MALOAI = @MALOAI)</CommandTe
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NHANVIENTableAdapter" GeneratorDataComponentClassName="NHANVIENTableAdapter" Name="NHANVIEN" UserDataComponentName="NHANVIENTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.NHANVIEN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.NHANVIEN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[NHANVIEN] WHERE (([MANV] = @Original_MANV) AND ([HO] = @Original_HO) AND ([TEN] = @Original_TEN) AND ([GIOITINH] = @Original_GIOITINH) AND ((@IsNull_NGAYSINH = 1 AND [NGAYSINH] IS NULL) OR ([NGAYSINH] = @Original_NGAYSINH)) AND ((@IsNull_DIACHI = 1 AND [DIACHI] IS NULL) OR ([DIACHI] = @Original_DIACHI)) AND ((@IsNull_SDT = 1 AND [SDT] IS NULL) OR ([SDT] = @Original_SDT)) AND ((@IsNull_EMAIL = 1 AND [EMAIL] IS NULL) OR ([EMAIL] = @Original_EMAIL)))</CommandText>
@@ -644,7 +644,7 @@ SELECT MANV, HO, TEN, GIOITINH, NGAYSINH, DIACHI, SDT, EMAIL FROM NHANVIEN WHERE
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PHIEUDATTableAdapter" GeneratorDataComponentClassName="PHIEUDATTableAdapter" Name="PHIEUDAT" UserDataComponentName="PHIEUDATTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.PHIEUDAT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.PHIEUDAT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[PHIEUDAT] WHERE (([MAPHIEUDAT] = @Original_MAPHIEUDAT) AND ([MAKH] = @Original_MAKH) AND ([HOTENNGUOINHAN] = @Original_HOTENNGUOINHAN) AND ([DIACHINGUOINHAN] = @Original_DIACHINGUOINHAN) AND ([SDTNGUOINHAN] = @Original_SDTNGUOINHAN) AND ([NGAYDAT] = @Original_NGAYDAT) AND ((@IsNull_NGAYGIAO = 1 AND [NGAYGIAO] IS NULL) OR ([NGAYGIAO] = @Original_NGAYGIAO)) AND ([TRANGTHAI] = @Original_TRANGTHAI) AND ((@IsNull_MANV = 1 AND [MANV] IS NULL) OR ([MANV] = @Original_MANV)))</CommandText>
@@ -731,7 +731,7 @@ SELECT MAPHIEUDAT, MAKH, HOTENNGUOINHAN, DIACHINGUOINHAN, SDTNGUOINHAN, NGAYDAT,
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PHIEUNHAPTableAdapter" GeneratorDataComponentClassName="PHIEUNHAPTableAdapter" Name="PHIEUNHAP" UserDataComponentName="PHIEUNHAPTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[PHIEUNHAP] WHERE (([MAPN] = @Original_MAPN) AND ([NGAYNHAP] = @Original_NGAYNHAP) AND ([MANV] = @Original_MANV))</CommandText>
@@ -784,14 +784,34 @@ SELECT MAPN, NGAYNHAP, MANV FROM PHIEUNHAP WHERE (MAPN = @MAPN)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HOTENNVTableAdapter" GeneratorDataComponentClassName="HOTENNVTableAdapter" Name="HOTENNV" UserDataComponentName="HOTENNVTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BANDONGHO_TTCSConnectionString (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.NHANVIEN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="constrBanDongHo (Settings)" DbObjectName="BANDONGHO_TTCS.dbo.NewSelectCommand" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.NewDeleteCommand</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Object" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DataTypeServer="nchar(10)" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_MANV" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="MANV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        MANV, HO + ' ' + TEN AS HOTEN
-FROM            NHANVIEN</CommandText>
-                    <Parameters />
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.NewSelectCommand</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Object" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
                   </DbCommand>
                 </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.NewUpdateCommand</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Object" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DataTypeServer="nchar(10)" DbType="StringFixedLength" Direction="Input" ParameterName="@MANV" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="MANV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DataTypeServer="nchar(10)" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_MANV" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="MANV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
