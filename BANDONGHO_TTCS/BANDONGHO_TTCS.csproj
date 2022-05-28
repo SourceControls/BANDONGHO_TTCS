@@ -39,6 +39,7 @@
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2" />
     <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNhanVien.Designer.cs">
+      <DependentUpon>UCNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCPhieuNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCPhieuNhap.Designer.cs">
+      <DependentUpon>UCPhieuNhap.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,7 +108,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UCNhanVien.resx">
+      <DependentUpon>UCNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCPhieuNhap.resx">
+      <DependentUpon>UCPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="DSet.xsc">
+      <DependentUpon>DSet.xsd</DependentUpon>
+    </None>
+    <None Include="DSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSet.xss">
+      <DependentUpon>DSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

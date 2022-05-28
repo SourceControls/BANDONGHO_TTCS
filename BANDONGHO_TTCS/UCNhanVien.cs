@@ -17,5 +17,13 @@ namespace BANDONGHO_TTCS
         {
             InitializeComponent();
         }
+
+        private void nHANVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bdsNhanVien.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dSet);
+
+        }
     }
 }
