@@ -40,7 +40,7 @@ namespace BANDONGHO_TTCS
             try
             {
                 // Khoi tao connection string
-                connstr = "Data Source= MYLAPTOP;Initial Catalog=" + Program.database + ";User ID=" +
+                connstr = "Data Source= DESKTOP-OJUM6M0;Initial Catalog=" + Program.database + ";User ID=" +
                     Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
                 Program.conn.ConnectionString = connstr;
                 conn.Open();
@@ -70,18 +70,21 @@ namespace BANDONGHO_TTCS
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
-                sqlCmd.ExecuteNonQuery();
-                return true;
+                if(sqlCmd.ExecuteNonQuery() == 1)
+                {
+                    throw new Exception("Has error");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi thực thi sql non query, chi tiết: " + ex.Message);
+                return false;
             }
             finally
             {
                 conn.Close();
             }
-            return false;
+            return true;
         }
 
         public static int ExecSqlNonQuery(String cmd)
