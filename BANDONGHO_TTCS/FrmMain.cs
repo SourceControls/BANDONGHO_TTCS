@@ -26,6 +26,16 @@ namespace BANDONGHO_TTCS
             testControl.Instance.BringToFront();
         }
 
+        private void openUCPhieuNhap()
+        {
+            if(!container.Controls.Contains(UCPhieuNhap.Instance))
+            {
+                this.container.Controls.Add(UCPhieuNhap.Instance);
+                UCPhieuNhap.Instance.Dock = DockStyle.Fill;
+                UCPhieuNhap.Instance.BringToFront();
+            }
+        }
+
         public void closeAllForm()
         {
 
@@ -35,6 +45,11 @@ namespace BANDONGHO_TTCS
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
             openTestControll();
+        }
+
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+            openUCPhieuNhap();
         }
     }
 }
