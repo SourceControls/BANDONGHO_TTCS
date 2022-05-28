@@ -61,6 +61,29 @@ namespace BANDONGHO_TTCS
             conn.Close();
             return dt;
         }
+
+        public static bool execSqlNonQuery(String cmd)
+        {
+            SqlCommand sqlCmd = new SqlCommand(cmd, conn);
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandTimeout = 600;
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            try
+            {
+                sqlCmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi thực thi sql non query, chi tiết: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+
         public static int ExecSqlNonQuery(String cmd)
         {
             SqlCommand sqlCmd = new SqlCommand(cmd, conn);
