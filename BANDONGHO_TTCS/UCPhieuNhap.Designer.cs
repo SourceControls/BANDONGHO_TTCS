@@ -75,6 +75,7 @@ namespace BANDONGHO_TTCS
             this.ctMenuThemCT = new System.Windows.Forms.ToolStripMenuItem();
             this.ctMenuLuuCT = new System.Windows.Forms.ToolStripMenuItem();
             this.ctMenuXoaCT = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctMenuXN = new System.Windows.Forms.ToolStripMenuItem();
             this.bdsDongHo = new System.Windows.Forms.BindingSource(this.components);
             this.dongHoAdapter = new BANDONGHO_TTCS.DSetTableAdapters.DONGHOTableAdapter();
             this.pcGridPN = new DevExpress.XtraEditors.PanelControl();
@@ -251,6 +252,7 @@ namespace BANDONGHO_TTCS
             this.btnExist.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExist.ImageOptions.SvgImage")));
             this.btnExist.Name = "btnExist";
             this.btnExist.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnExist.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExist_ItemClick);
             // 
             // bar3
             // 
@@ -510,30 +512,39 @@ namespace BANDONGHO_TTCS
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctMenuThemCT,
             this.ctMenuLuuCT,
-            this.ctMenuXoaCT});
+            this.ctMenuXoaCT,
+            this.ctMenuXN});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 92);
             // 
             // ctMenuThemCT
             // 
             this.ctMenuThemCT.Name = "ctMenuThemCT";
-            this.ctMenuThemCT.Size = new System.Drawing.Size(180, 22);
+            this.ctMenuThemCT.Size = new System.Drawing.Size(143, 22);
             this.ctMenuThemCT.Text = "Thêm chi tiết";
             this.ctMenuThemCT.Click += new System.EventHandler(this.ctMenuThemCT_Click);
             // 
             // ctMenuLuuCT
             // 
             this.ctMenuLuuCT.Name = "ctMenuLuuCT";
-            this.ctMenuLuuCT.Size = new System.Drawing.Size(180, 22);
+            this.ctMenuLuuCT.Size = new System.Drawing.Size(143, 22);
             this.ctMenuLuuCT.Text = "Lưu chi tiết";
             this.ctMenuLuuCT.Click += new System.EventHandler(this.ctMenuLuuCT_Click);
             // 
             // ctMenuXoaCT
             // 
             this.ctMenuXoaCT.Name = "ctMenuXoaCT";
-            this.ctMenuXoaCT.Size = new System.Drawing.Size(180, 22);
+            this.ctMenuXoaCT.Size = new System.Drawing.Size(143, 22);
             this.ctMenuXoaCT.Text = "Xoá chi tiết";
             this.ctMenuXoaCT.Click += new System.EventHandler(this.ctMenuXoaCT_Click);
+            // 
+            // ctMenuXN
+            // 
+            this.ctMenuXN.Name = "ctMenuXN";
+            this.ctMenuXN.ShowShortcutKeys = false;
+            this.ctMenuXN.Size = new System.Drawing.Size(143, 22);
+            this.ctMenuXN.Text = "Xác nhận sửa";
+            this.ctMenuXN.Click += new System.EventHandler(this.ctMenuXN_Click);
             // 
             // bdsDongHo
             // 
@@ -699,5 +710,6 @@ namespace BANDONGHO_TTCS
         private DevExpress.XtraGrid.Columns.GridColumn colMAPN;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYNHAP;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
+        private System.Windows.Forms.ToolStripMenuItem ctMenuXN;
     }
 }

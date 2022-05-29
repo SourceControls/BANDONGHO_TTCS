@@ -23,6 +23,7 @@ namespace BANDONGHO_TTCS
         private static int IDCTPN;
 
         private static UCPhieuNhap _instance;
+
         public static UCPhieuNhap Instance
         {
             get
@@ -75,16 +76,26 @@ namespace BANDONGHO_TTCS
             controlPanelAndButton(false);
         }
 
+        private void confirmUpdateBdsCTPN()
+        {
+            bdsCTPN.EndEdit();
+            CTPNAdapter.Connection.ConnectionString = Program.connstr;
+            CTPNAdapter.Update(dSet.CT_PN);
+            bdsCTPN.ResetCurrentItem();
+        }
+
         private void UCPhieuNhap_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSet.DONGHO' table. You can move, or remove it, as needed.
             this.dSet.EnforceConstraints = false;
             this.PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
             this.PhieuNhapAdapter.Fill(this.dSet.PHIEUNHAP);
+
             this.CTPNAdapter.Connection.ConnectionString = Program.connstr;
             this.CTPNAdapter.Fill(this.dSet.CT_PN);
+
             this.hotenNVAdapter.Connection.ConnectionString = Program.connstr;
             this.hotenNVAdapter.Fill(this.dSet.HOTENNV);
+
             this.dongHoAdapter.Connection.ConnectionString = Program.connstr;
             this.dongHoAdapter.Fill(this.dSet.DONGHO);
 
@@ -93,6 +104,7 @@ namespace BANDONGHO_TTCS
             lkDH.ValueMember = "MADONGHO";
 
             slPN = bdsPhieuNhap.Count;
+            slCTPN = bdsCTPN.Count;
             selectDefaultValue();
         }
 
@@ -107,7 +119,6 @@ namespace BANDONGHO_TTCS
             bdsPhieuNhap.AddNew();
             selectDefaultValue();
             edtPN.Enabled = true;
-            edtPN.Focus();
             disabledPanelAndButton();
         }
 
@@ -186,6 +197,7 @@ namespace BANDONGHO_TTCS
         {
             try
             {
+                PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
                 PhieuNhapAdapter.Fill(dSet.PHIEUNHAP);
             }
             catch (Exception ex)
@@ -263,70 +275,16 @@ namespace BANDONGHO_TTCS
             }
             try
             {
-                bdsCTPN.EndEdit();
-                CTPNAdapter.Connection.ConnectionString = Program.connstr;
-                CTPNAdapter.Update(dSet.CT_PN);
-                bdsCTPN.ResetCurrentItem();
+                confirmUpdateBdsCTPN();
                 isAssignSLCTPN = true;
-                MessageBox.Show("Lưu chi tiết thành công!");
                 slCTPN = bdsCTPN.Count;
+                MessageBox.Show("Lưu chi tiết thành công!");
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void gvCTPN_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            if(gvCTPN.FocusedColumn.FieldName == "DONGIA" || gvCTPN.FocusedColumn.FieldName == "SOLUONG")
-            {
-                double donGia = 0;
-                if(!Double.TryParse(e.Value as String, out donGia))
-                {
-                    e.Valid = false;
-                    e.ErrorText = "Phải nhập một số!";
-                }
-                if(donGia <= 0)
-                {
-                    e.Valid = false;
-                    e.ErrorText = "Phải là số dương!";
-                }
-            }
-        }
-
-        private void gvCTPN_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
-            GridColumn columnDonGia = gvCTPN.Columns["DONGIA"];
-            GridColumn columnSoLuong = gvCTPN.Columns["SOLUONG"];
-            GridColumn columnMaDongHo = gvCTPN.Columns["MADONGHO"];
-
-            string test = gvCTPN.GetSelectedCells().ToString();
-
-            string maDH = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnMaDongHo).ToString().Trim();
-            string donGia = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnDonGia).ToString().Trim();
-            string soLuong = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnSoLuong).ToString().Trim();
-
-            if (maDH.Length == 0)
-            {
-                e.Valid = false;
-                e.ErrorText = "Mã đồng hồ không được để trống!\n";
-            } else if (donGia.Length == 0)
-            {
-                e.Valid = false;
-                e.ErrorText = "Đơn giá không được để trống và phải lớn hơn 0!\n";
-            } else if (soLuong.Length == 0)
-            {
-                e.Valid = false;
-                e.ErrorText = "Số lượng không được để trống và phải lớn hơn 0!\n";
-            }
-        }
-
-        private void gvCTPN_InvalidValueException(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
-        {
-            MessageBox.Show(e.ErrorText, "Giá trị không hợp lệ!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
-        }
-
+      
         private void ctMenuXoaCT_Click(object sender, EventArgs e)
         {
             if (bdsCTPN.Count == 0) return;
@@ -349,6 +307,79 @@ namespace BANDONGHO_TTCS
                     return;
                 }
             }
+        }
+
+        private void ctMenuXN_Click(object sender, EventArgs e)
+        {
+            if(bdsCTPN.Count == 0 || slCTPN < bdsCTPN.Count)
+            {
+                return;
+            }
+           try
+            {
+                confirmUpdateBdsCTPN();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Line 325");
+            }
+        }
+
+        private void gvCTPN_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            if (gvCTPN.FocusedColumn.FieldName == "DONGIA" || gvCTPN.FocusedColumn.FieldName == "SOLUONG")
+            {
+                double donGia = 0;
+                if (!Double.TryParse(e.Value as String, out donGia))
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Phải nhập một số!";
+                }
+                if (donGia <= 0)
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Phải là số dương!";
+                }
+            }
+        }
+       
+        private void gvCTPN_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            GridColumn columnDonGia = gvCTPN.Columns["DONGIA"];
+            GridColumn columnSoLuong = gvCTPN.Columns["SOLUONG"];
+            GridColumn columnMaDongHo = gvCTPN.Columns["MADONGHO"];
+
+            string test = gvCTPN.GetSelectedCells().ToString();
+
+            string maDH = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnMaDongHo).ToString().Trim();
+            string donGia = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnDonGia).ToString().Trim();
+            string soLuong = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnSoLuong).ToString().Trim();
+
+            if (maDH.Length == 0)
+            {
+                e.Valid = false;
+                e.ErrorText = "Mã đồng hồ không được để trống!\n";
+            }
+            else if (donGia.Length == 0)
+            {
+                e.Valid = false;
+                e.ErrorText = "Đơn giá không được để trống và phải lớn hơn 0!\n";
+            }
+            else if (soLuong.Length == 0)
+            {
+                e.Valid = false;
+                e.ErrorText = "Số lượng không được để trống và phải lớn hơn 0!\n";
+            }
+        }
+        
+        private void gvCTPN_InvalidValueException(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            MessageBox.Show(e.ErrorText, "Giá trị không hợp lệ!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
+        }
+
+        private void btnExist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.fMain.remove_UCPhieuNhap();
         }
     }
 }

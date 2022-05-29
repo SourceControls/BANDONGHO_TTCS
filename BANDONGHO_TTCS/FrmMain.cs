@@ -39,7 +39,6 @@ namespace BANDONGHO_TTCS
         public void closeAllForm()
         {
 
-
         }
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
@@ -50,6 +49,11 @@ namespace BANDONGHO_TTCS
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
             openUCPhieuNhap();
+        }
+
+        public void remove_UCPhieuNhap()
+        {
+            this.container.Controls.Remove(UCPhieuNhap.Instance);
         }
     }
 }
