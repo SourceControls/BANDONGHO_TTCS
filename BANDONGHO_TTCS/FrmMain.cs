@@ -55,5 +55,21 @@ namespace BANDONGHO_TTCS
         {
             this.container.Controls.Remove(UCPhieuNhap.Instance);
         }
+
+        private void accordionControlElement8_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCHoaDon.Instance))
+            {
+                this.container.Controls.Add(UCHoaDon.Instance);
+                UCHoaDon.Instance.Dock = DockStyle.Fill;
+                UCHoaDon.Instance.BringToFront();
+            }
+        }
+
+        public void remove_UCHoaDon()
+        {
+            this.container.Controls.Remove(UCHoaDon.Instance);
+        }
+
     }
 }

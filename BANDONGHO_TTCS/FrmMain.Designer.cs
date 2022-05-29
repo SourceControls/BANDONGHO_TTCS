@@ -134,6 +134,7 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement8.Text = "Lập hoá đơn";
+            this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
             // accordionControlElement9
             // 
