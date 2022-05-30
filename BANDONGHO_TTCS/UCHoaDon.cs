@@ -20,7 +20,7 @@ namespace BANDONGHO_TTCS
         {
             get
             {
-                if(_instance == null)
+                if (_instance == null)
                 {
                     _instance = new UCHoaDon();
                 }
@@ -40,7 +40,7 @@ namespace BANDONGHO_TTCS
             this.PDAdapter.Connection.ConnectionString = Program.connstr;
             this.PDAdapter.Fill(this.dSet.v_lay_phieu_dat);
 
-            if(bdsPD.Count == 0)
+            if (bdsPD.Count == 0)
             {
                 pcHD.Enabled = false;
             }
@@ -54,7 +54,7 @@ namespace BANDONGHO_TTCS
 
         private string format(string date)
         {
-            if(date.Length == 1)
+            if (date.Length == 1)
             {
                 return "0" + date;
             }
@@ -64,13 +64,13 @@ namespace BANDONGHO_TTCS
         private void btnLapHD_Click(object sender, EventArgs e)
         {
             string[] dateTmp = ((DataRowView)bdsPD[bdsPD.Position])["NGAYDAT"].ToString().Trim().Split(' ')[0].Split('/');
-            
+
             XrptHoaDon xrptHD = new XrptHoaDon(edtMaPD.Text.Trim());
             xrptHD.lbKH.Text = ((DataRowView)bdsPD[bdsPD.Position])["HOTENNGUOINHAN"].ToString().Trim();
             xrptHD.lbSDT.Text = ((DataRowView)bdsPD[bdsPD.Position])["SDTNGUOINHAN"].ToString().Trim();
             xrptHD.lbDC.Text = ((DataRowView)bdsPD[bdsPD.Position])["DIACHINGUOINHAN"].ToString().Trim();
             xrptHD.lbNV.Text = ((DataRowView)bdsPD[bdsPD.Position])["HOTENNV"].ToString().Trim();
-            xrptHD.lbNgayDat.Text = format(dateTmp[1]) + " - " + format(dateTmp[0]) + " - " + dateTmp[2];
+            xrptHD.lbNgayDat.Text = ((DataRowView)bdsPD[bdsPD.Position])["NGAYDAT"].ToString().Trim().Split(' ')[0];
 
             ReportPrintTool rpt = new ReportPrintTool(xrptHD);
             rpt.ShowPreviewDialog();
