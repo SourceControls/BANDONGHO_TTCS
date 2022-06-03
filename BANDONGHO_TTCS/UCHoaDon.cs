@@ -52,15 +52,6 @@ namespace BANDONGHO_TTCS
             _instance = null;
         }
 
-        private string format(string date)
-        {
-            if (date.Length == 1)
-            {
-                return "0" + date;
-            }
-            return date;
-        }
-
         private void btnLapHD_Click(object sender, EventArgs e)
         {
             string[] dateTmp = ((DataRowView)bdsPD[bdsPD.Position])["NGAYDAT"].ToString().Trim().Split(' ')[0].Split('/');

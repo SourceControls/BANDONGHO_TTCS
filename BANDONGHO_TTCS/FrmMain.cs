@@ -33,6 +33,7 @@ namespace BANDONGHO_TTCS
                 this.container.Controls.Add(UCPhieuNhap.Instance);
                 UCPhieuNhap.Instance.Dock = DockStyle.Fill;
                 UCPhieuNhap.Instance.BringToFront();
+                UCPhieuNhap.Instance.BringToFront();
             }
         }
 
@@ -63,6 +64,7 @@ namespace BANDONGHO_TTCS
                 this.container.Controls.Add(UCHoaDon.Instance);
                 UCHoaDon.Instance.Dock = DockStyle.Fill;
                 UCHoaDon.Instance.BringToFront();
+                UCHoaDon.Instance.BringToFront();
             }
         }
 
@@ -71,5 +73,36 @@ namespace BANDONGHO_TTCS
             this.container.Controls.Remove(UCHoaDon.Instance);
         }
 
+        private void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCBackup.Instance))
+            {
+                this.container.Controls.Add(UCBackup.Instance);
+                UCBackup.Instance.Dock = DockStyle.Fill;
+                UCBackup.Instance.BringToFront();
+                UCBackup.Instance.BringToFront();
+            }
+        }
+
+        public void remove_UCBackup()
+        {
+            this.container.Controls.Remove(UCBackup.Instance);
+        }
+
+        private void accordionControlElement10_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCRestore.Instance))
+            {
+                this.container.Controls.Add(UCRestore.Instance);
+                UCRestore.Instance.Dock = DockStyle.Fill;
+                UCRestore.Instance.BringToFront();
+                UCRestore.Instance.BringToFront();
+            }
+        }
+
+        public void remove_UCRestore()
+        {
+            this.container.Controls.Remove(UCRestore.Instance);
+        }
     }
 }

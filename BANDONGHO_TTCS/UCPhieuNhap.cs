@@ -84,7 +84,7 @@ namespace BANDONGHO_TTCS
             bdsCTPN.ResetCurrentItem();
         }
 
-        private void UCPhieuNhap_Load(object sender, EventArgs e)
+        private void initBDS()
         {
             this.dSet.EnforceConstraints = false;
             this.PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
@@ -98,6 +98,11 @@ namespace BANDONGHO_TTCS
 
             this.dongHoAdapter.Connection.ConnectionString = Program.connstr;
             this.dongHoAdapter.Fill(this.dSet.DONGHO);
+        }
+
+        private void UCPhieuNhap_Load(object sender, EventArgs e)
+        {
+            initBDS();
 
             lkDH.DataSource = bdsDongHo;
             lkDH.DisplayMember = "TENDONGHO";
@@ -197,8 +202,7 @@ namespace BANDONGHO_TTCS
         {
             try
             {
-                PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
-                PhieuNhapAdapter.Fill(dSet.PHIEUNHAP);
+                initBDS();
             }
             catch (Exception ex)
             {
@@ -267,6 +271,15 @@ namespace BANDONGHO_TTCS
             {
                 maDH = ((DataRowView)bdsCTPN[i])["MADONGHO"].ToString().Trim();
                 strCmd = "sp_kt_ton_tai_dh_trong_ctpn '" + maPN + "', '" + maDH + "'";
+                for (int j = i + 1; j < bdsCTPN.Count; j++)
+                {
+                    if (((DataRowView)bdsCTPN[j])["MADONGHO"].ToString().Trim().Equals(maDH))
+                    {
+                        gvCTPN.SetColumnError(null, "Hai đồng hồ cùng tên tồn tại trong 1 phiếu nhập!");
+                        MessageBox.Show("Hai đồng hồ cùng tên tồn tại trong 1 phiếu nhập!");
+                        return;
+                    }
+                }
                 if (!Program.execSqlNonQuery(strCmd))
                 {
                     gvCTPN.SetColumnError(null, "Đồng hồ đã tồn tại trong phiếu nhập!");
@@ -380,6 +393,7 @@ namespace BANDONGHO_TTCS
         private void btnExist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Program.fMain.remove_UCPhieuNhap();
+            _instance = null;
         }
     }
 }
