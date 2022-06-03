@@ -1,0 +1,11 @@
+create proc [dbo].[sp_kt_ton_tai_dh_trong_ctpn] @mapn nchar(10), @madh nchar(10)
+as
+begin
+	if exists (select MADONGHO from CT_PN where MADONGHO = @madh AND MAPN = @mapn)
+	begin
+		raiserror('Đồng hồ đã tồn tại trong phiếu nhập!', 16, 1)
+		return -1;
+	end
+	else
+		return 0;
+end
