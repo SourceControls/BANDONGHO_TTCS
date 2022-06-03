@@ -449,6 +449,8 @@ namespace BANDONGHO_TTCS
             this.colMAPN1.Caption = "Mã phiếu nhập";
             this.colMAPN1.FieldName = "MAPN";
             this.colMAPN1.Name = "colMAPN1";
+            this.colMAPN1.OptionsColumn.AllowEdit = false;
+            this.colMAPN1.OptionsColumn.AllowFocus = false;
             this.colMAPN1.Visible = true;
             this.colMAPN1.VisibleIndex = 0;
             // 

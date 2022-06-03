@@ -79,6 +79,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogRestore.Designer.cs">
+      <DependentUpon>FrmLogRestore.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCBackup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCBackup.Designer.cs">
+      <DependentUpon>UCBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +117,12 @@
     <Compile Include="UCPhieuNhap.Designer.cs">
       <DependentUpon>UCPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCRestore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCRestore.Designer.cs">
+      <DependentUpon>UCRestore.cs</DependentUpon>
+    </Compile>
     <Compile Include="XrptHoaDon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogRestore.resx">
+      <DependentUpon>FrmLogRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -130,11 +151,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UCBackup.resx">
+      <DependentUpon>UCBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCHoaDon.resx">
       <DependentUpon>UCHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCPhieuNhap.resx">
       <DependentUpon>UCPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCRestore.resx">
+      <DependentUpon>UCRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XrptHoaDon.resx">
       <DependentUpon>XrptHoaDon.cs</DependentUpon>

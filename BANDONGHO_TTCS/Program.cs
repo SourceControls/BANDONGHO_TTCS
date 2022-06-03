@@ -29,8 +29,29 @@ namespace BANDONGHO_TTCS
         public static FrmMain fMain;
         public static frmLogin fLogin;
 
+        public static string URLBackup = "D:\\Learn\\Ky_2_Nam3\\TTCS\\backup_BANDONGHO";
+        public static string fullBKfileName = "full_bk.bak";
+        public static string diffBKfileName = "diff_bk.bak";
+        public static string logBKfileName = "log_bk.trn";
 
+        public static void closeConnection()
+        {
+            if(!execSqlNonQuery(
+                "alter database BANDONGHO_TTCS set single_user with rollback immediate") ||
+                !execSqlNonQuery(
+                "alter database BANDONGHO_TTCS set multi_user"))
+            {
+                return;
+            }
+        }
 
+        public static int connectToMaster()
+        {
+            database = "master";
+            int res = connectToDB();
+            database = "BANDONGHO_TTCS";
+            return res;
+        }
         public static int connectToDB()
         {
             if (conn != null && conn.State == ConnectionState.Open)
@@ -60,6 +81,25 @@ namespace BANDONGHO_TTCS
             da.Fill(dt);
             conn.Close();
             return dt;
+        }
+        public static void excuteCommandBKAndRestore(string cmd)
+        {
+            SqlCommand sqlCmd = new SqlCommand(cmd, Program.conn);
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandTimeout = 600;
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            try
+            {
+                sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi thực thi sql non query, chi tiết: " + ex.Message);
+            }
+            finally
+            {
+                Program.conn.Close();
+            }
         }
 
         public static bool execSqlNonQuery(String cmd)
