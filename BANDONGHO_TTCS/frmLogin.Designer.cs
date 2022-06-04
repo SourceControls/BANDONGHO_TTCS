@@ -53,7 +53,7 @@ namespace BANDONGHO_TTCS
             // 
             // txtTenDangNhap
             // 
-            this.txtTenDangNhap.EditValue = "TTCSNV01";
+            this.txtTenDangNhap.EditValue = "sa";
             this.txtTenDangNhap.Location = new System.Drawing.Point(106, 209);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(228, 22);
@@ -84,7 +84,7 @@ namespace BANDONGHO_TTCS
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.EditValue = "TTCSNV01";
+            this.txtMatKhau.EditValue = "123";
             this.txtMatKhau.Location = new System.Drawing.Point(106, 300);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.PasswordChar = '*';

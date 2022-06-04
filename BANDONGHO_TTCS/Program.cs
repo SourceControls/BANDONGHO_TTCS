@@ -18,6 +18,7 @@ namespace BANDONGHO_TTCS
         /// 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
+        public static SqlDataReader myReader;
         public static String login = "";
         public static String password = "";
 
@@ -25,10 +26,32 @@ namespace BANDONGHO_TTCS
         public static String mGroup = "";
         public static String mHoTen = "";
 
+        public static FrmMain fMain;
         public static frmLogin fLogin;
 
+        public static string URLBackup = "D:\\Learn\\Ky_2_Nam3\\TTCS\\backup_BANDONGHO";
+        public static string fullBKfileName = "full_bk.bak";
+        public static string diffBKfileName = "diff_bk.bak";
+        public static string logBKfileName = "log_bk.trn";
 
+        public static void closeConnection()
+        {
+            if(!execSqlNonQuery(
+                "alter database BANDONGHO_TTCS set single_user with rollback immediate") ||
+                !execSqlNonQuery(
+                "alter database BANDONGHO_TTCS set multi_user"))
+            {
+                return;
+            }
+        }
 
+        public static int connectToMaster()
+        {
+            database = "master";
+            int res = connectToDB();
+            database = "BANDONGHO_TTCS";
+            return res;
+        }
         public static int connectToDB()
         {
             if (conn != null && conn.State == ConnectionState.Open)
@@ -38,21 +61,10 @@ namespace BANDONGHO_TTCS
             try
             {
                 // Khoi tao connection string
-                connstr = "Data Source= MYLAPTOP;Initial Catalog=" + Program.database + ";User ID=" +
+                connstr = "Data Source= DESKTOP-OJUM6M0;Initial Catalog=" + Program.database + ";User ID=" +
                     Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
                 Program.conn.ConnectionString = connstr;
                 conn.Open();
-                SqlDataReader myReader = Program.ExecSqlDataReader("EXEC SP_LAY_HO_TEN_VA_GROUP '" + login + "'");
-                if (myReader == null)
-                {
-                    return -1;
-                }
-                else if (myReader.HasRows)
-                {
-                    myReader.Read();
-                    mGroup = myReader.GetString(0);
-                    mHoTen =  myReader.GetString(1);
-                }
             }
             catch (Exception ex)
             {
@@ -70,6 +82,7 @@ namespace BANDONGHO_TTCS
             conn.Close();
             return dt;
         }
+<<<<<<< HEAD
         public static int execSqlNonQueryReturnStatus(String cmd)
         {
             SqlDataReader myReader = Program.ExecSqlDataReader(cmd);
@@ -83,8 +96,29 @@ namespace BANDONGHO_TTCS
                 return myReader.GetInt32(0);
             }
             else { return -1; }
-
         }
+        public static void excuteCommandBKAndRestore(string cmd)
+        {
+            SqlCommand sqlCmd = new SqlCommand(cmd, Program.conn);
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandTimeout = 600;
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            try
+            {
+                sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi thực thi sql non query, chi tiết: " + ex.Message);
+            }
+            finally
+            {
+                Program.conn.Close();
+            }
+        }
+=======
+>>>>>>> parent of c394127 (hùng)
+
         public static bool execSqlNonQuery(String cmd)
         {
             SqlCommand sqlCmd = new SqlCommand(cmd, conn);
@@ -93,18 +127,20 @@ namespace BANDONGHO_TTCS
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
-                sqlCmd.ExecuteNonQuery();
-                return true;
+                if(sqlCmd.ExecuteNonQuery() == 1)
+                {
+                    throw new Exception("Has error");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thất bại!\n" + ex.Message);
+                MessageBox.Show("Lỗi thực thi sql non query, chi tiết: " + ex.Message);
             }
             finally
             {
                 conn.Close();
             }
-            return false;
+            return true;
         }
 
         public static int ExecSqlNonQuery(String cmd)
@@ -153,7 +189,10 @@ namespace BANDONGHO_TTCS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             fLogin = new frmLogin();
-                Application.Run(Program.fLogin);
+            fMain = new FrmMain();
+            Program.fLogin.ShowDialog(fMain);
+            if(login.Length>0)
+            Application.Run(Program.fMain);
         }
 
     }

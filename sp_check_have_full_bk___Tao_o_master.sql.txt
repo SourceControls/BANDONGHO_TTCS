@@ -1,0 +1,13 @@
+-- Tạo ở master
+
+create proc [dbo].[sp_check_have_full_bk]
+as
+begin
+	if not exists (select backup_set_id from msdb.dbo.backupset where database_name = 'BANDONGHO_TTCS' AND type='D')
+		begin
+			raiserror('Bạn cần một bản full backup trước khi thực hiện differential backup', 16, 1)
+			return 1;
+		end
+	
+	return 0;
+end

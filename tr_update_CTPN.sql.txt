@@ -1,0 +1,9 @@
+create trigger [dbo].[tr_update_CTPN] on [dbo].[CT_PN]
+after update as
+begin
+	if update(SOLUONG)
+		begin
+			update DONGHO set SLTON = SLTON - (select SOLUONG from deleted) + (select SOLUONG from inserted)
+			where MADONGHO = (select MADONGHO from inserted)
+		end
+end

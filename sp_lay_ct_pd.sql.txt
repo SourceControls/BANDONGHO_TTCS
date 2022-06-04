@@ -1,0 +1,10 @@
+
+create proc [dbo].[sp_lay_ct_pd] @MAPD nchar(10)
+as
+select TENDONGHO, SOLUONG, DONGIA, THANHTIEN=SOLUONG*DONGIA
+from (
+	select MAPHIEUDAT
+	from PHIEUDAT
+	where MAPHIEUDAT=@MAPD AND TRANGTHAI <> N'Ðã huỷ'
+) PD inner join CT_PD on PD.MAPHIEUDAT = CT_PD.MAPHIEUDAT
+	inner join (select MADONGHO, TENDONGHO from DONGHO) DH on DH.MADONGHO = CT_PD.MADONGHO

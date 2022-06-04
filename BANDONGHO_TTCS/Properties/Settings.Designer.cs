@@ -26,10 +26,11 @@ namespace BANDONGHO_TTCS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MYLAPTOP;Initial Catalog=BANDONGHO_TTCS;Integrated Security=True")]
-        public string constrBanDongHo {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-OJUM6M0;Initial Catalog=BANDONGHO_TTCS;User ID=sa;Password=12" +
+            "3")]
+        public string BANDONGHO_TTCSConnectionString {
             get {
-                return ((string)(this["constrBanDongHo"]));
+                return ((string)(this["BANDONGHO_TTCSConnectionString"]));
             }
         }
     }

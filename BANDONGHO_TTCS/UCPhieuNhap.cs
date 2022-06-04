@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Columns;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +20,10 @@ namespace BANDONGHO_TTCS
         private static int slPN;
         private static int slCTPN;
         private static bool isAssignSLCTPN;
-
+        private static int IDCTPN;
 
         private static UCPhieuNhap _instance;
+
         public static UCPhieuNhap Instance
         {
             get
@@ -74,26 +76,37 @@ namespace BANDONGHO_TTCS
             controlPanelAndButton(false);
         }
 
+        private void confirmUpdateBdsCTPN()
+        {
+            bdsCTPN.EndEdit();
+            CTPNAdapter.Connection.ConnectionString = Program.connstr;
+            CTPNAdapter.Update(dSet.CT_PN);
+            bdsCTPN.ResetCurrentItem();
+        }
+
+        private void initBDS()
+        {
+            this.dSet.EnforceConstraints = false;
+            this.PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
+            this.PhieuNhapAdapter.Fill(this.dSet.PHIEUNHAP);
+            this.hotenNVAdapter.Connection.ConnectionString = Program.connstr;
+            this.hotenNVAdapter.Fill(this.dSet.HOTENNV);
+            this.CTPNAdapter.Connection.ConnectionString = Program.connstr;
+            this.CTPNAdapter.Fill(this.dSet.CT_PN);
+            this.dongHoAdapter.Connection.ConnectionString = Program.connstr;
+            this.dongHoAdapter.Fill(this.dSet.DONGHO);
+        }
+
         private void UCPhieuNhap_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSet.DONGHO' table. You can move, or remove it, as needed.
-            this.dSet.EnforceConstraints = false;
-            this.PhieuNhapAdapter.Fill(this.dSet.PHIEUNHAP);
-            this.hotenNVAdapter.Fill(this.dSet.HOTENNV);
-            this.CTPNAdapter.Fill(this.dSet.CT_PN);
-            this.dongHoAdapter.Fill(this.dSet.DONGHO);
+            initBDS();
 
-           /* List<string> dummyListDH = new List<string>();
-            dummyListDH.Add("DH01");
-            dummyListDH.Add("DH02");
-            dummyListDH.Add("DH03");
-            dummyListDH.Add("DH04");
+            lkDH.DataSource = bdsDongHo;
+            lkDH.DisplayMember = "TENDONGHO";
+            lkDH.ValueMember = "MADONGHO";
 
-            RepositoryItemComboBox riCmbDongHo = new RepositoryItemComboBox();
-            riCmbDongHo.Items.AddRange(dummyListDH);
-            gvCTPN.Columns["DONGHO"].ColumnEdit = riCmbDongHo;
-*/
             slPN = bdsPhieuNhap.Count;
+            slCTPN = bdsCTPN.Count;
             selectDefaultValue();
         }
 
@@ -108,7 +121,6 @@ namespace BANDONGHO_TTCS
             bdsPhieuNhap.AddNew();
             selectDefaultValue();
             edtPN.Enabled = true;
-            edtPN.Focus();
             disabledPanelAndButton();
         }
 
@@ -129,6 +141,7 @@ namespace BANDONGHO_TTCS
                 {
                     maPN = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position])["MAPN"].ToString();
                     bdsPhieuNhap.RemoveCurrent();
+                    PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
                     PhieuNhapAdapter.Update(this.dSet.PHIEUNHAP);
                 }
                 catch (Exception ex)
@@ -186,7 +199,7 @@ namespace BANDONGHO_TTCS
         {
             try
             {
-                PhieuNhapAdapter.Fill(dSet.PHIEUNHAP);
+                initBDS();
             }
             catch (Exception ex)
             {
@@ -219,7 +232,7 @@ namespace BANDONGHO_TTCS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + " Line 100");
+                MessageBox.Show(ex.Message + " Line 224");
             }
         }
 
@@ -240,19 +253,144 @@ namespace BANDONGHO_TTCS
                 slCTPN = bdsCTPN.Count;
             }
             bdsCTPN.AddNew();
-            ((DataRowView)bdsCTPN[bdsCTPN.Position])["MAPN"] = edtPN.Text;
+            ((DataRowView)bdsCTPN[bdsCTPN.Position])["MAPN"] = maPN = edtPN.Text;
+
         }
 
         private void ctMenuLuuCT_Click(object sender, EventArgs e)
         {
-            if (bdsCTPN.Count == 0)
+            if (bdsCTPN.Count == 0 || slCTPN == bdsCTPN.Count)
             {
                 return;
             }
+            string maDH, strCmd;
             for (int i = slCTPN; i < bdsCTPN.Count; i++)
             {
-
+                maDH = ((DataRowView)bdsCTPN[i])["MADONGHO"].ToString().Trim();
+                strCmd = "sp_kt_ton_tai_dh_trong_ctpn '" + maPN + "', '" + maDH + "'";
+                for (int j = i + 1; j < bdsCTPN.Count; j++)
+                {
+                    if (((DataRowView)bdsCTPN[j])["MADONGHO"].ToString().Trim().Equals(maDH))
+                    {
+                        gvCTPN.SetColumnError(null, "Hai đồng hồ cùng tên tồn tại trong 1 phiếu nhập!");
+                        MessageBox.Show("Hai đồng hồ cùng tên tồn tại trong 1 phiếu nhập!");
+                        return;
+                    }
+                }
+                if (!Program.execSqlNonQuery(strCmd))
+                {
+                    gvCTPN.SetColumnError(null, "Đồng hồ đã tồn tại trong phiếu nhập!");
+                    return;
+                }
             }
+            try
+            {
+                confirmUpdateBdsCTPN();
+                isAssignSLCTPN = true;
+                slCTPN = bdsCTPN.Count;
+                MessageBox.Show("Lưu chi tiết thành công!");
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+      
+        private void ctMenuXoaCT_Click(object sender, EventArgs e)
+        {
+            if (bdsCTPN.Count == 0) return;
+            if (MessageBox.Show("Xác nhận xóa chi tiết? ", "Xác Nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    // Lưu mã để phục hồi vị trí khi bị lỗi
+                    IDCTPN = Int32.Parse(((DataRowView)bdsCTPN[viTri])["ID_CTPN"].ToString());
+                    bdsCTPN.RemoveCurrent();
+                    CTPNAdapter.Connection.ConnectionString = Program.connstr;
+                    CTPNAdapter.Update(this.dSet.CT_PN);
+                    slCTPN = bdsCTPN.Count;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa chi tiết! " + ex.ToString());
+                    CTPNAdapter.Fill(this.dSet.CT_PN);
+                    bdsCTPN.Position = bdsCTPN.Find("MADONGHO", IDCTPN);
+                    return;
+                }
+            }
+        }
+
+        private void ctMenuXN_Click(object sender, EventArgs e)
+        {
+            if(bdsCTPN.Count == 0 || slCTPN < bdsCTPN.Count)
+            {
+                return;
+            }
+           try
+            {
+                confirmUpdateBdsCTPN();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Line 325");
+            }
+        }
+
+        private void gvCTPN_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            if (gvCTPN.FocusedColumn.FieldName == "DONGIA" || gvCTPN.FocusedColumn.FieldName == "SOLUONG")
+            {
+                double donGia = 0;
+                if (!Double.TryParse(e.Value as String, out donGia))
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Phải nhập một số!";
+                }
+                if (donGia <= 0)
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Phải là số dương!";
+                }
+            }
+        }
+       
+        private void gvCTPN_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            GridColumn columnDonGia = gvCTPN.Columns["DONGIA"];
+            GridColumn columnSoLuong = gvCTPN.Columns["SOLUONG"];
+            GridColumn columnMaDongHo = gvCTPN.Columns["MADONGHO"];
+
+            string test = gvCTPN.GetSelectedCells().ToString();
+
+            string maDH = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnMaDongHo).ToString().Trim();
+            string donGia = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnDonGia).ToString().Trim();
+            string soLuong = gvCTPN.GetRowCellValue(gvCTPN.FocusedRowHandle, columnSoLuong).ToString().Trim();
+
+            if (maDH.Length == 0)
+            {
+                e.Valid = false;
+                e.ErrorText = "Mã đồng hồ không được để trống!\n";
+            }
+            else if (donGia.Length == 0)
+            {
+                e.Valid = false;
+                e.ErrorText = "Đơn giá không được để trống và phải lớn hơn 0!\n";
+            }
+            else if (soLuong.Length == 0)
+            {
+                e.Valid = false;
+                e.ErrorText = "Số lượng không được để trống và phải lớn hơn 0!\n";
+            }
+        }
+        
+        private void gvCTPN_InvalidValueException(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            MessageBox.Show(e.ErrorText, "Giá trị không hợp lệ!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
+        }
+
+        private void btnExist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.fMain.remove_UCPhieuNhap();
+            _instance = null;
         }
     }
 }

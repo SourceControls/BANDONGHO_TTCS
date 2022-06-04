@@ -47,21 +47,17 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement15 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.stt = new System.Windows.Forms.StatusStrip();
-            this.sttMaNV = new System.Windows.Forms.ToolStripStatusLabel();
-            this.sttHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
-            this.stt.SuspendLayout();
             this.SuspendLayout();
             // 
             // container
             // 
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(371, 39);
+            this.container.Location = new System.Drawing.Point(371, 31);
             this.container.Margin = new System.Windows.Forms.Padding(4);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1013, 748);
+            this.container.Size = new System.Drawing.Size(1013, 756);
             this.container.TabIndex = 0;
             // 
             // accordionControl1
@@ -71,11 +67,11 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement1,
             this.accordionControlElement2,
             this.accordionControlElement3});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(371, 748);
+            this.accordionControl1.Size = new System.Drawing.Size(371, 756);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -94,29 +90,26 @@ namespace BANDONGHO_TTCS
             // 
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "Quản Lý Nhân Viên";
+            this.accordionControlElement5.Text = "Chức Năng 1";
             this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
             // accordionControlElement6
             // 
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement6.Text = "Quản Lý Đồng Hồ";
-            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
+            this.accordionControlElement6.Text = "Chức Năng 2";
             // 
             // accordionControlElement7
             // 
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement7.Text = "Đổi mật khẩu";
-            this.accordionControlElement7.Click += new System.EventHandler(this.accordionControlElement7_Click);
+            this.accordionControlElement7.Text = "Chức Năng 3";
             // 
             // accordionControlElement11
             // 
             this.accordionControlElement11.Name = "accordionControlElement11";
             this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement11.Text = "Đăng Xuất";
-            this.accordionControlElement11.Click += new System.EventHandler(this.accordionControlElement11_Click);
+            this.accordionControlElement11.Text = "Chức Năng 4";
             // 
             // accordionControlElement2
             // 
@@ -141,18 +134,21 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement8.Text = "Lập hoá đơn";
+            this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
             // accordionControlElement9
             // 
             this.accordionControlElement9.Name = "accordionControlElement9";
             this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement9.Text = "Backup";
+            this.accordionControlElement9.Click += new System.EventHandler(this.accordionControlElement9_Click);
             // 
             // accordionControlElement10
             // 
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement10.Text = "Restore";
+            this.accordionControlElement10.Click += new System.EventHandler(this.accordionControlElement10_Click);
             // 
             // accordionControlElement3
             // 
@@ -194,42 +190,17 @@ namespace BANDONGHO_TTCS
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1384, 39);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1384, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            // 
-            // stt
-            // 
-            this.stt.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.stt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sttMaNV,
-            this.sttHoTen});
-            this.stt.Location = new System.Drawing.Point(371, 761);
-            this.stt.Name = "stt";
-            this.stt.Size = new System.Drawing.Size(1013, 26);
-            this.stt.TabIndex = 3;
-            this.stt.Text = "statusStrip1";
-            // 
-            // sttMaNV
-            // 
-            this.sttMaNV.Name = "sttMaNV";
-            this.sttMaNV.Size = new System.Drawing.Size(151, 20);
-            this.sttMaNV.Text = "toolStripStatusLabel1";
-            // 
-            // sttHoTen
-            // 
-            this.sttHoTen.Name = "sttHoTen";
-            this.sttHoTen.Size = new System.Drawing.Size(151, 20);
-            this.sttHoTen.Text = "toolStripStatusLabel2";
             // 
             // FrmMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 787);
             this.ControlContainer = this.container;
-            this.Controls.Add(this.stt);
             this.Controls.Add(this.container);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
@@ -240,13 +211,9 @@ namespace BANDONGHO_TTCS
             this.NavigationControl = this.accordionControl1;
             this.Text = "FrmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
-            this.stt.ResumeLayout(false);
-            this.stt.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -269,8 +236,5 @@ namespace BANDONGHO_TTCS
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement13;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement14;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement15;
-        private System.Windows.Forms.StatusStrip stt;
-        private System.Windows.Forms.ToolStripStatusLabel sttMaNV;
-        private System.Windows.Forms.ToolStripStatusLabel sttHoTen;
     }
 }

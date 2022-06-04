@@ -49,14 +49,8 @@ namespace BANDONGHO_TTCS
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.pcGridPN = new DevExpress.XtraEditors.PanelControl();
-            this.gcPN = new DevExpress.XtraGrid.GridControl();
             this.bdsPhieuNhap = new System.Windows.Forms.BindingSource(this.components);
             this.dSet = new BANDONGHO_TTCS.DSet();
-            this.gvPN = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAPN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAYNHAP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhieuNhapAdapter = new BANDONGHO_TTCS.DSetTableAdapters.PHIEUNHAPTableAdapter();
             this.tableAdapterManager = new BANDONGHO_TTCS.DSetTableAdapters.TableAdapterManager();
             this.CTPNAdapter = new BANDONGHO_TTCS.DSetTableAdapters.CT_PNTableAdapter();
@@ -72,26 +66,31 @@ namespace BANDONGHO_TTCS
             this.gvCTPN = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMADONGHO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lkDH = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmbDongHo = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.hotenNVAdapter = new BANDONGHO_TTCS.DSetTableAdapters.HOTENNVTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctMenuThemCT = new System.Windows.Forms.ToolStripMenuItem();
             this.ctMenuLuuCT = new System.Windows.Forms.ToolStripMenuItem();
             this.ctMenuXoaCT = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctMenuXN = new System.Windows.Forms.ToolStripMenuItem();
             this.bdsDongHo = new System.Windows.Forms.BindingSource(this.components);
             this.dongHoAdapter = new BANDONGHO_TTCS.DSetTableAdapters.DONGHOTableAdapter();
+            this.pcGridPN = new DevExpress.XtraEditors.PanelControl();
+            this.gcPN = new DevExpress.XtraGrid.GridControl();
+            this.gvPN = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAPN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYNHAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             mAPNLabel = new System.Windows.Forms.Label();
             nGAYNHAPLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcGridPN)).BeginInit();
-            this.pcGridPN.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPNNhap)).BeginInit();
             this.pcPNNhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtMANV.Properties)).BeginInit();
@@ -104,43 +103,49 @@ namespace BANDONGHO_TTCS
             ((System.ComponentModel.ISupportInitialize)(this.gcCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkDH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDongHo)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDongHo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcGridPN)).BeginInit();
+            this.pcGridPN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPN)).BeginInit();
             this.SuspendLayout();
             // 
             // mAPNLabel
             // 
             mAPNLabel.AutoSize = true;
-            mAPNLabel.Location = new System.Drawing.Point(26, 37);
+            mAPNLabel.Location = new System.Drawing.Point(22, 30);
             mAPNLabel.Name = "mAPNLabel";
-            mAPNLabel.Size = new System.Drawing.Size(62, 17);
+            mAPNLabel.Size = new System.Drawing.Size(50, 13);
             mAPNLabel.TabIndex = 0;
             mAPNLabel.Text = "Mã phiếu";
             // 
             // nGAYNHAPLabel
             // 
             nGAYNHAPLabel.AutoSize = true;
-            nGAYNHAPLabel.Location = new System.Drawing.Point(281, 37);
+            nGAYNHAPLabel.Location = new System.Drawing.Point(241, 30);
             nGAYNHAPLabel.Name = "nGAYNHAPLabel";
-            nGAYNHAPLabel.Size = new System.Drawing.Size(61, 17);
+            nGAYNHAPLabel.Size = new System.Drawing.Size(49, 13);
             nGAYNHAPLabel.TabIndex = 2;
             nGAYNHAPLabel.Text = "Ngày lập";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(268, 114);
+            label1.Location = new System.Drawing.Point(230, 93);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(89, 17);
+            label1.Size = new System.Drawing.Size(71, 13);
             label1.TabIndex = 6;
             label1.Text = "Mã nhân viên";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(26, 114);
+            label2.Location = new System.Drawing.Point(22, 93);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(69, 17);
+            label2.Size = new System.Drawing.Size(55, 13);
             label2.TabIndex = 7;
             label2.Text = "Nhân viên";
             // 
@@ -173,7 +178,7 @@ namespace BANDONGHO_TTCS
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnThem, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu),
@@ -247,6 +252,7 @@ namespace BANDONGHO_TTCS
             this.btnExist.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExist.ImageOptions.SvgImage")));
             this.btnExist.Name = "btnExist";
             this.btnExist.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnExist.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExist_ItemClick);
             // 
             // bar3
             // 
@@ -266,60 +272,73 @@ namespace BANDONGHO_TTCS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(988, 30);
+<<<<<<< HEAD
+            this.barDockControlTop.Size = new System.Drawing.Size(1092, 24);
+=======
+            this.barDockControlTop.Size = new System.Drawing.Size(847, 24);
+>>>>>>> parent of c394127 (hùng)
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 608);
+<<<<<<< HEAD
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 580);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(988, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1092, 20);
+=======
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 490);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(847, 20);
+>>>>>>> parent of c394127 (hùng)
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 578);
+<<<<<<< HEAD
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 556);
+=======
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 466);
+>>>>>>> parent of c394127 (hùng)
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(988, 30);
+<<<<<<< HEAD
+            this.barDockControlRight.Location = new System.Drawing.Point(1092, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 578);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 556);
+=======
+            this.barDockControlRight.Location = new System.Drawing.Point(847, 24);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 466);
             // 
             // pcGridPN
             // 
             this.pcGridPN.Controls.Add(this.gcPN);
             this.pcGridPN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pcGridPN.Location = new System.Drawing.Point(0, 30);
-            this.pcGridPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pcGridPN.Location = new System.Drawing.Point(0, 24);
             this.pcGridPN.Name = "pcGridPN";
-            this.pcGridPN.Size = new System.Drawing.Size(988, 382);
+            this.pcGridPN.Size = new System.Drawing.Size(847, 310);
             this.pcGridPN.TabIndex = 4;
             // 
             // gcPN
             // 
             this.gcPN.DataSource = this.bdsPhieuNhap;
             this.gcPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcPN.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcPN.Location = new System.Drawing.Point(2, 2);
             this.gcPN.MainView = this.gvPN;
-            this.gcPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcPN.MenuManager = this.barManager1;
             this.gcPN.Name = "gcPN";
-            this.gcPN.Size = new System.Drawing.Size(984, 378);
+            this.gcPN.Size = new System.Drawing.Size(843, 306);
             this.gcPN.TabIndex = 0;
             this.gcPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPN});
+>>>>>>> parent of c394127 (hùng)
             // 
             // bdsPhieuNhap
             // 
@@ -331,13 +350,14 @@ namespace BANDONGHO_TTCS
             this.dSet.DataSetName = "DSet";
             this.dSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+<<<<<<< HEAD
+=======
             // gvPN
             // 
             this.gvPN.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAPN,
             this.colNGAYNHAP,
             this.colMANV});
-            this.gvPN.DetailHeight = 431;
             this.gvPN.GridControl = this.gcPN;
             this.gvPN.Name = "gvPN";
             // 
@@ -345,38 +365,33 @@ namespace BANDONGHO_TTCS
             // 
             this.colMAPN.Caption = "Mã phiếu nhập";
             this.colMAPN.FieldName = "MAPN";
-            this.colMAPN.MinWidth = 23;
             this.colMAPN.Name = "colMAPN";
             this.colMAPN.OptionsColumn.AllowEdit = false;
             this.colMAPN.OptionsColumn.AllowFocus = false;
             this.colMAPN.Visible = true;
             this.colMAPN.VisibleIndex = 0;
-            this.colMAPN.Width = 87;
             // 
             // colNGAYNHAP
             // 
             this.colNGAYNHAP.Caption = "Ngày nhập";
             this.colNGAYNHAP.FieldName = "NGAYNHAP";
-            this.colNGAYNHAP.MinWidth = 23;
             this.colNGAYNHAP.Name = "colNGAYNHAP";
             this.colNGAYNHAP.OptionsColumn.AllowEdit = false;
             this.colNGAYNHAP.OptionsColumn.AllowFocus = false;
             this.colNGAYNHAP.Visible = true;
             this.colNGAYNHAP.VisibleIndex = 1;
-            this.colNGAYNHAP.Width = 87;
             // 
             // colMANV
             // 
             this.colMANV.Caption = "Mã nhân viên";
             this.colMANV.FieldName = "MANV";
-            this.colMANV.MinWidth = 23;
             this.colMANV.Name = "colMANV";
             this.colMANV.OptionsColumn.AllowEdit = false;
             this.colMANV.OptionsColumn.AllowFocus = false;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 2;
-            this.colMANV.Width = 87;
             // 
+>>>>>>> parent of c394127 (hùng)
             // PhieuNhapAdapter
             // 
             this.PhieuNhapAdapter.ClearBeforeFill = true;
@@ -390,7 +405,6 @@ namespace BANDONGHO_TTCS
             this.tableAdapterManager.DONGHOTableAdapter = null;
             this.tableAdapterManager.HANGDONGHOTableAdapter = null;
             this.tableAdapterManager.HOADONTableAdapter = null;
-            this.tableAdapterManager.HOTENNVTableAdapter = null;
             this.tableAdapterManager.KHACHHANGTableAdapter = null;
             this.tableAdapterManager.KHUYENMAITableAdapter = null;
             this.tableAdapterManager.LOAIDONGHOTableAdapter = null;
@@ -415,20 +429,24 @@ namespace BANDONGHO_TTCS
             this.pcPNNhap.Controls.Add(this.edtPN);
             this.pcPNNhap.Dock = System.Windows.Forms.DockStyle.Left;
             this.pcPNNhap.Enabled = false;
-            this.pcPNNhap.Location = new System.Drawing.Point(0, 412);
-            this.pcPNNhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+<<<<<<< HEAD
+            this.pcPNNhap.Location = new System.Drawing.Point(0, 353);
             this.pcPNNhap.Name = "pcPNNhap";
-            this.pcPNNhap.Size = new System.Drawing.Size(548, 196);
+            this.pcPNNhap.Size = new System.Drawing.Size(477, 227);
+=======
+            this.pcPNNhap.Location = new System.Drawing.Point(0, 334);
+            this.pcPNNhap.Name = "pcPNNhap";
+            this.pcPNNhap.Size = new System.Drawing.Size(470, 156);
+>>>>>>> parent of c394127 (hùng)
             this.pcPNNhap.TabIndex = 5;
             // 
             // edtMANV
             // 
-            this.edtMANV.Location = new System.Drawing.Point(364, 111);
-            this.edtMANV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.edtMANV.Location = new System.Drawing.Point(312, 90);
             this.edtMANV.MenuManager = this.barManager1;
             this.edtMANV.Name = "edtMANV";
             this.edtMANV.Properties.ReadOnly = true;
-            this.edtMANV.Size = new System.Drawing.Size(117, 22);
+            this.edtMANV.Size = new System.Drawing.Size(100, 20);
             this.edtMANV.TabIndex = 5;
             // 
             // cmbNV
@@ -438,10 +456,9 @@ namespace BANDONGHO_TTCS
             this.cmbNV.DisplayMember = "HOTEN";
             this.cmbNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNV.FormattingEnabled = true;
-            this.cmbNV.Location = new System.Drawing.Point(92, 111);
-            this.cmbNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbNV.Location = new System.Drawing.Point(79, 90);
             this.cmbNV.Name = "cmbNV";
-            this.cmbNV.Size = new System.Drawing.Size(145, 24);
+            this.cmbNV.Size = new System.Drawing.Size(125, 21);
             this.cmbNV.TabIndex = 4;
             this.cmbNV.ValueMember = "MANV";
             this.cmbNV.SelectedIndexChanged += new System.EventHandler(this.cmbNV_SelectedIndexChanged);
@@ -455,48 +472,56 @@ namespace BANDONGHO_TTCS
             // 
             this.dpPN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPhieuNhap, "NGAYNHAP", true));
             this.dpPN.EditValue = null;
-            this.dpPN.Location = new System.Drawing.Point(364, 33);
-            this.dpPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dpPN.Location = new System.Drawing.Point(312, 27);
             this.dpPN.MenuManager = this.barManager1;
             this.dpPN.Name = "dpPN";
             this.dpPN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpPN.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dpPN.Size = new System.Drawing.Size(117, 22);
+            this.dpPN.Size = new System.Drawing.Size(100, 20);
             this.dpPN.TabIndex = 3;
             // 
             // edtPN
             // 
             this.edtPN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPhieuNhap, "MAPN", true));
-            this.edtPN.Location = new System.Drawing.Point(92, 33);
-            this.edtPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.edtPN.Location = new System.Drawing.Point(79, 27);
             this.edtPN.MenuManager = this.barManager1;
             this.edtPN.Name = "edtPN";
-            this.edtPN.Size = new System.Drawing.Size(146, 22);
+            this.edtPN.Size = new System.Drawing.Size(125, 20);
             this.edtPN.TabIndex = 1;
             // 
             // pcGridCTPN
             // 
             this.pcGridCTPN.Controls.Add(this.gcCTPN);
             this.pcGridCTPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pcGridCTPN.Location = new System.Drawing.Point(548, 412);
-            this.pcGridCTPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+<<<<<<< HEAD
+            this.pcGridCTPN.Location = new System.Drawing.Point(477, 353);
             this.pcGridCTPN.Name = "pcGridCTPN";
-            this.pcGridCTPN.Size = new System.Drawing.Size(440, 196);
+            this.pcGridCTPN.Size = new System.Drawing.Size(615, 227);
+=======
+            this.pcGridCTPN.Location = new System.Drawing.Point(470, 334);
+            this.pcGridCTPN.Name = "pcGridCTPN";
+            this.pcGridCTPN.Size = new System.Drawing.Size(377, 156);
+>>>>>>> parent of c394127 (hùng)
             this.pcGridCTPN.TabIndex = 6;
             // 
             // gcCTPN
             // 
             this.gcCTPN.DataSource = this.bdsCTPN;
             this.gcCTPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCTPN.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcCTPN.Location = new System.Drawing.Point(2, 2);
             this.gcCTPN.MainView = this.gvCTPN;
-            this.gcCTPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcCTPN.MenuManager = this.barManager1;
             this.gcCTPN.Name = "gcCTPN";
-            this.gcCTPN.Size = new System.Drawing.Size(436, 192);
+<<<<<<< HEAD
+            this.gcCTPN.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmbDongHo,
+            this.lkDH});
+            this.gcCTPN.Size = new System.Drawing.Size(611, 223);
+=======
+            this.gcCTPN.Size = new System.Drawing.Size(373, 152);
+>>>>>>> parent of c394127 (hùng)
             this.gcCTPN.TabIndex = 0;
             this.gcCTPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTPN});
@@ -511,51 +536,91 @@ namespace BANDONGHO_TTCS
             this.gvCTPN.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAPN1,
             this.colMADONGHO,
+<<<<<<< HEAD
+            this.colDONGIA,
+            this.colSOLUONG});
+=======
             this.colSOLUONG,
             this.colDONGIA});
-            this.gvCTPN.DetailHeight = 431;
+>>>>>>> parent of c394127 (hùng)
             this.gvCTPN.GridControl = this.gcCTPN;
             this.gvCTPN.Name = "gvCTPN";
+            this.gvCTPN.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gvCTPN_ValidateRow);
+            this.gvCTPN.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gvCTPN_ValidatingEditor);
+            this.gvCTPN.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.gvCTPN_InvalidValueException);
             // 
             // colMAPN1
             // 
             this.colMAPN1.Caption = "Mã phiếu nhập";
             this.colMAPN1.FieldName = "MAPN";
-            this.colMAPN1.MinWidth = 23;
             this.colMAPN1.Name = "colMAPN1";
+            this.colMAPN1.OptionsColumn.AllowEdit = false;
+            this.colMAPN1.OptionsColumn.AllowFocus = false;
             this.colMAPN1.Visible = true;
             this.colMAPN1.VisibleIndex = 0;
-            this.colMAPN1.Width = 87;
             // 
             // colMADONGHO
             // 
             this.colMADONGHO.Caption = "Mã đồng hồ";
+            this.colMADONGHO.ColumnEdit = this.lkDH;
             this.colMADONGHO.FieldName = "MADONGHO";
-            this.colMADONGHO.MinWidth = 23;
             this.colMADONGHO.Name = "colMADONGHO";
             this.colMADONGHO.Visible = true;
             this.colMADONGHO.VisibleIndex = 1;
-            this.colMADONGHO.Width = 87;
             // 
-            // colSOLUONG
+            // lkDH
             // 
+<<<<<<< HEAD
+            this.lkDH.AutoHeight = false;
+            this.lkDH.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkDH.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MADONGHO", "Mã đồng hồ"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENDONGHO", "Tên đồng hồ")});
+            this.lkDH.Name = "lkDH";
+            this.lkDH.NullText = "Loading...";
+=======
             this.colSOLUONG.Caption = "Số lượng";
             this.colSOLUONG.FieldName = "SOLUONG";
-            this.colSOLUONG.MinWidth = 23;
             this.colSOLUONG.Name = "colSOLUONG";
             this.colSOLUONG.Visible = true;
             this.colSOLUONG.VisibleIndex = 2;
-            this.colSOLUONG.Width = 87;
+>>>>>>> parent of c394127 (hùng)
             // 
             // colDONGIA
             // 
             this.colDONGIA.Caption = "Đơn giá";
+            this.colDONGIA.DisplayFormat.FormatString = "##,###.##";
+            this.colDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDONGIA.FieldName = "DONGIA";
-            this.colDONGIA.MinWidth = 23;
             this.colDONGIA.Name = "colDONGIA";
+            this.colDONGIA.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colDONGIA.Visible = true;
+<<<<<<< HEAD
+            this.colDONGIA.VisibleIndex = 2;
+            // 
+            // colSOLUONG
+            // 
+            this.colSOLUONG.Caption = "Số lượng";
+            this.colSOLUONG.DisplayFormat.FormatString = "##,###";
+            this.colSOLUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colSOLUONG.FieldName = "SOLUONG";
+            this.colSOLUONG.Name = "colSOLUONG";
+            this.colSOLUONG.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colSOLUONG.Visible = true;
+            this.colSOLUONG.VisibleIndex = 3;
+            // 
+            // cmbDongHo
+            // 
+            this.cmbDongHo.AllowDropDownWhenReadOnly = DevExpress.Utils.DefaultBoolean.True;
+            this.cmbDongHo.AutoHeight = false;
+            this.cmbDongHo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbDongHo.Name = "cmbDongHo";
+            this.cmbDongHo.ReadOnly = true;
+=======
             this.colDONGIA.VisibleIndex = 3;
-            this.colDONGIA.Width = 87;
+>>>>>>> parent of c394127 (hùng)
             // 
             // hotenNVAdapter
             // 
@@ -563,33 +628,46 @@ namespace BANDONGHO_TTCS
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctMenuThemCT,
             this.ctMenuLuuCT,
-            this.ctMenuXoaCT});
+            this.ctMenuXoaCT,
+            this.ctMenuXN});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 76);
+<<<<<<< HEAD
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 92);
+=======
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 70);
+>>>>>>> parent of c394127 (hùng)
             // 
             // ctMenuThemCT
             // 
             this.ctMenuThemCT.Name = "ctMenuThemCT";
-            this.ctMenuThemCT.Size = new System.Drawing.Size(164, 24);
+            this.ctMenuThemCT.Size = new System.Drawing.Size(143, 22);
             this.ctMenuThemCT.Text = "Thêm chi tiết";
             this.ctMenuThemCT.Click += new System.EventHandler(this.ctMenuThemCT_Click);
             // 
             // ctMenuLuuCT
             // 
             this.ctMenuLuuCT.Name = "ctMenuLuuCT";
-            this.ctMenuLuuCT.Size = new System.Drawing.Size(164, 24);
+            this.ctMenuLuuCT.Size = new System.Drawing.Size(143, 22);
             this.ctMenuLuuCT.Text = "Lưu chi tiết";
             this.ctMenuLuuCT.Click += new System.EventHandler(this.ctMenuLuuCT_Click);
             // 
             // ctMenuXoaCT
             // 
             this.ctMenuXoaCT.Name = "ctMenuXoaCT";
-            this.ctMenuXoaCT.Size = new System.Drawing.Size(164, 24);
+            this.ctMenuXoaCT.Size = new System.Drawing.Size(143, 22);
             this.ctMenuXoaCT.Text = "Xoá chi tiết";
+            this.ctMenuXoaCT.Click += new System.EventHandler(this.ctMenuXoaCT_Click);
+            // 
+            // ctMenuXN
+            // 
+            this.ctMenuXN.Name = "ctMenuXN";
+            this.ctMenuXN.ShowShortcutKeys = false;
+            this.ctMenuXN.Size = new System.Drawing.Size(143, 22);
+            this.ctMenuXN.Text = "Xác nhận sửa";
+            this.ctMenuXN.Click += new System.EventHandler(this.ctMenuXN_Click);
             // 
             // bdsDongHo
             // 
@@ -600,9 +678,70 @@ namespace BANDONGHO_TTCS
             // 
             this.dongHoAdapter.ClearBeforeFill = true;
             // 
+            // pcGridPN
+            // 
+            this.pcGridPN.Controls.Add(this.gcPN);
+            this.pcGridPN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pcGridPN.Location = new System.Drawing.Point(0, 24);
+            this.pcGridPN.Name = "pcGridPN";
+            this.pcGridPN.Size = new System.Drawing.Size(1092, 329);
+            this.pcGridPN.TabIndex = 4;
+            // 
+            // gcPN
+            // 
+            this.gcPN.DataSource = this.bdsPhieuNhap;
+            this.gcPN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcPN.Location = new System.Drawing.Point(2, 2);
+            this.gcPN.MainView = this.gvPN;
+            this.gcPN.MenuManager = this.barManager1;
+            this.gcPN.Name = "gcPN";
+            this.gcPN.Size = new System.Drawing.Size(1088, 327);
+            this.gcPN.TabIndex = 0;
+            this.gcPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPN});
+            // 
+            // gvPN
+            // 
+            this.gvPN.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAPN,
+            this.colNGAYNHAP,
+            this.colMANV});
+            this.gvPN.GridControl = this.gcPN;
+            this.gvPN.Name = "gvPN";
+            // 
+            // colMAPN
+            // 
+            this.colMAPN.Caption = "Mã phiếu nhập";
+            this.colMAPN.FieldName = "MAPN";
+            this.colMAPN.Name = "colMAPN";
+            this.colMAPN.OptionsColumn.AllowEdit = false;
+            this.colMAPN.OptionsColumn.AllowFocus = false;
+            this.colMAPN.Visible = true;
+            this.colMAPN.VisibleIndex = 0;
+            // 
+            // colNGAYNHAP
+            // 
+            this.colNGAYNHAP.Caption = "Ngày nhập";
+            this.colNGAYNHAP.FieldName = "NGAYNHAP";
+            this.colNGAYNHAP.Name = "colNGAYNHAP";
+            this.colNGAYNHAP.OptionsColumn.AllowEdit = false;
+            this.colNGAYNHAP.OptionsColumn.AllowFocus = false;
+            this.colNGAYNHAP.Visible = true;
+            this.colNGAYNHAP.VisibleIndex = 1;
+            // 
+            // colMANV
+            // 
+            this.colMANV.Caption = "Mã nhân viên";
+            this.colMANV.FieldName = "MANV";
+            this.colMANV.Name = "colMANV";
+            this.colMANV.OptionsColumn.AllowEdit = false;
+            this.colMANV.OptionsColumn.AllowFocus = false;
+            this.colMANV.Visible = true;
+            this.colMANV.VisibleIndex = 2;
+            // 
             // UCPhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.pcGridCTPN);
@@ -612,17 +751,16 @@ namespace BANDONGHO_TTCS
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UCPhieuNhap";
-            this.Size = new System.Drawing.Size(988, 628);
+<<<<<<< HEAD
+            this.Size = new System.Drawing.Size(1092, 600);
+=======
+            this.Size = new System.Drawing.Size(847, 510);
+>>>>>>> parent of c394127 (hùng)
             this.Load += new System.EventHandler(this.UCPhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcGridPN)).EndInit();
-            this.pcGridPN.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhieuNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPNNhap)).EndInit();
             this.pcPNNhap.ResumeLayout(false);
             this.pcPNNhap.PerformLayout();
@@ -636,8 +774,14 @@ namespace BANDONGHO_TTCS
             ((System.ComponentModel.ISupportInitialize)(this.gcCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDongHo)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bdsDongHo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcGridPN)).EndInit();
+            this.pcGridPN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,7 +805,6 @@ namespace BANDONGHO_TTCS
         private DevExpress.XtraBars.BarButtonItem btnExist;
         private System.Windows.Forms.BindingSource bdsPhieuNhap;
         private DSet dSet;
-        private DevExpress.XtraEditors.PanelControl pcGridPN;
         private DSetTableAdapters.PHIEUNHAPTableAdapter PhieuNhapAdapter;
         private DSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.PanelControl pcGridCTPN;
@@ -677,7 +820,6 @@ namespace BANDONGHO_TTCS
         private DevExpress.XtraGrid.Views.Grid.GridView gvCTPN;
         private DSetTableAdapters.CT_PNTableAdapter CTPNAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPN1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMADONGHO;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -686,10 +828,15 @@ namespace BANDONGHO_TTCS
         private System.Windows.Forms.ToolStripMenuItem ctMenuXoaCT;
         private System.Windows.Forms.BindingSource bdsDongHo;
         private DSetTableAdapters.DONGHOTableAdapter dongHoAdapter;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cmbDongHo;
+        public DevExpress.XtraGrid.Columns.GridColumn colMADONGHO;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lkDH;
+        private DevExpress.XtraEditors.PanelControl pcGridPN;
         private DevExpress.XtraGrid.GridControl gcPN;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPN;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPN;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYNHAP;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
+        private System.Windows.Forms.ToolStripMenuItem ctMenuXN;
     }
 }
