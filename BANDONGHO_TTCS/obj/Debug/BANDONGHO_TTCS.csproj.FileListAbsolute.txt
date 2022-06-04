@@ -150,3 +150,5 @@ D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\bin\Debug\de\DevExpress.
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
+D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCDongHo.resources
+D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.FrmDoiMatKhau.resources

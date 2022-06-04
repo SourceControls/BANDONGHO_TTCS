@@ -12,6 +12,13 @@ namespace BANDONGHO_TTCS
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
+        public static FrmMain fMain;
+
+        public void clearData()
+        {
+            txtMatKhau.Text = "";
+                
+        }
         public frmLogin()
         {
             InitializeComponent();
@@ -31,12 +38,24 @@ namespace BANDONGHO_TTCS
                 if(Program.connectToDB() == 1)
                 {
                     this.Visible = false;
+                    
+                    if(fMain == null)
+                    {
+                        fMain = new FrmMain();
+                    }
+                    fMain.Show();
                     return;
+                }
+                else
+                {
+                    MessageBox.Show("Sai thông tin tài khoản hoặc tài khoản bị khóa!");
                 }
 
             }
             Program.login = "";
 
         }
+
     }
+
 }

@@ -18,7 +18,6 @@ namespace BANDONGHO_TTCS
         /// 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static SqlDataReader myReader;
         public static String login = "";
         public static String password = "";
 
@@ -26,7 +25,6 @@ namespace BANDONGHO_TTCS
         public static String mGroup = "";
         public static String mHoTen = "";
 
-        public static FrmMain fMain;
         public static frmLogin fLogin;
 
 
@@ -44,6 +42,17 @@ namespace BANDONGHO_TTCS
                     Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
                 Program.conn.ConnectionString = connstr;
                 conn.Open();
+                SqlDataReader myReader = Program.ExecSqlDataReader("EXEC SP_LAY_HO_TEN_VA_GROUP '" + login + "'");
+                if (myReader == null)
+                {
+                    return -1;
+                }
+                else if (myReader.HasRows)
+                {
+                    myReader.Read();
+                    mGroup = myReader.GetString(0);
+                    mHoTen =  myReader.GetString(1);
+                }
             }
             catch (Exception ex)
             {
@@ -61,7 +70,21 @@ namespace BANDONGHO_TTCS
             conn.Close();
             return dt;
         }
+        public static int execSqlNonQueryReturnStatus(String cmd)
+        {
+            SqlDataReader myReader = Program.ExecSqlDataReader(cmd);
+            if(myReader == null)
+            {
+                return -1;
+            }
+            if (myReader.HasRows)
+            {
+                myReader.Read();
+                return myReader.GetInt32(0);
+            }
+            else { return -1; }
 
+        }
         public static bool execSqlNonQuery(String cmd)
         {
             SqlCommand sqlCmd = new SqlCommand(cmd, conn);
@@ -75,7 +98,7 @@ namespace BANDONGHO_TTCS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi thực thi sql non query, chi tiết: " + ex.Message);
+                MessageBox.Show("Thất bại!\n" + ex.Message);
             }
             finally
             {
@@ -130,10 +153,7 @@ namespace BANDONGHO_TTCS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             fLogin = new frmLogin();
-            fMain = new FrmMain();
-            Program.fLogin.ShowDialog(fMain);
-            if(login.Length>0)
-            Application.Run(Program.fMain);
+                Application.Run(Program.fLogin);
         }
 
     }

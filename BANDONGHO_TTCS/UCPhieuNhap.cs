@@ -78,13 +78,9 @@ namespace BANDONGHO_TTCS
         {
             // TODO: This line of code loads data into the 'dSet.DONGHO' table. You can move, or remove it, as needed.
             this.dSet.EnforceConstraints = false;
-            this.PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
             this.PhieuNhapAdapter.Fill(this.dSet.PHIEUNHAP);
-            this.hotenNVAdapter.Connection.ConnectionString = Program.connstr;
             this.hotenNVAdapter.Fill(this.dSet.HOTENNV);
-            this.CTPNAdapter.Connection.ConnectionString = Program.connstr;
             this.CTPNAdapter.Fill(this.dSet.CT_PN);
-            this.dongHoAdapter.Connection.ConnectionString = Program.connstr;
             this.dongHoAdapter.Fill(this.dSet.DONGHO);
 
            /* List<string> dummyListDH = new List<string>();
@@ -133,7 +129,6 @@ namespace BANDONGHO_TTCS
                 {
                     maPN = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position])["MAPN"].ToString();
                     bdsPhieuNhap.RemoveCurrent();
-                    PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
                     PhieuNhapAdapter.Update(this.dSet.PHIEUNHAP);
                 }
                 catch (Exception ex)
