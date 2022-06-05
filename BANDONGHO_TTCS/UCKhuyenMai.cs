@@ -79,11 +79,12 @@ namespace BANDONGHO_TTCS
                 MessageBox.Show("Mã khuyến mãi không được để trống");
                 return false;
             }
-            if (kHUYENMAIBindingSource.Find("MAKM", mAKMTextEdit.Text) > -1)
-            {
-                MessageBox.Show("Mã khuyến mãi bị trùng");
-                return false;
-            }
+            if(isAddNew)
+                if (kHUYENMAIBindingSource.Find("MAKM", mAKMTextEdit.Text) > -1)
+                {
+                    MessageBox.Show("Mã khuyến mãi bị trùng");
+                    return false;
+                }
             if (tENKMTextEdit.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Tên khuyến mãi không được để trống");
@@ -159,6 +160,7 @@ namespace BANDONGHO_TTCS
             SetViewMode(true);
             ttCT_KM.Enabled = false;
             cT_KMGridControl.Enabled = false;
+            isAddNew = true;
 
             kHUYENMAIBindingSource.AddNew();
             InitValue_KM();
