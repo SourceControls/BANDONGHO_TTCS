@@ -138,6 +138,7 @@ namespace BANDONGHO_TTCS
             catch (Exception ex)
             {
                 MessageBox.Show("Thất bại!\n" + ex.Message);
+                return false;
             }
             finally
             {

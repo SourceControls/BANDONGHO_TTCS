@@ -15,8 +15,14 @@ namespace BANDONGHO_TTCS
         public FrmMain()
         {
             InitializeComponent();
-            sttHoTen.Text = "Họ Tên: " + Program.mHoTen;
-            sttMaNV.Text = "Mã NV: " + Program.login;
+
+
+        }
+
+        public void phanQuyen()
+        {
+
+
         }
         private void openTestControll()
         { 
@@ -90,10 +96,9 @@ namespace BANDONGHO_TTCS
 
         private void accordionControlElement11_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Program.fLogin.clearData();
             Program.fLogin.Show();
-            container.Controls.Clear();
+            this.Dispose();
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -149,6 +154,32 @@ namespace BANDONGHO_TTCS
         public void remove_UCRestore()
         {
             this.container.Controls.Remove(UCRestore.Instance);
+        }
+
+        private void container_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            sttHoTen.Text = "Họ Tên: " + Program.mHoTen;
+            sttMaNV.Text = "Mã NV: " + Program.login;
+            sttChucVu.Text = "Chức vụ: " + Program.mGroup;
+            if (Program.mGroup.ToUpper().Trim() == "NHANVIEN")
+            {
+                accordionControlElement6.Visible = false;
+                accordionControlElement5.Visible = false;
+                accordionControlElement9.Visible = false;
+                accordionControlElement10.Visible = false;
+            }
+            else if (Program.mGroup.ToUpper().Trim() == "QUANLY")
+            {
+                accordionControlElement6.Visible = true;
+                accordionControlElement5.Visible = true;
+                accordionControlElement9.Visible = true;
+                accordionControlElement10.Visible = true;
+            }
         }
     }
 }

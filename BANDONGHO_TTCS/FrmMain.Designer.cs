@@ -50,6 +50,7 @@ namespace BANDONGHO_TTCS
             this.stt = new System.Windows.Forms.StatusStrip();
             this.sttMaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.sttHoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sttChucVu = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.stt.SuspendLayout();
@@ -63,6 +64,7 @@ namespace BANDONGHO_TTCS
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(1013, 748);
             this.container.TabIndex = 0;
+            this.container.Click += new System.EventHandler(this.container_Click);
             // 
             // accordionControl1
             // 
@@ -206,7 +208,8 @@ namespace BANDONGHO_TTCS
             this.stt.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.stt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sttMaNV,
-            this.sttHoTen});
+            this.sttHoTen,
+            this.sttChucVu});
             this.stt.Location = new System.Drawing.Point(371, 761);
             this.stt.Name = "stt";
             this.stt.Size = new System.Drawing.Size(1013, 26);
@@ -224,6 +227,12 @@ namespace BANDONGHO_TTCS
             this.sttHoTen.Name = "sttHoTen";
             this.sttHoTen.Size = new System.Drawing.Size(151, 20);
             this.sttHoTen.Text = "toolStripStatusLabel2";
+            // 
+            // sttChucVu
+            // 
+            this.sttChucVu.Name = "sttChucVu";
+            this.sttChucVu.Size = new System.Drawing.Size(151, 20);
+            this.sttChucVu.Text = "toolStripStatusLabel1";
             // 
             // FrmMain
             // 
@@ -244,6 +253,7 @@ namespace BANDONGHO_TTCS
             this.Text = "FrmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.stt.ResumeLayout(false);
@@ -275,5 +285,6 @@ namespace BANDONGHO_TTCS
         private System.Windows.Forms.StatusStrip stt;
         private System.Windows.Forms.ToolStripStatusLabel sttMaNV;
         private System.Windows.Forms.ToolStripStatusLabel sttHoTen;
+        private System.Windows.Forms.ToolStripStatusLabel sttChucVu;
     }
 }

@@ -37,11 +37,7 @@ namespace BANDONGHO_TTCS
                 if(Program.connectToDB() == 1)
                 {
                     this.Visible = false;
-                    
-                    if(fMain == null)
-                    {
-                        fMain = new FrmMain();
-                    }
+                    fMain = new FrmMain();
                     fMain.Show();
                     return;
                 }
