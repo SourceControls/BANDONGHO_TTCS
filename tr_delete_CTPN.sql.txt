@@ -1,0 +1,6 @@
+create trigger [dbo].[tr_delete_CTPN] on [dbo].[CT_PN]
+after delete as
+begin
+	update DONGHO set SLTON = SLTON - (select SOLUONG from deleted)
+	where MADONGHO = (select MADONGHO from deleted)
+end

@@ -1,0 +1,6 @@
+create trigger [dbo].[tr_insert_CTPN] on [dbo].[CT_PN]
+after insert as
+begin
+	update DONGHO set SLTON = SLTON + (select SOLUONG from inserted)
+	where MADONGHO = (select MADONGHO from inserted)
+end
