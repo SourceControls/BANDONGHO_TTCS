@@ -183,12 +183,10 @@ D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.FrmMain.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.testControl.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.Properties.Resources.resources
-D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCBackup.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCDongHo.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCHoaDon.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCNhanVien.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCPhieuNhap.resources
-D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCRestore.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.XrptHoaDon.resources
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.csproj.GenerateResource.cache
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.exe.licenses
@@ -197,3 +195,7 @@ D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.exe
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.pdb
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.csproj.AssemblyReference.cache
+D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCHangDongHo.resources
+D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCKhuyenMai.resources
+D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCLoaiDongHo.resources
+D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS\obj\Debug\BANDONGHO_TTCS.UCBackUpRestore.resources

@@ -182,8 +182,8 @@ namespace BANDONGHO_TTCS
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.fMain.remove_UCLoaiDongHo();
-            _instance = null;
+/*            Program.fMain.remove_UCLoaiDongHo();
+            _instance = null;*/
         }
     }
 }

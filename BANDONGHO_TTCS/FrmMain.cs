@@ -153,16 +153,47 @@ namespace BANDONGHO_TTCS
             {
                 accordionControlElement6.Visible = false;
                 accordionControlElement5.Visible = false;
-                accordionControlElement9.Visible = false;
                 accordionControlElement10.Visible = false;
+                accordionControlElement13.Visible = false;
             }
             else if (Program.mGroup.ToUpper().Trim() == "QUANLY")
             {
                 accordionControlElement6.Visible = true;
                 accordionControlElement5.Visible = true;
-                accordionControlElement9.Visible = true;
                 accordionControlElement10.Visible = true;
+                accordionControlElement13.Visible = true;
+
             }
+        }
+
+        private void accordionControlElement12_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCHangDongHo.Instance))
+            {
+                this.container.Controls.Add(UCHangDongHo.Instance);
+            }
+            UCHangDongHo.Instance.Dock = DockStyle.Fill;
+            UCHangDongHo.Instance.BringToFront();
+        }
+
+        private void accordionControlElement13_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCKhuyenMai.Instance))
+            {
+                this.container.Controls.Add(UCKhuyenMai.Instance);
+            }
+            UCKhuyenMai.Instance.Dock = DockStyle.Fill;
+            UCKhuyenMai.Instance.BringToFront();
+        }
+
+        private void accordionControlElement14_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCLoaiDongHo.Instance))
+            {
+                this.container.Controls.Add(UCLoaiDongHo.Instance);
+            }
+            UCLoaiDongHo.Instance.Dock = DockStyle.Fill;
+            UCLoaiDongHo.Instance.BringToFront();
         }
     }
 }

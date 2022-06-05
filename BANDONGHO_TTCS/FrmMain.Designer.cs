@@ -58,10 +58,10 @@ namespace BANDONGHO_TTCS
             // container
             // 
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(371, 31);
+            this.container.Location = new System.Drawing.Point(371, 39);
             this.container.Margin = new System.Windows.Forms.Padding(4);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1013, 756);
+            this.container.Size = new System.Drawing.Size(1013, 748);
             this.container.TabIndex = 0;
             this.container.Click += new System.EventHandler(this.container_Click);
             // 
@@ -72,11 +72,11 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement1,
             this.accordionControlElement2,
             this.accordionControlElement3});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(371, 756);
+            this.accordionControl1.Size = new System.Drawing.Size(371, 748);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -153,10 +153,11 @@ namespace BANDONGHO_TTCS
             // accordionControlElement3
             // 
             this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement12,
             this.accordionControlElement13,
+            this.accordionControlElement12,
             this.accordionControlElement14,
             this.accordionControlElement15});
+            this.accordionControlElement3.Expanded = true;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Tài";
             // 
@@ -164,19 +165,22 @@ namespace BANDONGHO_TTCS
             // 
             this.accordionControlElement12.Name = "accordionControlElement12";
             this.accordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement12.Text = "Element12";
+            this.accordionControlElement12.Text = "Hãng Đồng Hồ";
+            this.accordionControlElement12.Click += new System.EventHandler(this.accordionControlElement12_Click);
             // 
             // accordionControlElement13
             // 
             this.accordionControlElement13.Name = "accordionControlElement13";
             this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement13.Text = "Element13";
+            this.accordionControlElement13.Text = "Khuyến Mại";
+            this.accordionControlElement13.Click += new System.EventHandler(this.accordionControlElement13_Click);
             // 
             // accordionControlElement14
             // 
             this.accordionControlElement14.Name = "accordionControlElement14";
             this.accordionControlElement14.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement14.Text = "Element14";
+            this.accordionControlElement14.Text = "Loại Đồng Hồ";
+            this.accordionControlElement14.Click += new System.EventHandler(this.accordionControlElement14_Click);
             // 
             // accordionControlElement15
             // 
@@ -190,7 +194,7 @@ namespace BANDONGHO_TTCS
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1384, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1384, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -203,20 +207,20 @@ namespace BANDONGHO_TTCS
             this.sttChucVu});
             this.stt.Location = new System.Drawing.Point(371, 761);
             this.stt.Name = "stt";
-            this.stt.Size = new System.Drawing.Size(1013, 22);
+            this.stt.Size = new System.Drawing.Size(1013, 26);
             this.stt.TabIndex = 3;
             this.stt.Text = "statusStrip1";
             // 
             // sttMaNV
             // 
             this.sttMaNV.Name = "sttMaNV";
-            this.sttMaNV.Size = new System.Drawing.Size(118, 17);
+            this.sttMaNV.Size = new System.Drawing.Size(151, 20);
             this.sttMaNV.Text = "toolStripStatusLabel1";
             // 
             // sttHoTen
             // 
             this.sttHoTen.Name = "sttHoTen";
-            this.sttHoTen.Size = new System.Drawing.Size(118, 17);
+            this.sttHoTen.Size = new System.Drawing.Size(151, 20);
             this.sttHoTen.Text = "toolStripStatusLabel2";
             // 
             // sttChucVu
@@ -228,7 +232,7 @@ namespace BANDONGHO_TTCS
             // FrmMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 787);
             this.ControlContainer = this.container;
@@ -251,6 +255,7 @@ namespace BANDONGHO_TTCS
             this.stt.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

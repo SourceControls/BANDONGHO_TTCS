@@ -1,8 +1,0 @@
-create proc [dbo].[sp_get_point_time]
-as
-begin
-	select point_time=backup_finish_date
-	from msdb.dbo.backupset
-	where database_name = 'BANDONGHO_TTCS' and type='L'
-	order by backup_finish_date DESC
-end

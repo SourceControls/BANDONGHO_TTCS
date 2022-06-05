@@ -305,8 +305,8 @@ namespace BANDONGHO_TTCS
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.fMain.remove_UCKhuyenMai();
-            _instance = null;
+ /*           FrmLogin.fMain.remove_UCKhuyenMai();
+            _instance = null;*/
         }
     }
 }

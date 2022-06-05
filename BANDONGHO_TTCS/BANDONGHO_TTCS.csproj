@@ -113,11 +113,29 @@
     <Compile Include="UCDongHo.Designer.cs">
       <DependentUpon>UCDongHo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCHangDongHo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCHangDongHo.Designer.cs">
+      <DependentUpon>UCHangDongHo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCHoaDon.Designer.cs">
       <DependentUpon>UCHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCKhuyenMai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCKhuyenMai.Designer.cs">
+      <DependentUpon>UCKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCLoaiDongHo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLoaiDongHo.Designer.cs">
+      <DependentUpon>UCLoaiDongHo.cs</DependentUpon>
     </Compile>
     <Compile Include="UCNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -172,8 +190,17 @@
     <EmbeddedResource Include="UCDongHo.resx">
       <DependentUpon>UCDongHo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCHangDongHo.resx">
+      <DependentUpon>UCHangDongHo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCHoaDon.resx">
       <DependentUpon>UCHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCKhuyenMai.resx">
+      <DependentUpon>UCKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCLoaiDongHo.resx">
+      <DependentUpon>UCLoaiDongHo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCNhanVien.resx">
       <DependentUpon>UCNhanVien.cs</DependentUpon>

@@ -25,7 +25,7 @@ namespace BANDONGHO_TTCS
         public static String database = "BANDONGHO_TTCS";
         public static String mGroup = "";
         public static String mHoTen = "";
-
+        public static SqlDataReader myReader;
         public static FrmLogin fLogin;
 
         public static string URL_BACKUP = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\backup\\";
@@ -60,7 +60,7 @@ namespace BANDONGHO_TTCS
             try
             {
                 // Khoi tao connection string
-                connstr = "Data Source= DESKTOP-OJUM6M0;Initial Catalog=" + Program.database + ";User ID=" +
+                connstr = "Data Source= MYLAPTOP;Initial Catalog=" + Program.database + ";User ID=" +
                     Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
                 Program.conn.ConnectionString = connstr;
                 conn.Open();
