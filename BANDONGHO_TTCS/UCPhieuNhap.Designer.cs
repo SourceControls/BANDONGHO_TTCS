@@ -315,6 +315,7 @@ namespace BANDONGHO_TTCS
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_GIOHANGTableAdapter = null;
             this.tableAdapterManager.CT_KMTableAdapter = null;
             this.tableAdapterManager.CT_PDTableAdapter = null;
             this.tableAdapterManager.CT_PNTableAdapter = this.CTPNAdapter;
@@ -587,6 +588,7 @@ namespace BANDONGHO_TTCS
             this.colMANV});
             this.gvPN.GridControl = this.gcPN;
             this.gvPN.Name = "gvPN";
+            this.gvPN.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvPN_FocusedRowChanged);
             // 
             // colMAPN
             // 

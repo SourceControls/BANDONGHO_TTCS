@@ -40,7 +40,7 @@ namespace BANDONGHO_TTCS
         {
             dpPN.DateTime = DateTime.Now;
             cmbNV.SelectedIndex = 0;
-        }
+        }   
 
         public UCPhieuNhap()
         {
@@ -331,6 +331,7 @@ namespace BANDONGHO_TTCS
            try
             {
                 confirmUpdateBdsCTPN();
+                MessageBox.Show("Cập nhật thành công!");
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message + " Line 325");
@@ -394,6 +395,11 @@ namespace BANDONGHO_TTCS
         {
             FrmLogin.fMain.remove_UCPhieuNhap();
             _instance = null;
+        }
+
+        private void gvPN_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            slCTPN = bdsCTPN.Count;
         }
     }
 }

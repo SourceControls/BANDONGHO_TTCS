@@ -19,43 +19,9 @@ namespace BANDONGHO_TTCS
             InitializeComponent();
         }
 
-       
-
-        private void FrmLogRestore_Load(object sender, EventArgs e)
-        {
-            this.dSet.EnforceConstraints = false;
-            this.sp_get_point_timeTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.sp_get_point_timeTableAdapter.Fill(this.dSet.sp_get_point_time);
-
-            if(sp_get_point_timeBindingSource.Count == 0)
-            {
-                btnOk.Enabled = false;
-            }
-        }
-
-        private void restoreFromFullAndDFBackup(object sender, EventArgs e)
-        {
-            try
-            {
-                UCRestore.Instance.restoreFromFullBKBeforeRestoreLog_Click(sender, e);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            UCRestore.Instance.restoreFromDFBKBeforeRestoreLog_Click(sender, e);
-        }
-
-        private string convertDate2DateInSQL(string date)
-        {
-            string[] splitDateAndTime = date.Split(' ');
-            string[] splitDate = splitDateAndTime[0].Split('/');
-
-            return splitDate[2] + '-' + splitDate[1] + '-' + splitDate[0] + ' ' + splitDateAndTime[1];
-        }
-
         private void btnOk_Click(object sender, EventArgs e)
         {
+            bool isSuccess = true;
             if (Program.connectToMaster() == 0)
             {
                 return;
@@ -64,38 +30,59 @@ namespace BANDONGHO_TTCS
             Program.closeConnection();
 
             string restoreCmd = "RESTORE LOG " + Program.database + " FROM DISK = '" +
-               Program.URLBackup + "\\" + Program.logBKfileName + "' WITH STOPAT = '" + 
-               convertDate2DateInSQL(cmbPointTime.Text) + "'";
+               Program.URL_BACKUP + "\\" + Program.LOG_BK_FILE_NAME + "' WITH STOPAT = '" +
+             dpPointTime.Value.ToString("yyyy-MM-dd HH:mm:ss") + "'";
             try
             {
-                restoreFromFullAndDFBackup(sender, e);
+                UCBackUpRestore.Instance.restoreFromFullBKBeforeRestoreLog();
+                UCBackUpRestore.Instance.restoreFromDFBKBeforeRestoreLog();
             } catch (Exception)
             {
+                // restore from full backup with mode norecovery
+                UCBackUpRestore.Instance.restoreFromFullBKBeforeRestoreLog();
                 // Nếu restore lỗi từ bản backup differential thì thử restore từ bản log backup
             } finally
             {
                 try
                 {
                     Program.excuteCommandBKAndRestore(restoreCmd);
-                    MessageBox.Show("Restore sucessful!");
                 }
                 catch (Exception exLog)
                 {
-                    // Nếu restore lỗi từ bản log backup thì roll back về bản full backup
-                    UCRestore.Instance.restoreFromFullBK();
-                    MessageBox.Show(exLog.Message);
+                    // Nếu restore lỗi từ bản log backup thì roll back về bản differential backup
+                    isSuccess = false;
+                    MessageBox.Show("Restore từ bản log backup lỗi," +
+                            "thử restore về bản differential backup mới nhất!\n" + exLog.Message); ;
+                    try
+                    {
+                        UCBackUpRestore.Instance.restoreFromDFBK();
+                    } catch (Exception exFull)
+                    {
+                        MessageBox.Show(exFull.Message);
+                    }
                 } finally
                 {
+                    // Trường hợp database bị restoring...
                     if(Program.connectToDB() == 0)
                     {
+                        MessageBox.Show("Có lỗi xảy ra trong quá trình restore từ bản log backup, " +
+                            "vui lòng chọn lại một thòi điểm thích hợp!\n Hệ thống đang rollback về bản differential backup mới nhất");
+                        isSuccess = false;
                         try
                         {
-                            restoreFromFullAndDFBackup(sender, e);
-                        } catch (Exception)
+                            Program.connectToMaster();
+                            UCBackUpRestore.Instance.restoreFromDFBK();
+                        } catch (Exception exRollback)
                         {
-
+                            MessageBox.Show(exRollback.Message);
+                        } finally
+                        {
+                            Program.connectToDB();
                         }
-                        MessageBox.Show("Restore with log backup fail!");
+                    }
+                    if(isSuccess)
+                    {
+                        MessageBox.Show("Restore sucessful!");
                     }
                 }
             }
