@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -27,10 +28,10 @@ namespace BANDONGHO_TTCS
 
         public static FrmLogin fLogin;
 
-        public static string URLBackup = "D:\\Learn\\Ky_2_Nam3\\TTCS\\backup_BANDONGHO";
-        public static string fullBKfileName = "full_bk.bak";
-        public static string diffBKfileName = "diff_bk.bak";
-        public static string logBKfileName = "log_bk.trn";
+        public static string URL_BACKUP = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\backup\\";
+        public static string FULL_BK_FILE_NAME = "full_bk.bak";
+        public static string DIFF_BK_FILE_NAME = "diff_bk.bak";
+        public static string LOG_BK_FILE_NAME = "log_bk.trn";
 
         public static void closeConnection()
         {
@@ -59,11 +60,11 @@ namespace BANDONGHO_TTCS
             try
             {
                 // Khoi tao connection string
-                connstr = "Data Source= MYLAPTOP;Initial Catalog=" + Program.database + ";User ID=" +
+                connstr = "Data Source= DESKTOP-OJUM6M0;Initial Catalog=" + Program.database + ";User ID=" +
                     Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
                 Program.conn.ConnectionString = connstr;
                 conn.Open();
-                SqlDataReader myReader = Program.ExecSqlDataReader("EXEC SP_LAY_HO_TEN_VA_GROUP '" + login + "'");
+/*                SqlDataReader myReader = Program.ExecSqlDataReader("EXEC SP_LAY_HO_TEN_VA_GROUP '" + login + "'");
                 if (myReader == null)
                 {
                     return -1;
@@ -73,7 +74,7 @@ namespace BANDONGHO_TTCS
                     myReader.Read();
                     mGroup = myReader.GetString(0);
                     mHoTen =  myReader.GetString(1);
-                }
+                }*/
             }
             catch (Exception ex)
             {

@@ -39,7 +39,6 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -58,10 +57,10 @@ namespace BANDONGHO_TTCS
             // container
             // 
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(371, 39);
+            this.container.Location = new System.Drawing.Point(371, 31);
             this.container.Margin = new System.Windows.Forms.Padding(4);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1013, 748);
+            this.container.Size = new System.Drawing.Size(1013, 756);
             this.container.TabIndex = 0;
             // 
             // accordionControl1
@@ -71,11 +70,11 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement1,
             this.accordionControlElement2,
             this.accordionControlElement3});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(371, 748);
+            this.accordionControl1.Size = new System.Drawing.Size(371, 756);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -123,7 +122,6 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement4,
             this.accordionControlElement8,
-            this.accordionControlElement9,
             this.accordionControlElement10});
             this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
@@ -143,18 +141,11 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement8.Text = "Lập hoá đơn";
             this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
-            // accordionControlElement9
-            // 
-            this.accordionControlElement9.Name = "accordionControlElement9";
-            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement9.Text = "Backup";
-            this.accordionControlElement9.Click += new System.EventHandler(this.accordionControlElement9_Click);
-            // 
             // accordionControlElement10
             // 
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement10.Text = "Restore";
+            this.accordionControlElement10.Text = "Backup, Restore";
             this.accordionControlElement10.Click += new System.EventHandler(this.accordionControlElement10_Click);
             // 
             // accordionControlElement3
@@ -197,7 +188,7 @@ namespace BANDONGHO_TTCS
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1384, 39);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1384, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -207,28 +198,28 @@ namespace BANDONGHO_TTCS
             this.stt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sttMaNV,
             this.sttHoTen});
-            this.stt.Location = new System.Drawing.Point(371, 761);
+            this.stt.Location = new System.Drawing.Point(371, 765);
             this.stt.Name = "stt";
-            this.stt.Size = new System.Drawing.Size(1013, 26);
+            this.stt.Size = new System.Drawing.Size(1013, 22);
             this.stt.TabIndex = 3;
             this.stt.Text = "statusStrip1";
             // 
             // sttMaNV
             // 
             this.sttMaNV.Name = "sttMaNV";
-            this.sttMaNV.Size = new System.Drawing.Size(151, 20);
+            this.sttMaNV.Size = new System.Drawing.Size(118, 17);
             this.sttMaNV.Text = "toolStripStatusLabel1";
             // 
             // sttHoTen
             // 
             this.sttHoTen.Name = "sttHoTen";
-            this.sttHoTen.Size = new System.Drawing.Size(151, 20);
+            this.sttHoTen.Size = new System.Drawing.Size(118, 17);
             this.sttHoTen.Text = "toolStripStatusLabel2";
             // 
             // FrmMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 787);
             this.ControlContainer = this.container;
@@ -250,7 +241,6 @@ namespace BANDONGHO_TTCS
             this.stt.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -265,7 +255,6 @@ namespace BANDONGHO_TTCS
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;

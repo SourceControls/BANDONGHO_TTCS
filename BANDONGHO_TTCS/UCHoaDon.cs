@@ -33,23 +33,22 @@ namespace BANDONGHO_TTCS
             InitializeComponent();
         }
 
-        private void pHIEUDATGridControl_Load(object sender, EventArgs e)
+        private void initBDS()
         {
             this.dSet.EnforceConstraints = false;
 
             this.PDAdapter.Connection.ConnectionString = Program.connstr;
             this.PDAdapter.Fill(this.dSet.v_lay_phieu_dat);
+        }
+
+        private void pHIEUDATGridControl_Load(object sender, EventArgs e)
+        {
+            initBDS();
 
             if (bdsPD.Count == 0)
             {
                 pcHD.Enabled = false;
             }
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            FrmLogin.fMain.remove_UCHoaDon();
-            _instance = null;
         }
 
         private void btnLapHD_Click(object sender, EventArgs e)
@@ -65,6 +64,17 @@ namespace BANDONGHO_TTCS
 
             ReportPrintTool rpt = new ReportPrintTool(xrptHD);
             rpt.ShowPreviewDialog();
+        }
+
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmLogin.fMain.remove_UCHoaDon();
+            _instance = null;
+        }
+
+        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            initBDS();
         }
     }
 }

@@ -119,36 +119,19 @@ namespace BANDONGHO_TTCS
         {
             this.container.Controls.Remove(UCHoaDon.Instance);
         }
-
-        private void accordionControlElement9_Click(object sender, EventArgs e)
-        {
-            if (!container.Controls.Contains(UCBackup.Instance))
-            {
-                this.container.Controls.Add(UCBackup.Instance);
-             }
-            UCBackup.Instance.Dock = DockStyle.Fill;
-            UCBackup.Instance.BringToFront();
-
-        }
-
-        public void remove_UCBackup()
-        {
-            this.container.Controls.Remove(UCBackup.Instance);
-        }
-
         private void accordionControlElement10_Click(object sender, EventArgs e)
         {
-            if (!container.Controls.Contains(UCRestore.Instance))
+            if (!container.Controls.Contains(UCBackUpRestore.Instance))
             {
-                this.container.Controls.Add(UCRestore.Instance);
+                this.container.Controls.Add(UCBackUpRestore.Instance);
             }
-            UCRestore.Instance.Dock = DockStyle.Fill;
-            UCRestore.Instance.BringToFront();
+            UCBackUpRestore.Instance.Dock = DockStyle.Fill;
+            UCBackUpRestore.Instance.BringToFront();
         }
 
         public void remove_UCRestore()
         {
-            this.container.Controls.Remove(UCRestore.Instance);
+            this.container.Controls.Remove(UCBackUpRestore.Instance);
         }
     }
 }
