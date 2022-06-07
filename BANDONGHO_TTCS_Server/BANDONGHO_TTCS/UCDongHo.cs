@@ -155,18 +155,20 @@ namespace BANDONGHO_TTCS
             }
             String newPath = @"..\..\Resource\Watch_Img\" + txtMaDH.Text.Trim() + ".png";
             String oldPath = txtHinhAnh.Text;
-            if (txtHinhAnh.Text.ToString().Contains(':'))
-            {
-                txtHinhAnh.Text = newPath;
-            }
+
             try
             {
                 bdsDongHo.EndEdit();
                 dONGHOTableAdapter.Update(dSet.DONGHO);
                 bdsDongHo.ResetCurrentItem();
-                if (File.Exists(newPath))
-                    File.Delete(newPath);
-                File.Copy(oldPath, newPath);
+                if (txtHinhAnh.Text.ToString().Contains(':'))
+                {
+                    txtHinhAnh.Text = newPath;
+                    if (File.Exists(newPath))
+                        File.Delete(newPath);
+                    File.Copy(oldPath, newPath);
+                }
+
               
                 MessageBox.Show("Lưu thành công!");
 

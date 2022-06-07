@@ -6563,6 +6563,8 @@ namespace BANDONGHO_TTCS {
             
             private global::System.Data.DataColumn columnTHANHTIEN;
             
+            private global::System.Data.DataColumn columnHINHANH;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public sp_lay_ct_pdDataTable() {
@@ -6630,6 +6632,14 @@ namespace BANDONGHO_TTCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn HINHANHColumn {
+                get {
+                    return this.columnHINHANH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6665,13 +6675,14 @@ namespace BANDONGHO_TTCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sp_lay_ct_pdRow Addsp_lay_ct_pdRow(string TENDONGHO, int SOLUONG, decimal DONGIA, decimal THANHTIEN) {
+            public sp_lay_ct_pdRow Addsp_lay_ct_pdRow(string TENDONGHO, int SOLUONG, decimal DONGIA, decimal THANHTIEN, string HINHANH) {
                 sp_lay_ct_pdRow rowsp_lay_ct_pdRow = ((sp_lay_ct_pdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TENDONGHO,
                         SOLUONG,
                         DONGIA,
-                        THANHTIEN};
+                        THANHTIEN,
+                        HINHANH};
                 rowsp_lay_ct_pdRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_lay_ct_pdRow);
                 return rowsp_lay_ct_pdRow;
@@ -6698,6 +6709,7 @@ namespace BANDONGHO_TTCS {
                 this.columnSOLUONG = base.Columns["SOLUONG"];
                 this.columnDONGIA = base.Columns["DONGIA"];
                 this.columnTHANHTIEN = base.Columns["THANHTIEN"];
+                this.columnHINHANH = base.Columns["HINHANH"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6711,11 +6723,14 @@ namespace BANDONGHO_TTCS {
                 base.Columns.Add(this.columnDONGIA);
                 this.columnTHANHTIEN = new global::System.Data.DataColumn("THANHTIEN", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTHANHTIEN);
+                this.columnHINHANH = new global::System.Data.DataColumn("HINHANH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHINHANH);
                 this.columnTENDONGHO.AllowDBNull = false;
                 this.columnTENDONGHO.MaxLength = 50;
                 this.columnSOLUONG.AllowDBNull = false;
                 this.columnDONGIA.AllowDBNull = false;
                 this.columnTHANHTIEN.ReadOnly = true;
+                this.columnHINHANH.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9296,6 +9311,22 @@ namespace BANDONGHO_TTCS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string HINHANH {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_lay_ct_pd.HINHANHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HINHANH\' in table \'sp_lay_ct_pd\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_lay_ct_pd.HINHANHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTHANHTIENNull() {
                 return this.IsNull(this.tablesp_lay_ct_pd.THANHTIENColumn);
             }
@@ -9304,6 +9335,18 @@ namespace BANDONGHO_TTCS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTHANHTIENNull() {
                 this[this.tablesp_lay_ct_pd.THANHTIENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsHINHANHNull() {
+                return this.IsNull(this.tablesp_lay_ct_pd.HINHANHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetHINHANHNull() {
+                this[this.tablesp_lay_ct_pd.HINHANHColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -16281,6 +16324,7 @@ SELECT MAKH, MADH, SOLUONG, DONGIA FROM CT_GIOHANG WHERE (MADH = @MADH) AND (MAK
             tableMapping.ColumnMappings.Add("SOLUONG", "SOLUONG");
             tableMapping.ColumnMappings.Add("DONGIA", "DONGIA");
             tableMapping.ColumnMappings.Add("THANHTIEN", "THANHTIEN");
+            tableMapping.ColumnMappings.Add("HINHANH", "HINHANH");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

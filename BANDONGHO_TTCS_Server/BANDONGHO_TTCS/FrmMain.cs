@@ -190,5 +190,15 @@ namespace BANDONGHO_TTCS
         {
 
         }
+
+        private void accordionControlElement15_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCXacNhanDonHang.Instance))
+            {
+                this.container.Controls.Add(UCXacNhanDonHang.Instance);
+            }
+            UCXacNhanDonHang.Instance.Dock = DockStyle.Fill;
+            UCXacNhanDonHang.Instance.BringToFront();
+        }
     }
 }
