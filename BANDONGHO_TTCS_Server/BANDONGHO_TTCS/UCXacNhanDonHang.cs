@@ -132,7 +132,7 @@ namespace BANDONGHO_TTCS
 
         private void btnDHDG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            strView = "Ðang giao";
+            strView = "Đang giao";
             FillDS();
             label1.Text = "Danh sách đơn hàng đang giao";
             label2.Visible = true;
@@ -150,7 +150,7 @@ namespace BANDONGHO_TTCS
 
         private void btnDHDH_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            strView = "Ðã huỷ";
+            strView = "Đã hủy";
             FillDS();
             label1.Text = "Danh sách đơn hàng đã hủy";
             label2.Visible = true;

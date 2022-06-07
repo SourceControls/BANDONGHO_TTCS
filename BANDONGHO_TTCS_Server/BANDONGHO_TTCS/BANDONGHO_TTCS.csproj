@@ -100,12 +100,6 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\UCXacNhanDonHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Properties\UCXacNhanDonHang.designer.cs">
-      <DependentUpon>UCXacNhanDonHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="testControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,6 +155,12 @@
     <Compile Include="UCBackUpRestore.Designer.cs">
       <DependentUpon>UCBackUpRestore.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCXacNhanDonHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCXacNhanDonHang.Designer.cs">
+      <DependentUpon>UCXacNhanDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="XrptHoaDon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -179,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\UCXacNhanDonHang.resx">
-      <DependentUpon>UCXacNhanDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testControl.resx">
       <DependentUpon>testControl.cs</DependentUpon>
@@ -219,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCBackUpRestore.resx">
       <DependentUpon>UCBackUpRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCXacNhanDonHang.resx">
+      <DependentUpon>UCXacNhanDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XrptHoaDon.resx">
       <DependentUpon>XrptHoaDon.cs</DependentUpon>

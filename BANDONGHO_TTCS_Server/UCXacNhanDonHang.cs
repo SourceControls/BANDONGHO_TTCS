@@ -67,9 +67,9 @@ namespace BANDONGHO_TTCS
             if (strView != null)
             {
                 this.pHIEUDATTableAdapter.Connection.ConnectionString = Program.connstr;
-                //this.pHIEUDATTableAdapter.FillByTT(this.dSet.PHIEUDAT, strView);
+                this.pHIEUDATTableAdapter.FillByTT(this.dSet.PHIEUDAT, strView);
                 this.cT_PDTableAdapter.Connection.ConnectionString = Program.connstr;
-                //this.cT_PDTableAdapter.FillByTT(this.dSet.CT_PD, strView);
+                this.cT_PDTableAdapter.FillByTT(this.dSet.CT_PD, strView);
             }
             else
             {

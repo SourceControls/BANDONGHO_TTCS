@@ -59,9 +59,31 @@ namespace BANDONGHO_TTCS
         public static int connectToMaster()
         {
             database = "master";
-            int res = connectToDB();
+            int res = connectToDBMaster();
             database = "BANDONGHO_TTCS";
             return res;
+        }
+
+        public static int connectToDBMaster()
+        {
+            if (conn != null && conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            try
+            {
+                // Khoi tao connection string
+                connstr = "Data Source= MYLAPTOP;Initial Catalog=" + Program.database + ";User ID=" +
+                    Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
+                Program.conn.ConnectionString = connstr;
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi kết nối server Connect to database!" + ex.Message);
+                return 0;
+            }
+            return 1;
         }
         public static int connectToDB()
         {
