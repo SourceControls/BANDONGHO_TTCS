@@ -157,6 +157,7 @@ namespace BANDONGHO_TTCS
                     bdsPhieuNhap.RemoveCurrent();
                     PhieuNhapAdapter.Connection.ConnectionString = Program.connstr;
                     PhieuNhapAdapter.Update(this.dSet.PHIEUNHAP);
+                    slPN = bdsPhieuNhap.Count;
                 }
                 catch (Exception ex)
                 {
@@ -181,18 +182,22 @@ namespace BANDONGHO_TTCS
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             string maPN = edtPN.Text.ToString().Trim();
             if (maPN.Length == 0)
             {
                 MessageBox.Show("Mã phiếu nhập không được để trống!");
                 return;
             }
-            for(int i = 0; i < bdsPhieuNhap.Count; i++)
+            if(slPN != bdsPhieuNhap.Count)
             {
-                if(((DataRowView) bdsPhieuNhap[i])["MAPN"].ToString().Trim().Equals(maPN))
+                for (int i = 0; i < bdsPhieuNhap.Count; i++)
                 {
-                    MessageBox.Show("Mã phiếu nhập đã tồn tại!");
-                    return;
+                    if (((DataRowView)bdsPhieuNhap[i])["MAPN"].ToString().Trim().Equals(maPN))
+                    {
+                        MessageBox.Show("Mã phiếu nhập đã tồn tại!");
+                        return;
+                    }
                 }
             }
             
