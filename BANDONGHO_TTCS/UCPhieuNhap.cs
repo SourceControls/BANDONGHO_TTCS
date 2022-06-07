@@ -21,6 +21,7 @@ namespace BANDONGHO_TTCS
         private static int slCTPN;
         private static bool isAssignSLCTPN;
         private static int IDCTPN;
+        private static List<List<string>> listIDAndSLDH = new List<List<string>>();
 
         private static UCPhieuNhap _instance;
 
@@ -57,6 +58,18 @@ namespace BANDONGHO_TTCS
             return true;
         }
 
+        private void setListIDDHFromBDSCTPN()
+        {
+            listIDAndSLDH.Clear();
+            List<string> tmp;
+            for(int i = 0; i < bdsCTPN.Count; i++)
+            {
+                tmp = new List<string>();
+                tmp.Add(((DataRowView)bdsCTPN[i])["MADONGHO"].ToString());
+                tmp.Add(((DataRowView)bdsCTPN[i])["SOLUONG"].ToString());
+                listIDAndSLDH.Add(tmp);
+            }
+        }
         private void controlPanelAndButton(bool isEnable)
         {
             btnSua.Enabled = btnXoa.Enabled =
@@ -111,6 +124,7 @@ namespace BANDONGHO_TTCS
             slPN = bdsPhieuNhap.Count;
             slCTPN = bdsCTPN.Count;
             selectDefaultValue();
+            setListIDDHFromBDSCTPN();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -292,6 +306,7 @@ namespace BANDONGHO_TTCS
                 isAssignSLCTPN = true;
                 slCTPN = bdsCTPN.Count;
                 MessageBox.Show("Lưu chi tiết thành công!");
+                setListIDDHFromBDSCTPN();
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -301,6 +316,16 @@ namespace BANDONGHO_TTCS
         private void ctMenuXoaCT_Click(object sender, EventArgs e)
         {
             if (bdsCTPN.Count == 0) return;
+            int index = bdsCTPN.Position;
+            string maDH = ((DataRowView)bdsCTPN[index])["MADONGHO"].ToString();
+            int soLuong = Int16.Parse(((DataRowView)bdsCTPN[index])["SOLUONG"].ToString());
+            int slTonDH = Int16.Parse(((DataRowView)bdsDongHo[bdsDongHo.Find("MADONGHO", maDH)])["SLTON"].ToString());
+            if(slTonDH < soLuong)
+            {
+                gvCTPN.SetColumnError(null, "Số lượng tồn không cho phép xoá!");
+                MessageBox.Show("Số lượng tồn không cho phép xoá!");
+                return;
+            }
             if (MessageBox.Show("Xác nhận xóa chi tiết? ", "Xác Nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
@@ -311,6 +336,7 @@ namespace BANDONGHO_TTCS
                     CTPNAdapter.Connection.ConnectionString = Program.connstr;
                     CTPNAdapter.Update(this.dSet.CT_PN);
                     slCTPN = bdsCTPN.Count;
+                    setListIDDHFromBDSCTPN();
                 }
                 catch (Exception ex)
                 {
@@ -328,10 +354,34 @@ namespace BANDONGHO_TTCS
             {
                 return;
             }
+            string maDH;
+            int slTonDH, soluong;
+            for(int i = 0; i < bdsCTPN.Count; i++)
+            {
+                maDH = ((DataRowView)bdsCTPN[i])["MADONGHO"].ToString();
+                if(!listIDAndSLDH[i][0].Equals(maDH))
+                {
+                    gvCTPN.SetColumnError(null, "Không được sửa đồng hồ!");
+                    MessageBox.Show("Không được sửa đồng hồ!");
+                    ((DataRowView)bdsCTPN[i])["MADONGHO"] = listIDAndSLDH[i][0];
+                    return;
+                }
+
+                slTonDH = Int16.Parse(((DataRowView)bdsDongHo[bdsDongHo.Find("MADONGHO", maDH)])["SLTON"].ToString());
+                soluong = Int16.Parse(((DataRowView)bdsCTPN[i])["SOLUONG"].ToString());
+                if (slTonDH < (Int16.Parse(listIDAndSLDH[i][1]) - soluong))
+                {
+                    gvCTPN.SetColumnError(null, "Số lượng tồn không cho phép sửa!");
+                    MessageBox.Show("Số lượng tồn không cho phép sửa!");
+                    ((DataRowView)bdsCTPN[i])["SOLUONG"] = listIDAndSLDH[i][1];
+                    return;
+                }
+            }
            try
             {
                 confirmUpdateBdsCTPN();
                 MessageBox.Show("Cập nhật thành công!");
+                setListIDDHFromBDSCTPN();
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message + " Line 325");
@@ -400,6 +450,7 @@ namespace BANDONGHO_TTCS
         private void gvPN_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             slCTPN = bdsCTPN.Count;
+            setListIDDHFromBDSCTPN();
         }
     }
 }

@@ -72,7 +72,9 @@ namespace BANDONGHO_TTCS
             {
                 return;
             }
+
             Program.closeConnection();
+            Program.setSingleUser();
 
             try
             {
@@ -86,6 +88,7 @@ namespace BANDONGHO_TTCS
             finally
             {
                 Program.connectToDB();
+                Program.setMultiUser();
             }
         }
 
@@ -97,6 +100,8 @@ namespace BANDONGHO_TTCS
             }
 
             Program.closeConnection();
+            Program.setSingleUser();
+
             try
             {
                 restoreFromDFBK();
@@ -107,6 +112,7 @@ namespace BANDONGHO_TTCS
             } finally
             {
                 Program.connectToDB();
+                Program.setMultiUser();
             }
         }
 
@@ -169,7 +175,7 @@ namespace BANDONGHO_TTCS
         private void fullBackup()
         {
             string bkCmd = "BACKUP DATABASE " + Program.database + " TO DISK = '" +
-                Program.URL_BACKUP + "\\" + Program.FULL_BK_FILE_NAME + "' with init";
+                Program.URL_BACKUP + "\\" + Program.FULL_BK_FILE_NAME + "' WITH INIT";
 
             if (Program.ExecSqlNonQuery(bkCmd))
             {
@@ -230,6 +236,11 @@ namespace BANDONGHO_TTCS
 
         private void btnRSCF_Click(object sender, EventArgs e)
         {
+            string checkHaveFullBackupCmd = "exec sp_check_have_full_bk";
+            if (!Program.ExecSqlNonQuery(checkHaveFullBackupCmd))
+            {
+                return;
+            }
             string restoreType = cmbRestore.Text.Trim();
             if (restoreType.Equals("Restore From Full Backup"))
             {

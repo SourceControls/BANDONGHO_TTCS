@@ -22,12 +22,14 @@ namespace BANDONGHO_TTCS
         private void btnOk_Click(object sender, EventArgs e)
         {
             bool isSuccess = true;
+
             if (Program.connectToMaster() == 0)
             {
                 return;
             }
 
             Program.closeConnection();
+            Program.setSingleUser();
 
             string restoreCmd = "RESTORE LOG " + Program.database + " FROM DISK = '" +
                Program.URL_BACKUP + "\\" + Program.LOG_BK_FILE_NAME + "' WITH STOPAT = '" +
@@ -62,11 +64,12 @@ namespace BANDONGHO_TTCS
                     }
                 } finally
                 {
-                    // Trường hợp database bị restoring...
+                    // Trường hợp database bị restoring...dđ
                     if(Program.connectToDB() == 0)
                     {
                         MessageBox.Show("Có lỗi xảy ra trong quá trình restore từ bản log backup, " +
-                            "vui lòng chọn lại một thòi điểm thích hợp!\n Hệ thống đang rollback về bản differential backup mới nhất");
+                            "vui lòng chọn lại một thòi điểm thích hợp!\n Hệ thống đang rollback về " +
+                            "bản differential backup mới nhất");
                         isSuccess = false;
                         try
                         {
@@ -78,6 +81,7 @@ namespace BANDONGHO_TTCS
                         } finally
                         {
                             Program.connectToDB();
+                            Program.setMultiUser();
                         }
                     }
                     if(isSuccess)
