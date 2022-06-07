@@ -32,8 +32,6 @@ namespace BANDONGHO_TTCS
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAPNLabel;
             System.Windows.Forms.Label nGAYNHAPLabel;
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCPhieuNhap));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -55,8 +53,6 @@ namespace BANDONGHO_TTCS
             this.tableAdapterManager = new BANDONGHO_TTCS.DSetTableAdapters.TableAdapterManager();
             this.CTPNAdapter = new BANDONGHO_TTCS.DSetTableAdapters.CT_PNTableAdapter();
             this.pcPNNhap = new DevExpress.XtraEditors.PanelControl();
-            this.edtMANV = new DevExpress.XtraEditors.TextEdit();
-            this.cmbNV = new System.Windows.Forms.ComboBox();
             this.bdsHoTenNV = new System.Windows.Forms.BindingSource(this.components);
             this.dpPN = new DevExpress.XtraEditors.DateEdit();
             this.edtPN = new DevExpress.XtraEditors.TextEdit();
@@ -86,14 +82,11 @@ namespace BANDONGHO_TTCS
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             mAPNLabel = new System.Windows.Forms.Label();
             nGAYNHAPLabel = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPNNhap)).BeginInit();
             this.pcPNNhap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edtMANV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsHoTenNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPN.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPN.Properties)).BeginInit();
@@ -116,7 +109,7 @@ namespace BANDONGHO_TTCS
             // mAPNLabel
             // 
             mAPNLabel.AutoSize = true;
-            mAPNLabel.Location = new System.Drawing.Point(22, 30);
+            mAPNLabel.Location = new System.Drawing.Point(34, 111);
             mAPNLabel.Name = "mAPNLabel";
             mAPNLabel.Size = new System.Drawing.Size(50, 13);
             mAPNLabel.TabIndex = 0;
@@ -125,29 +118,11 @@ namespace BANDONGHO_TTCS
             // nGAYNHAPLabel
             // 
             nGAYNHAPLabel.AutoSize = true;
-            nGAYNHAPLabel.Location = new System.Drawing.Point(241, 30);
+            nGAYNHAPLabel.Location = new System.Drawing.Point(253, 111);
             nGAYNHAPLabel.Name = "nGAYNHAPLabel";
             nGAYNHAPLabel.Size = new System.Drawing.Size(49, 13);
             nGAYNHAPLabel.TabIndex = 2;
             nGAYNHAPLabel.Text = "Ngày lập";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(230, 93);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(71, 13);
-            label1.TabIndex = 6;
-            label1.Text = "Mã nhân viên";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(22, 93);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(55, 13);
-            label2.TabIndex = 7;
-            label2.Text = "Nhân viên";
             // 
             // barManager1
             // 
@@ -336,10 +311,6 @@ namespace BANDONGHO_TTCS
             // 
             // pcPNNhap
             // 
-            this.pcPNNhap.Controls.Add(label2);
-            this.pcPNNhap.Controls.Add(label1);
-            this.pcPNNhap.Controls.Add(this.edtMANV);
-            this.pcPNNhap.Controls.Add(this.cmbNV);
             this.pcPNNhap.Controls.Add(nGAYNHAPLabel);
             this.pcPNNhap.Controls.Add(this.dpPN);
             this.pcPNNhap.Controls.Add(mAPNLabel);
@@ -351,29 +322,6 @@ namespace BANDONGHO_TTCS
             this.pcPNNhap.Size = new System.Drawing.Size(477, 227);
             this.pcPNNhap.TabIndex = 5;
             // 
-            // edtMANV
-            // 
-            this.edtMANV.Location = new System.Drawing.Point(312, 90);
-            this.edtMANV.MenuManager = this.barManager1;
-            this.edtMANV.Name = "edtMANV";
-            this.edtMANV.Properties.ReadOnly = true;
-            this.edtMANV.Size = new System.Drawing.Size(100, 20);
-            this.edtMANV.TabIndex = 5;
-            // 
-            // cmbNV
-            // 
-            this.cmbNV.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsPhieuNhap, "MANV", true));
-            this.cmbNV.DataSource = this.bdsHoTenNV;
-            this.cmbNV.DisplayMember = "HOTEN";
-            this.cmbNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNV.FormattingEnabled = true;
-            this.cmbNV.Location = new System.Drawing.Point(79, 90);
-            this.cmbNV.Name = "cmbNV";
-            this.cmbNV.Size = new System.Drawing.Size(125, 21);
-            this.cmbNV.TabIndex = 4;
-            this.cmbNV.ValueMember = "MANV";
-            this.cmbNV.SelectedIndexChanged += new System.EventHandler(this.cmbNV_SelectedIndexChanged);
-            // 
             // bdsHoTenNV
             // 
             this.bdsHoTenNV.DataMember = "HOTENNV";
@@ -383,7 +331,7 @@ namespace BANDONGHO_TTCS
             // 
             this.dpPN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPhieuNhap, "NGAYNHAP", true));
             this.dpPN.EditValue = null;
-            this.dpPN.Location = new System.Drawing.Point(312, 27);
+            this.dpPN.Location = new System.Drawing.Point(324, 108);
             this.dpPN.MenuManager = this.barManager1;
             this.dpPN.Name = "dpPN";
             this.dpPN.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -396,7 +344,7 @@ namespace BANDONGHO_TTCS
             // edtPN
             // 
             this.edtPN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPhieuNhap, "MAPN", true));
-            this.edtPN.Location = new System.Drawing.Point(79, 27);
+            this.edtPN.Location = new System.Drawing.Point(91, 108);
             this.edtPN.MenuManager = this.barManager1;
             this.edtPN.Name = "edtPN";
             this.edtPN.Size = new System.Drawing.Size(125, 20);
@@ -641,7 +589,6 @@ namespace BANDONGHO_TTCS
             ((System.ComponentModel.ISupportInitialize)(this.pcPNNhap)).EndInit();
             this.pcPNNhap.ResumeLayout(false);
             this.pcPNNhap.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edtMANV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsHoTenNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPN.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpPN.Properties)).EndInit();
@@ -686,8 +633,6 @@ namespace BANDONGHO_TTCS
         private DSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.PanelControl pcGridCTPN;
         private DevExpress.XtraEditors.PanelControl pcPNNhap;
-        private DevExpress.XtraEditors.TextEdit edtMANV;
-        private System.Windows.Forms.ComboBox cmbNV;
         private System.Windows.Forms.BindingSource bdsHoTenNV;
         private DevExpress.XtraEditors.DateEdit dpPN;
         private DevExpress.XtraEditors.TextEdit edtPN;
