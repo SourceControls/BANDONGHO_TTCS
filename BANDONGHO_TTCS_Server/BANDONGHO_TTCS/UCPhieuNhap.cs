@@ -40,7 +40,7 @@ namespace BANDONGHO_TTCS
         private void selectDefaultValue()
         {
             dpPN.DateTime = DateTime.Now;
-            cmbNV.SelectedIndex = 0;
+            ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position])["MANV"] = Program.login;
         }   
 
         public UCPhieuNhap()
@@ -74,9 +74,11 @@ namespace BANDONGHO_TTCS
         {
             btnSua.Enabled = btnXoa.Enabled =
             btnLoad.Enabled = pcGridPN.Enabled =
-            btnThem.Enabled = pcGridPN.Enabled = isEnable;
+            btnThem.Enabled = pcGridCTPN.Enabled = 
+            contextMenuStrip1.Enabled = isEnable;
 
-            pcPNNhap.Enabled = btnUndo.Enabled = btnLuu.Enabled = !isEnable;
+            pcPNNhap.Enabled = btnUndo.Enabled = 
+                btnLuu.Enabled = !isEnable;
         }
 
         private void enabledPanelAndButton()
@@ -129,11 +131,6 @@ namespace BANDONGHO_TTCS
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (bdsHoTenNV.Count == 0)
-            {
-                MessageBox.Show("Phải có ít nhất một nhân viên để lập phiếu nhập!");
-                return;
-            }
             viTri = bdsPhieuNhap.Position;
             bdsPhieuNhap.AddNew();
             selectDefaultValue();
@@ -178,9 +175,6 @@ namespace BANDONGHO_TTCS
                 return;
             }
 
-            viTri = bdsPhieuNhap.Position;
-            edtMANV.Text = cmbNV.SelectedValue.ToString();
-
             edtPN.Enabled = false;
             disabledPanelAndButton();
         }
@@ -193,7 +187,15 @@ namespace BANDONGHO_TTCS
                 MessageBox.Show("Mã phiếu nhập không được để trống!");
                 return;
             }
-
+            for(int i = 0; i < bdsPhieuNhap.Count; i++)
+            {
+                if(((DataRowView) bdsPhieuNhap[i])["MAPN"].ToString().Trim().Equals(maPN))
+                {
+                    MessageBox.Show("Mã phiếu nhập đã tồn tại!");
+                    return;
+                }
+            }
+            
             try
             {
                 bdsPhieuNhap.EndEdit();
@@ -234,25 +236,6 @@ namespace BANDONGHO_TTCS
             bdsPhieuNhap.Position = viTri;
             enabledPanelAndButton();
         }
-
-        private void cmbNV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbNV.SelectedValue == null ||
-                  cmbNV.SelectedValue.ToString().Equals("System.Data.DataRowView")
-              )
-            {
-                return;
-            }
-            try
-            {
-                edtMANV.Text = cmbNV.SelectedValue.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + " Line 224");
-            }
-        }
-
         private void ctMenuThemCT_Click(object sender, EventArgs e)
         {
             if (!checkBdsPhieuNhapHaveItem("Phải có ít nhất một phiếu nhập!"))

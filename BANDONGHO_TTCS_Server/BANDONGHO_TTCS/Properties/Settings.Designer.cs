@@ -16,7 +16,7 @@ namespace BANDONGHO_TTCS.Properties {
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-       
+        
         public static Settings Default {
             get {
                 return defaultInstance;
@@ -26,7 +26,7 @@ namespace BANDONGHO_TTCS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MYLAPTOP;Initial Catalog=BANDONGHO_TTCS;User ID=sa;Password=12" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-OJUM6M0;Initial Catalog=BANDONGHO_TTCS;User ID=sa;Password=12" +
             "3")]
         public string BANDONGHO_TTCSConnectionString {
             get {
