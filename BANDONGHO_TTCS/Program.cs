@@ -28,20 +28,32 @@ namespace BANDONGHO_TTCS
         public static SqlDataReader myReader;
         public static FrmLogin fLogin;
 
-        public static string URL_BACKUP = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\backup\\";
+        // Đường dẫn tới thư mục project
+        public static string URL_BACKUP = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + 
+            "\\backup\\";
         public static string FULL_BK_FILE_NAME = "full_bk.bak";
         public static string DIFF_BK_FILE_NAME = "diff_bk.bak";
         public static string LOG_BK_FILE_NAME = "log_bk.trn";
 
+        private static string cmdSingleUser = "ALTER DATABASE BANDONGHO_TTCS SET SINGLE_USER WITH ROLLBACK IMMEDIATE";
+        private static string cmdMultiUser = "ALTER DATABASE BANDONGHO_TTCS SET MULTI_USER";
+
         public static void closeConnection()
         {
-            if(!ExecSqlNonQuery(
-                "alter database BANDONGHO_TTCS set single_user with rollback immediate") ||
-                !ExecSqlNonQuery(
-                "alter database BANDONGHO_TTCS set multi_user"))
+            if(!ExecSqlNonQuery(cmdSingleUser) || !ExecSqlNonQuery(cmdMultiUser))
             {
                 return;
             }
+        }
+
+        public static void setSingleUser()
+        {
+            ExecSqlNonQuery(cmdSingleUser);
+        }
+
+        public static void setMultiUser()
+        {
+            ExecSqlNonQuery(cmdMultiUser);
         }
 
         public static int connectToMaster()
@@ -60,7 +72,7 @@ namespace BANDONGHO_TTCS
             try
             {
                 // Khoi tao connection string
-                connstr = "Data Source= MYLAPTOP;Initial Catalog=" + Program.database + ";User ID=" +
+                connstr = "Data Source= DESKTOP-OJUM6M0;Initial Catalog=" + Program.database + ";User ID=" +
                     Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
                 Program.conn.ConnectionString = connstr;
                 conn.Open();

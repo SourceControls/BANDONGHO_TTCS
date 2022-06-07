@@ -457,7 +457,7 @@ namespace BANDONGHO_TTCS
             // 
             // colMADONGHO
             // 
-            this.colMADONGHO.Caption = "Mã đồng hồ";
+            this.colMADONGHO.Caption = "Đồng hồ";
             this.colMADONGHO.ColumnEdit = this.lkDH;
             this.colMADONGHO.FieldName = "MADONGHO";
             this.colMADONGHO.Name = "colMADONGHO";
