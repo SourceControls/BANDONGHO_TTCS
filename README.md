@@ -19,4 +19,5 @@
   + Clone dự án về máy.
   + Chạy file script DB.sql trên SQL Server.
   + Đổi tên server trong dự án cho phù hợp.
+  + Đặt mật khẩu cho sa là 123 (cho phù hợp với connection string trong dataset). Sau đó có thể vào file App.config, xoá phần password đi của connection string đi.
   + Chạy dự án và test.
