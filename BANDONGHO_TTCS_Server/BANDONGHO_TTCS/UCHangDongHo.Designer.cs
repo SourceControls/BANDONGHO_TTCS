@@ -78,7 +78,7 @@ namespace BANDONGHO_TTCS
             // mAHANGLabel
             // 
             mAHANGLabel.AutoSize = true;
-            mAHANGLabel.Location = new System.Drawing.Point(86, 145);
+            mAHANGLabel.Location = new System.Drawing.Point(286, 88);
             mAHANGLabel.Name = "mAHANGLabel";
             mAHANGLabel.Size = new System.Drawing.Size(91, 23);
             mAHANGLabel.TabIndex = 0;
@@ -87,7 +87,7 @@ namespace BANDONGHO_TTCS
             // tENHANGLabel
             // 
             tENHANGLabel.AutoSize = true;
-            tENHANGLabel.Location = new System.Drawing.Point(86, 195);
+            tENHANGLabel.Location = new System.Drawing.Point(279, 138);
             tENHANGLabel.Name = "tENHANGLabel";
             tENHANGLabel.Size = new System.Drawing.Size(98, 23);
             tENHANGLabel.TabIndex = 2;
@@ -283,11 +283,11 @@ namespace BANDONGHO_TTCS
             // hANGDONGHOGridControl
             // 
             this.hANGDONGHOGridControl.DataSource = this.hANGDONGHOBindingSource;
-            this.hANGDONGHOGridControl.Location = new System.Drawing.Point(3, 103);
+            this.hANGDONGHOGridControl.Location = new System.Drawing.Point(0, 103);
             this.hANGDONGHOGridControl.MainView = this.gridView1;
             this.hANGDONGHOGridControl.MenuManager = this.barManager1;
             this.hANGDONGHOGridControl.Name = "hANGDONGHOGridControl";
-            this.hANGDONGHOGridControl.Size = new System.Drawing.Size(640, 570);
+            this.hANGDONGHOGridControl.Size = new System.Drawing.Size(1143, 273);
             this.hANGDONGHOGridControl.TabIndex = 5;
             this.hANGDONGHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -324,7 +324,7 @@ namespace BANDONGHO_TTCS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label1.Location = new System.Drawing.Point(190, 54);
+            this.label1.Location = new System.Drawing.Point(428, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(279, 29);
             this.label1.TabIndex = 6;
@@ -337,9 +337,9 @@ namespace BANDONGHO_TTCS
             this.ttHANGDONGHO.Controls.Add(tENHANGLabel);
             this.ttHANGDONGHO.Controls.Add(this.tENHANGTextEdit);
             this.ttHANGDONGHO.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ttHANGDONGHO.Location = new System.Drawing.Point(672, 157);
+            this.ttHANGDONGHO.Location = new System.Drawing.Point(150, 392);
             this.ttHANGDONGHO.Name = "ttHANGDONGHO";
-            this.ttHANGDONGHO.Size = new System.Drawing.Size(458, 418);
+            this.ttHANGDONGHO.Size = new System.Drawing.Size(849, 281);
             this.ttHANGDONGHO.TabIndex = 7;
             this.ttHANGDONGHO.TabStop = false;
             this.ttHANGDONGHO.Text = "Thông tin hãng đồng hồ";
@@ -347,7 +347,7 @@ namespace BANDONGHO_TTCS
             // mAHANGTextEdit
             // 
             this.mAHANGTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.hANGDONGHOBindingSource, "MAHANG", true));
-            this.mAHANGTextEdit.Location = new System.Drawing.Point(183, 147);
+            this.mAHANGTextEdit.Location = new System.Drawing.Point(390, 90);
             this.mAHANGTextEdit.MenuManager = this.barManager1;
             this.mAHANGTextEdit.Name = "mAHANGTextEdit";
             this.mAHANGTextEdit.Size = new System.Drawing.Size(125, 22);
@@ -356,7 +356,7 @@ namespace BANDONGHO_TTCS
             // tENHANGTextEdit
             // 
             this.tENHANGTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.hANGDONGHOBindingSource, "TENHANG", true));
-            this.tENHANGTextEdit.Location = new System.Drawing.Point(190, 197);
+            this.tENHANGTextEdit.Location = new System.Drawing.Point(390, 140);
             this.tENHANGTextEdit.MenuManager = this.barManager1;
             this.tENHANGTextEdit.Name = "tENHANGTextEdit";
             this.tENHANGTextEdit.Size = new System.Drawing.Size(125, 22);

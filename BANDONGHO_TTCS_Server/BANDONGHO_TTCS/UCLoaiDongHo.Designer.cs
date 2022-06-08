@@ -30,10 +30,10 @@ namespace BANDONGHO_TTCS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLoaiDongHo));
             System.Windows.Forms.Label mALOAILabel;
             System.Windows.Forms.Label tENLOAILabel;
             System.Windows.Forms.Label mOTALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLoaiDongHo));
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -54,18 +54,18 @@ namespace BANDONGHO_TTCS
             this.lOAIDONGHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOAIDONGHOTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.LOAIDONGHOTableAdapter();
             this.tableAdapterManager = new BANDONGHO_TTCS.DSetTableAdapters.TableAdapterManager();
+            this.dONGHOTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.DONGHOTableAdapter();
             this.lOAIDONGHOGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.colMALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMOTA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.ttLOAIDONGHO = new System.Windows.Forms.GroupBox();
+            this.txtboxMoTa = new System.Windows.Forms.TextBox();
             this.mALOAITextEdit = new DevExpress.XtraEditors.TextEdit();
             this.tENLOAITextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.txtboxMoTa = new System.Windows.Forms.TextBox();
             this.dONGHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dONGHOTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.DONGHOTableAdapter();
             mALOAILabel = new System.Windows.Forms.Label();
             tENLOAILabel = new System.Windows.Forms.Label();
             mOTALabel = new System.Windows.Forms.Label();
@@ -79,6 +79,33 @@ namespace BANDONGHO_TTCS
             ((System.ComponentModel.ISupportInitialize)(this.tENLOAITextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dONGHOBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mALOAILabel
+            // 
+            mALOAILabel.AutoSize = true;
+            mALOAILabel.Location = new System.Drawing.Point(109, 105);
+            mALOAILabel.Name = "mALOAILabel";
+            mALOAILabel.Size = new System.Drawing.Size(76, 23);
+            mALOAILabel.TabIndex = 0;
+            mALOAILabel.Text = "Mã loại:";
+            // 
+            // tENLOAILabel
+            // 
+            tENLOAILabel.AutoSize = true;
+            tENLOAILabel.Location = new System.Drawing.Point(102, 156);
+            tENLOAILabel.Name = "tENLOAILabel";
+            tENLOAILabel.Size = new System.Drawing.Size(83, 23);
+            tENLOAILabel.TabIndex = 2;
+            tENLOAILabel.Text = "Tên loại:";
+            // 
+            // mOTALabel
+            // 
+            mOTALabel.AutoSize = true;
+            mOTALabel.Location = new System.Drawing.Point(465, 57);
+            mOTALabel.Name = "mOTALabel";
+            mOTALabel.Size = new System.Drawing.Size(64, 23);
+            mOTALabel.TabIndex = 4;
+            mOTALabel.Text = "Mô tả:";
             // 
             // bar2
             // 
@@ -277,14 +304,18 @@ namespace BANDONGHO_TTCS
             this.tableAdapterManager.PHIEUNHAPTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = BANDONGHO_TTCS.DSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // dONGHOTableAdapter
+            // 
+            this.dONGHOTableAdapter.ClearBeforeFill = true;
+            // 
             // lOAIDONGHOGridControl
             // 
             this.lOAIDONGHOGridControl.DataSource = this.lOAIDONGHOBindingSource;
-            this.lOAIDONGHOGridControl.Location = new System.Drawing.Point(3, 103);
+            this.lOAIDONGHOGridControl.Location = new System.Drawing.Point(0, 103);
             this.lOAIDONGHOGridControl.MainView = this.gridView1;
             this.lOAIDONGHOGridControl.MenuManager = this.barManager1;
             this.lOAIDONGHOGridControl.Name = "lOAIDONGHOGridControl";
-            this.lOAIDONGHOGridControl.Size = new System.Drawing.Size(690, 607);
+            this.lOAIDONGHOGridControl.Size = new System.Drawing.Size(1134, 305);
             this.lOAIDONGHOGridControl.TabIndex = 5;
             this.lOAIDONGHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -297,16 +328,7 @@ namespace BANDONGHO_TTCS
             this.colMOTA});
             this.gridView1.GridControl = this.lOAIDONGHOGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label1.Location = new System.Drawing.Point(207, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 29);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Danh sách loại đồng hồ";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
             // colMALOAI
             // 
@@ -338,6 +360,16 @@ namespace BANDONGHO_TTCS
             this.colMOTA.VisibleIndex = 2;
             this.colMOTA.Width = 94;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.label1.Location = new System.Drawing.Point(423, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(263, 29);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Danh sách loại đồng hồ";
+            // 
             // ttLOAIDONGHO
             // 
             this.ttLOAIDONGHO.Controls.Add(this.txtboxMoTa);
@@ -347,79 +379,48 @@ namespace BANDONGHO_TTCS
             this.ttLOAIDONGHO.Controls.Add(this.tENLOAITextEdit);
             this.ttLOAIDONGHO.Controls.Add(mOTALabel);
             this.ttLOAIDONGHO.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ttLOAIDONGHO.Location = new System.Drawing.Point(721, 129);
+            this.ttLOAIDONGHO.Location = new System.Drawing.Point(21, 424);
             this.ttLOAIDONGHO.Name = "ttLOAIDONGHO";
-            this.ttLOAIDONGHO.Size = new System.Drawing.Size(392, 515);
+            this.ttLOAIDONGHO.Size = new System.Drawing.Size(1092, 286);
             this.ttLOAIDONGHO.TabIndex = 8;
             this.ttLOAIDONGHO.TabStop = false;
             this.ttLOAIDONGHO.Text = "Thông tin loại đồng hồ";
             // 
-            // mALOAILabel
+            // txtboxMoTa
             // 
-            mALOAILabel.AutoSize = true;
-            mALOAILabel.Location = new System.Drawing.Point(72, 86);
-            mALOAILabel.Name = "mALOAILabel";
-            mALOAILabel.Size = new System.Drawing.Size(76, 23);
-            mALOAILabel.TabIndex = 0;
-            mALOAILabel.Text = "Mã loại:";
+            this.txtboxMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOAIDONGHOBindingSource, "MOTA", true));
+            this.txtboxMoTa.Location = new System.Drawing.Point(469, 94);
+            this.txtboxMoTa.Multiline = true;
+            this.txtboxMoTa.Name = "txtboxMoTa";
+            this.txtboxMoTa.Size = new System.Drawing.Size(501, 131);
+            this.txtboxMoTa.TabIndex = 5;
             // 
             // mALOAITextEdit
             // 
             this.mALOAITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOAIDONGHOBindingSource, "MALOAI", true));
-            this.mALOAITextEdit.Location = new System.Drawing.Point(154, 83);
+            this.mALOAITextEdit.Location = new System.Drawing.Point(191, 102);
             this.mALOAITextEdit.MenuManager = this.barManager1;
             this.mALOAITextEdit.Name = "mALOAITextEdit";
             this.mALOAITextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.mALOAITextEdit.Properties.Appearance.Options.UseFont = true;
-            this.mALOAITextEdit.Size = new System.Drawing.Size(125, 28);
+            this.mALOAITextEdit.Size = new System.Drawing.Size(192, 28);
             this.mALOAITextEdit.TabIndex = 1;
-            // 
-            // tENLOAILabel
-            // 
-            tENLOAILabel.AutoSize = true;
-            tENLOAILabel.Location = new System.Drawing.Point(72, 137);
-            tENLOAILabel.Name = "tENLOAILabel";
-            tENLOAILabel.Size = new System.Drawing.Size(83, 23);
-            tENLOAILabel.TabIndex = 2;
-            tENLOAILabel.Text = "Tên loại:";
             // 
             // tENLOAITextEdit
             // 
             this.tENLOAITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOAIDONGHOBindingSource, "TENLOAI", true));
-            this.tENLOAITextEdit.Location = new System.Drawing.Point(161, 134);
+            this.tENLOAITextEdit.Location = new System.Drawing.Point(191, 153);
             this.tENLOAITextEdit.MenuManager = this.barManager1;
             this.tENLOAITextEdit.Name = "tENLOAITextEdit";
             this.tENLOAITextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tENLOAITextEdit.Properties.Appearance.Options.UseFont = true;
-            this.tENLOAITextEdit.Size = new System.Drawing.Size(125, 28);
+            this.tENLOAITextEdit.Size = new System.Drawing.Size(192, 28);
             this.tENLOAITextEdit.TabIndex = 3;
-            // 
-            // mOTALabel
-            // 
-            mOTALabel.AutoSize = true;
-            mOTALabel.Location = new System.Drawing.Point(72, 192);
-            mOTALabel.Name = "mOTALabel";
-            mOTALabel.Size = new System.Drawing.Size(64, 23);
-            mOTALabel.TabIndex = 4;
-            mOTALabel.Text = "Mô tả:";
-            // 
-            // txtboxMoTa
-            // 
-            this.txtboxMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOAIDONGHOBindingSource, "MOTA", true));
-            this.txtboxMoTa.Location = new System.Drawing.Point(76, 229);
-            this.txtboxMoTa.Multiline = true;
-            this.txtboxMoTa.Name = "txtboxMoTa";
-            this.txtboxMoTa.Size = new System.Drawing.Size(284, 211);
-            this.txtboxMoTa.TabIndex = 5;
             // 
             // dONGHOBindingSource
             // 
             this.dONGHOBindingSource.DataMember = "DONGHO";
             this.dONGHOBindingSource.DataSource = this.dSet;
-            // 
-            // dONGHOTableAdapter
-            // 
-            this.dONGHOTableAdapter.ClearBeforeFill = true;
             // 
             // UCLoaiDongHo
             // 

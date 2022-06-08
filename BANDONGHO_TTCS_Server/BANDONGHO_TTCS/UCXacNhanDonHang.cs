@@ -68,6 +68,7 @@ namespace BANDONGHO_TTCS
             {
                 this.pHIEUDATTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.pHIEUDATTableAdapter.FillByTT(this.dSet.PHIEUDAT, strView);
+
                 this.cT_PDTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.cT_PDTableAdapter.FillByTT(this.dSet.CT_PD, strView);
             }
@@ -84,10 +85,12 @@ namespace BANDONGHO_TTCS
                 simpleButton1.Enabled = false;
                 simpleButton2.Enabled = false;
                 simpleButton3.Enabled = false;
+                simpleButton4.Enabled = false;
             }
             else
             {
                 simpleButton3.Enabled = true;
+                simpleButton4.Enabled = true;
                 simpleButton1.Enabled = true;
                 simpleButton2.Enabled = true;
             }    
@@ -107,6 +110,7 @@ namespace BANDONGHO_TTCS
             simpleButton1.Visible = true;
             simpleButton2.Visible = true;
             simpleButton3.Visible = false;
+            simpleButton4.Visible = false;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             ShowName();
@@ -125,6 +129,7 @@ namespace BANDONGHO_TTCS
             simpleButton1.Visible = true;
             simpleButton2.Visible = true;
             simpleButton3.Visible = false;
+            simpleButton4.Visible = false;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             ShowName();
@@ -143,6 +148,7 @@ namespace BANDONGHO_TTCS
             simpleButton1.Visible = false;
             simpleButton2.Visible = false;
             simpleButton3.Visible = true;
+            simpleButton4.Visible = true;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             ShowName();
@@ -154,13 +160,14 @@ namespace BANDONGHO_TTCS
             FillDS();
             label1.Text = "Danh sách đơn hàng đã hủy";
             label2.Visible = true;
-            label2.Text = "Nhân viên hủy đơn:";
+            label2.Text = "Nhân viên xác nhận:";
             label3.Visible = true;
             label4.Visible = false;
             label5.Visible = false;
             simpleButton1.Visible = false;
             simpleButton2.Visible = false;
             simpleButton3.Visible = false;
+            simpleButton4.Visible = false;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             ShowName();
@@ -179,6 +186,7 @@ namespace BANDONGHO_TTCS
             simpleButton1.Visible = false;
             simpleButton2.Visible = false;
             simpleButton3.Visible = false;
+            simpleButton4.Visible = false;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             ShowName();
@@ -197,6 +205,7 @@ namespace BANDONGHO_TTCS
             simpleButton1.Visible = false;
             simpleButton2.Visible = false;
             simpleButton3.Visible = false;
+            simpleButton4.Visible = false;
             groupBox1.Visible = true;
             groupBox2.Visible = false;
             ShowName();
@@ -277,6 +286,28 @@ namespace BANDONGHO_TTCS
             finally
             {
                 FillDS();
+            }
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận giao thất bại?", "Xác Nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    DataRowView current = (DataRowView)pHIEUDATBindingSource.Current;
+                    Program.execSqlNonQuery("EXEC SP_HUYDONHANG '" + current["MAPHIEUDAT"]
+                        + "', '" + Program.login + "'");
+                    MessageBox.Show("Đã xác nhận.");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Chưa thể xác nhận.");
+                }
+                finally
+                {
+                    FillDS();
+                }
             }
         }
     }
