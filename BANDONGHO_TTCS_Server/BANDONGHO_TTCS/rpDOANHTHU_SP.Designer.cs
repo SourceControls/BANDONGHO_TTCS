@@ -324,7 +324,7 @@ namespace BANDONGHO_TTCS
             this.tableCell6.StyleName = "DetailData1";
             this.tableCell6.StylePriority.UseTextAlignment = false;
             this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell6.TextFormatString = "{0:C2}";
+            this.tableCell6.TextFormatString = "{0:#,# VNĐ}";
             this.tableCell6.Weight = 0.41517808412329882D;
             // 
             // ReportFooter
@@ -366,7 +366,7 @@ namespace BANDONGHO_TTCS
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.label3.Summary = xrSummary1;
             this.label3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.label3.TextFormatString = "{0:C2}";
+            this.label3.TextFormatString = "{0:#,# VNĐ}";
             this.label3.WordWrap = false;
             // 
             // TUNGAY
@@ -383,7 +383,7 @@ namespace BANDONGHO_TTCS
             this.DENNGAY.ValueInfo = "1753-01-01";
             this.DENNGAY.Visible = false;
             // 
-            // rpDT_SP
+            // rpDOANHTHU_SP
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,
