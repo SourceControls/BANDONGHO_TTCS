@@ -92,6 +92,7 @@ namespace BANDONGHO_TTCS
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //check ràng buộc nhập liệu
             string maNV = txtMaNV.Text.ToString().Trim();
             string ho = txtHo.Text.ToString().Trim();
             string ten = txtTen.Text.ToString().Trim();
@@ -115,7 +116,7 @@ namespace BANDONGHO_TTCS
                 MessageBox.Show("Email không đúng định dạng!");
                 return;
             }
-
+            //bắt đầu lưu
             try
             {
                 bdsNhanVien.EndEdit();

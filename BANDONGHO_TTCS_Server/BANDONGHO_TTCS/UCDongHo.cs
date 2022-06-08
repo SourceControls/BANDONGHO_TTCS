@@ -40,6 +40,10 @@ namespace BANDONGHO_TTCS
             dONGHOTableAdapter.Fill(dSet.DONGHO);
             lOAIDONGHOTableAdapter.Fill(dSet.LOAIDONGHO);
             hANGDONGHOTableAdapter.Fill(dSet.HANGDONGHO);
+            cT_PDTableAdapter.Fill(dSet.CT_PD);
+            cT_PNTableAdapter.Fill(dSet.CT_PN);
+            cT_KMTableAdapter.Fill(dSet.CT_KM);
+            cT_GIOHANGTableAdapter.Fill(dSet.CT_GIOHANG);
             cbHang.DataSource = bdsHang;
             cbHang.DisplayMember = "TENHANG";
             cbHang.ValueMember = "MAHANG";
@@ -130,6 +134,7 @@ namespace BANDONGHO_TTCS
 
         private void btnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //check ràng buộc
             string maDH = txtMaDH.Text.ToString().Trim();
             string ten = txtTenDongHo.Text.ToString().Trim();
             string gia  = txtGia.Text.ToString().Trim();
@@ -155,7 +160,7 @@ namespace BANDONGHO_TTCS
             }
             String newPath = @"..\..\Resource\Watch_Img\" + txtMaDH.Text.Trim() + ".png";
             String oldPath = txtHinhAnh.Text;
-
+            //bắt đầu lưu
             try
             {
                 bdsDongHo.EndEdit();
@@ -215,6 +220,11 @@ namespace BANDONGHO_TTCS
             if (bdsCTPN.Count > 0)
             {
                 MessageBox.Show("Đồng hồ đã có trong phiếu nhập, không thể xóa!");
+                return;
+            }
+            if (bdsCTGH.Count > 0)
+            {
+                MessageBox.Show("Đồng hồ đã được khách thêm vào giỏ hàng, không thể xóa!");
                 return;
             }
             if (MessageBox.Show("Xác nhận xóa đồng hồ?", "Xác Nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)

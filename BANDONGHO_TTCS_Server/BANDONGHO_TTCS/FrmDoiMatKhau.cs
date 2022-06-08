@@ -20,6 +20,7 @@ namespace BANDONGHO_TTCS
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+            //check ràng buộc nhập liệu
             string matKhauCu = txtMatKhauCu.Text.Trim();
             string matKhauMoi = txtMatKhauMoi.Text.Trim();
             string nhapLaiMatKhau = txtNhapLaiMatKhau.Text.Trim();
@@ -38,6 +39,7 @@ namespace BANDONGHO_TTCS
                 MessageBox.Show("Mật khẩu cũ không đúng!");
                 return;
             }
+            //bắt đầu đổi mật khẩu
             if(Program.execSqlNonQuery("alter login " +Program.login + " with password = '" + matKhauMoi+"'"))
             {
                 MessageBox.Show("Đổi mật khẩu thành công!");

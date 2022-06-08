@@ -94,6 +94,8 @@ namespace BANDONGHO_TTCS
             this.hANGDONGHOTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.HANGDONGHOTableAdapter();
             this.lOAIDONGHOTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.LOAIDONGHOTableAdapter();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.bdsCTGH = new System.Windows.Forms.BindingSource(this.components);
+            this.cT_GIOHANGTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.CT_GIOHANGTableAdapter();
             hINHANHLabel = new System.Windows.Forms.Label();
             mOTALabel = new System.Windows.Forms.Label();
             mALOAILabel = new System.Windows.Forms.Label();
@@ -122,14 +124,15 @@ namespace BANDONGHO_TTCS
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDongHo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTGH)).BeginInit();
             this.SuspendLayout();
             // 
             // hINHANHLabel
             // 
             hINHANHLabel.AutoSize = true;
-            hINHANHLabel.Location = new System.Drawing.Point(165, 35);
+            hINHANHLabel.Location = new System.Drawing.Point(192, 43);
             hINHANHLabel.Name = "hINHANHLabel";
-            hINHANHLabel.Size = new System.Drawing.Size(50, 13);
+            hINHANHLabel.Size = new System.Drawing.Size(63, 17);
             hINHANHLabel.TabIndex = 38;
             hINHANHLabel.Text = "Hình Ảnh";
             hINHANHLabel.Click += new System.EventHandler(this.hINHANHLabel_Click);
@@ -137,63 +140,63 @@ namespace BANDONGHO_TTCS
             // mOTALabel
             // 
             mOTALabel.AutoSize = true;
-            mOTALabel.Location = new System.Drawing.Point(438, 206);
+            mOTALabel.Location = new System.Drawing.Point(511, 254);
             mOTALabel.Name = "mOTALabel";
-            mOTALabel.Size = new System.Drawing.Size(36, 13);
+            mOTALabel.Size = new System.Drawing.Size(45, 17);
             mOTALabel.TabIndex = 35;
             mOTALabel.Text = "Mô Tả";
             // 
             // mALOAILabel
             // 
             mALOAILabel.AutoSize = true;
-            mALOAILabel.Location = new System.Drawing.Point(717, 167);
+            mALOAILabel.Location = new System.Drawing.Point(836, 206);
             mALOAILabel.Name = "mALOAILabel";
-            mALOAILabel.Size = new System.Drawing.Size(26, 13);
+            mALOAILabel.Size = new System.Drawing.Size(32, 17);
             mALOAILabel.TabIndex = 34;
             mALOAILabel.Text = "Loại";
             // 
             // mAHANGLabel
             // 
             mAHANGLabel.AutoSize = true;
-            mAHANGLabel.Location = new System.Drawing.Point(442, 167);
+            mAHANGLabel.Location = new System.Drawing.Point(516, 206);
             mAHANGLabel.Name = "mAHANGLabel";
-            mAHANGLabel.Size = new System.Drawing.Size(32, 13);
+            mAHANGLabel.Size = new System.Drawing.Size(40, 17);
             mAHANGLabel.TabIndex = 32;
             mAHANGLabel.Text = "Hãng";
             // 
             // gIALabel
             // 
             gIALabel.AutoSize = true;
-            gIALabel.Location = new System.Drawing.Point(454, 124);
+            gIALabel.Location = new System.Drawing.Point(530, 153);
             gIALabel.Name = "gIALabel";
-            gIALabel.Size = new System.Drawing.Size(22, 13);
+            gIALabel.Size = new System.Drawing.Size(26, 17);
             gIALabel.TabIndex = 30;
             gIALabel.Text = "Giá";
             // 
             // sLTONLabel
             // 
             sLTONLabel.AutoSize = true;
-            sLTONLabel.Location = new System.Drawing.Point(663, 122);
+            sLTONLabel.Location = new System.Drawing.Point(773, 150);
             sLTONLabel.Name = "sLTONLabel";
-            sLTONLabel.Size = new System.Drawing.Size(73, 13);
+            sLTONLabel.Size = new System.Drawing.Size(96, 17);
             sLTONLabel.TabIndex = 28;
             sLTONLabel.Text = "Số Lượng Tồn";
             // 
             // tENDONGHOLabel
             // 
             tENDONGHOLabel.AutoSize = true;
-            tENDONGHOLabel.Location = new System.Drawing.Point(399, 82);
+            tENDONGHOLabel.Location = new System.Drawing.Point(465, 101);
             tENDONGHOLabel.Name = "tENDONGHOLabel";
-            tENDONGHOLabel.Size = new System.Drawing.Size(70, 13);
+            tENDONGHOLabel.Size = new System.Drawing.Size(90, 17);
             tENDONGHOLabel.TabIndex = 26;
             tENDONGHOLabel.Text = "Tên Đồng Hồ";
             // 
             // mADONGHOLabel
             // 
             mADONGHOLabel.AutoSize = true;
-            mADONGHOLabel.Location = new System.Drawing.Point(405, 40);
+            mADONGHOLabel.Location = new System.Drawing.Point(472, 49);
             mADONGHOLabel.Name = "mADONGHOLabel";
-            mADONGHOLabel.Size = new System.Drawing.Size(66, 13);
+            mADONGHOLabel.Size = new System.Drawing.Size(84, 17);
             mADONGHOLabel.TabIndex = 24;
             mADONGHOLabel.Text = "Mã Đồng Hồ";
             // 
@@ -324,31 +327,35 @@ namespace BANDONGHO_TTCS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(970, 24);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1132, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 850);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1046);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(970, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1132, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 826);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1016);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(970, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1132, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 826);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1016);
             // 
             // btnNone
             // 
@@ -446,7 +453,6 @@ namespace BANDONGHO_TTCS
             this.colHINHANH,
             this.colMAHANG,
             this.colMALOAI});
-            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.dONGHOGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
@@ -455,23 +461,23 @@ namespace BANDONGHO_TTCS
             // 
             this.colMADONGHO.Caption = "MÃ ĐH";
             this.colMADONGHO.FieldName = "MADONGHO";
-            this.colMADONGHO.MinWidth = 21;
+            this.colMADONGHO.MinWidth = 24;
             this.colMADONGHO.Name = "colMADONGHO";
             this.colMADONGHO.OptionsColumn.AllowEdit = false;
             this.colMADONGHO.Visible = true;
             this.colMADONGHO.VisibleIndex = 0;
-            this.colMADONGHO.Width = 82;
+            this.colMADONGHO.Width = 96;
             // 
             // colTENDONGHO
             // 
             this.colTENDONGHO.Caption = "Tên ĐH";
             this.colTENDONGHO.FieldName = "TENDONGHO";
-            this.colTENDONGHO.MinWidth = 21;
+            this.colTENDONGHO.MinWidth = 24;
             this.colTENDONGHO.Name = "colTENDONGHO";
             this.colTENDONGHO.OptionsColumn.AllowEdit = false;
             this.colTENDONGHO.Visible = true;
             this.colTENDONGHO.VisibleIndex = 1;
-            this.colTENDONGHO.Width = 143;
+            this.colTENDONGHO.Width = 167;
             // 
             // colGIA
             // 
@@ -479,76 +485,76 @@ namespace BANDONGHO_TTCS
             this.colGIA.DisplayFormat.FormatString = "n0";
             this.colGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colGIA.FieldName = "GIA";
-            this.colGIA.MinWidth = 21;
+            this.colGIA.MinWidth = 24;
             this.colGIA.Name = "colGIA";
             this.colGIA.OptionsColumn.AllowEdit = false;
             this.colGIA.Visible = true;
             this.colGIA.VisibleIndex = 2;
-            this.colGIA.Width = 254;
+            this.colGIA.Width = 296;
             // 
             // colSLTON
             // 
             this.colSLTON.Caption = "Số Lượng Tồn";
             this.colSLTON.FieldName = "SLTON";
-            this.colSLTON.MinWidth = 21;
+            this.colSLTON.MinWidth = 24;
             this.colSLTON.Name = "colSLTON";
             this.colSLTON.OptionsColumn.AllowEdit = false;
             this.colSLTON.Visible = true;
             this.colSLTON.VisibleIndex = 3;
-            this.colSLTON.Width = 95;
+            this.colSLTON.Width = 111;
             // 
             // colMOTA
             // 
             this.colMOTA.Caption = "Mô Tả";
             this.colMOTA.FieldName = "MOTA";
-            this.colMOTA.MinWidth = 21;
+            this.colMOTA.MinWidth = 24;
             this.colMOTA.Name = "colMOTA";
             this.colMOTA.OptionsColumn.AllowEdit = false;
             this.colMOTA.Visible = true;
             this.colMOTA.VisibleIndex = 4;
-            this.colMOTA.Width = 220;
+            this.colMOTA.Width = 257;
             // 
             // colHINHANH
             // 
             this.colHINHANH.FieldName = "HINHANH";
-            this.colHINHANH.MinWidth = 21;
+            this.colHINHANH.MinWidth = 24;
             this.colHINHANH.Name = "colHINHANH";
             this.colHINHANH.OptionsColumn.AllowEdit = false;
-            this.colHINHANH.Width = 81;
+            this.colHINHANH.Width = 94;
             // 
             // colMAHANG
             // 
             this.colMAHANG.Caption = "Mã Hãng";
             this.colMAHANG.FieldName = "MAHANG";
-            this.colMAHANG.MinWidth = 21;
+            this.colMAHANG.MinWidth = 24;
             this.colMAHANG.Name = "colMAHANG";
             this.colMAHANG.OptionsColumn.AllowEdit = false;
             this.colMAHANG.Visible = true;
             this.colMAHANG.VisibleIndex = 5;
-            this.colMAHANG.Width = 79;
+            this.colMAHANG.Width = 92;
             // 
             // colMALOAI
             // 
             this.colMALOAI.Caption = "Mã Loại";
             this.colMALOAI.FieldName = "MALOAI";
-            this.colMALOAI.MinWidth = 21;
+            this.colMALOAI.MinWidth = 24;
             this.colMALOAI.Name = "colMALOAI";
             this.colMALOAI.OptionsColumn.AllowEdit = false;
             this.colMALOAI.Visible = true;
             this.colMALOAI.VisibleIndex = 6;
-            this.colMALOAI.Width = 71;
+            this.colMALOAI.Width = 83;
             // 
             // dONGHOGridControl
             // 
             this.dONGHOGridControl.DataSource = this.bdsDongHo;
             this.dONGHOGridControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.dONGHOGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dONGHOGridControl.Location = new System.Drawing.Point(0, 24);
+            this.dONGHOGridControl.Location = new System.Drawing.Point(0, 30);
             this.dONGHOGridControl.MainView = this.gridView1;
             this.dONGHOGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dONGHOGridControl.MenuManager = this.barManager1;
             this.dONGHOGridControl.Name = "dONGHOGridControl";
-            this.dONGHOGridControl.Size = new System.Drawing.Size(970, 270);
+            this.dONGHOGridControl.Size = new System.Drawing.Size(1132, 332);
             this.dONGHOGridControl.TabIndex = 5;
             this.dONGHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -578,18 +584,18 @@ namespace BANDONGHO_TTCS
             this.panelInput.Controls.Add(this.txtMaDH);
             this.panelInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInput.Enabled = false;
-            this.panelInput.Location = new System.Drawing.Point(0, 294);
+            this.panelInput.Location = new System.Drawing.Point(0, 362);
             this.panelInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInput.Name = "panelInput";
-            this.panelInput.Size = new System.Drawing.Size(970, 556);
+            this.panelInput.Size = new System.Drawing.Size(1132, 684);
             this.panelInput.TabIndex = 9;
             // 
             // btnChonAnh
             // 
-            this.btnChonAnh.Location = new System.Drawing.Point(120, 348);
+            this.btnChonAnh.Location = new System.Drawing.Point(140, 428);
             this.btnChonAnh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChonAnh.Name = "btnChonAnh";
-            this.btnChonAnh.Size = new System.Drawing.Size(129, 23);
+            this.btnChonAnh.Size = new System.Drawing.Size(150, 28);
             this.btnChonAnh.TabIndex = 44;
             this.btnChonAnh.Text = "Chọn Ảnh";
             this.btnChonAnh.UseVisualStyleBackColor = true;
@@ -597,10 +603,10 @@ namespace BANDONGHO_TTCS
             // 
             // PBHinhAnh
             // 
-            this.PBHinhAnh.Location = new System.Drawing.Point(78, 51);
+            this.PBHinhAnh.Location = new System.Drawing.Point(91, 63);
             this.PBHinhAnh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PBHinhAnh.Name = "PBHinhAnh";
-            this.PBHinhAnh.Size = new System.Drawing.Size(231, 274);
+            this.PBHinhAnh.Size = new System.Drawing.Size(269, 337);
             this.PBHinhAnh.TabIndex = 43;
             this.PBHinhAnh.TabStop = false;
             // 
@@ -610,40 +616,40 @@ namespace BANDONGHO_TTCS
             this.txtHinhAnh.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHinhAnh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDongHo, "HINHANH", true));
             this.txtHinhAnh.Enabled = false;
-            this.txtHinhAnh.Location = new System.Drawing.Point(78, 330);
+            this.txtHinhAnh.Location = new System.Drawing.Point(91, 406);
             this.txtHinhAnh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHinhAnh.Name = "txtHinhAnh";
-            this.txtHinhAnh.Size = new System.Drawing.Size(231, 14);
+            this.txtHinhAnh.Size = new System.Drawing.Size(269, 16);
             this.txtHinhAnh.TabIndex = 42;
             this.txtHinhAnh.TextChanged += new System.EventHandler(this.hINHANHTextBox_TextChanged);
             // 
             // cbLoai
             // 
             this.cbLoai.FormattingEnabled = true;
-            this.cbLoai.Location = new System.Drawing.Point(750, 165);
+            this.cbLoai.Location = new System.Drawing.Point(875, 203);
             this.cbLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLoai.Name = "cbLoai";
-            this.cbLoai.Size = new System.Drawing.Size(144, 21);
+            this.cbLoai.Size = new System.Drawing.Size(167, 24);
             this.cbLoai.TabIndex = 41;
             this.cbLoai.SelectedIndexChanged += new System.EventHandler(this.cbLoai_SelectedIndexChanged);
             // 
             // cbHang
             // 
             this.cbHang.FormattingEnabled = true;
-            this.cbHang.Location = new System.Drawing.Point(482, 164);
+            this.cbHang.Location = new System.Drawing.Point(562, 202);
             this.cbHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbHang.Name = "cbHang";
-            this.cbHang.Size = new System.Drawing.Size(148, 21);
+            this.cbHang.Size = new System.Drawing.Size(172, 24);
             this.cbHang.TabIndex = 40;
             this.cbHang.SelectedIndexChanged += new System.EventHandler(this.cbHang_SelectedIndexChanged);
             // 
             // txtMoTa
             // 
             this.txtMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDongHo, "MOTA", true));
-            this.txtMoTa.Location = new System.Drawing.Point(482, 204);
+            this.txtMoTa.Location = new System.Drawing.Point(562, 251);
             this.txtMoTa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(465, 72);
+            this.txtMoTa.Size = new System.Drawing.Size(542, 88);
             this.txtMoTa.TabIndex = 37;
             this.txtMoTa.Text = "";
             // 
@@ -651,11 +657,11 @@ namespace BANDONGHO_TTCS
             // 
             this.txtMaLoai.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDongHo, "MALOAI", true));
             this.txtMaLoai.Enabled = false;
-            this.txtMaLoai.Location = new System.Drawing.Point(898, 165);
+            this.txtMaLoai.Location = new System.Drawing.Point(1048, 203);
             this.txtMaLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaLoai.MenuManager = this.barManager1;
             this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(48, 20);
+            this.txtMaLoai.Size = new System.Drawing.Size(56, 22);
             this.txtMaLoai.TabIndex = 36;
             this.txtMaLoai.EditValueChanged += new System.EventHandler(this.txtMaLoai_EditValueChanged);
             // 
@@ -663,25 +669,25 @@ namespace BANDONGHO_TTCS
             // 
             this.txtMaHang.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDongHo, "MAHANG", true));
             this.txtMaHang.Enabled = false;
-            this.txtMaHang.Location = new System.Drawing.Point(634, 165);
+            this.txtMaHang.Location = new System.Drawing.Point(740, 203);
             this.txtMaHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaHang.MenuManager = this.barManager1;
             this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(49, 20);
+            this.txtMaHang.Size = new System.Drawing.Size(57, 22);
             this.txtMaHang.TabIndex = 33;
             this.txtMaHang.EditValueChanged += new System.EventHandler(this.txtMaHang_EditValueChanged);
             // 
             // txtGia
             // 
             this.txtGia.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDongHo, "GIA", true));
-            this.txtGia.Location = new System.Drawing.Point(482, 122);
+            this.txtGia.Location = new System.Drawing.Point(562, 150);
             this.txtGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGia.MenuManager = this.barManager1;
             this.txtGia.Name = "txtGia";
             this.txtGia.Properties.Mask.EditMask = "n0";
             this.txtGia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtGia.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtGia.Size = new System.Drawing.Size(147, 20);
+            this.txtGia.Size = new System.Drawing.Size(171, 22);
             this.txtGia.TabIndex = 31;
             // 
             // txtSoLuongTon
@@ -693,7 +699,7 @@ namespace BANDONGHO_TTCS
             0,
             0});
             this.txtSoLuongTon.Enabled = false;
-            this.txtSoLuongTon.Location = new System.Drawing.Point(750, 119);
+            this.txtSoLuongTon.Location = new System.Drawing.Point(875, 146);
             this.txtSoLuongTon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoLuongTon.MenuManager = this.barManager1;
             this.txtSoLuongTon.Name = "txtSoLuongTon";
@@ -702,27 +708,27 @@ namespace BANDONGHO_TTCS
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtSoLuongTon.Properties.IsFloatValue = false;
             this.txtSoLuongTon.Properties.Mask.EditMask = "N00";
-            this.txtSoLuongTon.Size = new System.Drawing.Size(107, 20);
+            this.txtSoLuongTon.Size = new System.Drawing.Size(125, 24);
             this.txtSoLuongTon.TabIndex = 29;
             // 
             // txtTenDongHo
             // 
             this.txtTenDongHo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDongHo, "TENDONGHO", true));
-            this.txtTenDongHo.Location = new System.Drawing.Point(482, 80);
+            this.txtTenDongHo.Location = new System.Drawing.Point(562, 98);
             this.txtTenDongHo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenDongHo.MenuManager = this.barManager1;
             this.txtTenDongHo.Name = "txtTenDongHo";
-            this.txtTenDongHo.Size = new System.Drawing.Size(375, 20);
+            this.txtTenDongHo.Size = new System.Drawing.Size(437, 22);
             this.txtTenDongHo.TabIndex = 27;
             // 
             // txtMaDH
             // 
             this.txtMaDH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDongHo, "MADONGHO", true));
-            this.txtMaDH.Location = new System.Drawing.Point(482, 37);
+            this.txtMaDH.Location = new System.Drawing.Point(562, 46);
             this.txtMaDH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaDH.MenuManager = this.barManager1;
             this.txtMaDH.Name = "txtMaDH";
-            this.txtMaDH.Size = new System.Drawing.Size(107, 20);
+            this.txtMaDH.Size = new System.Drawing.Size(125, 22);
             this.txtMaDH.TabIndex = 25;
             // 
             // hANGDONGHOTableAdapter
@@ -733,9 +739,18 @@ namespace BANDONGHO_TTCS
             // 
             this.lOAIDONGHOTableAdapter.ClearBeforeFill = true;
             // 
+            // bdsCTGH
+            // 
+            this.bdsCTGH.DataMember = "FK_CT_GIOHANG_DONGHO";
+            this.bdsCTGH.DataSource = this.bdsDongHo;
+            // 
+            // cT_GIOHANGTableAdapter
+            // 
+            this.cT_GIOHANGTableAdapter.ClearBeforeFill = true;
+            // 
             // UCDongHo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelInput);
             this.Controls.Add(this.dONGHOGridControl);
@@ -745,7 +760,7 @@ namespace BANDONGHO_TTCS
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCDongHo";
-            this.Size = new System.Drawing.Size(970, 850);
+            this.Size = new System.Drawing.Size(1132, 1046);
             this.Load += new System.EventHandler(this.UCDongHo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSet)).EndInit();
@@ -768,6 +783,7 @@ namespace BANDONGHO_TTCS
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDongHo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTGH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -830,5 +846,7 @@ namespace BANDONGHO_TTCS
         private System.Windows.Forms.TextBox txtHinhAnh;
         private System.Windows.Forms.PictureBox PBHinhAnh;
         private System.Windows.Forms.Button btnChonAnh;
+        private System.Windows.Forms.BindingSource bdsCTGH;
+        private DSetTableAdapters.CT_GIOHANGTableAdapter cT_GIOHANGTableAdapter;
     }
 }

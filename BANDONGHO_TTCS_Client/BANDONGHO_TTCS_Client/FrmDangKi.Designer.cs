@@ -97,9 +97,9 @@ namespace BANDONGHO_TTCS_Client
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(58, 197);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Mật Khẩu Mới";
+            this.label1.Text = "Mật Khẩu";
             // 
             // btnHuy
             // 
