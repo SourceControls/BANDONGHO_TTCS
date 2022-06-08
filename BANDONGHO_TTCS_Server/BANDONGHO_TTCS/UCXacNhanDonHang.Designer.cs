@@ -77,6 +77,8 @@ namespace BANDONGHO_TTCS
             this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -99,9 +101,8 @@ namespace BANDONGHO_TTCS
             this.dONGHOTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.DONGHOTableAdapter();
             this.fKDHCTPDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nHANVIENTableAdapter = new BANDONGHO_TTCS.DSetTableAdapters.NHANVIENTableAdapter();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             mAPHIEUDATLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
             hOTENNGUOINHANLabel = new System.Windows.Forms.Label();
@@ -575,6 +576,25 @@ namespace BANDONGHO_TTCS
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu đặt";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pHIEUDATBindingSource, "TRANGTHAI", true));
+            this.label5.Location = new System.Drawing.Point(269, 239);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 17);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(125, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Trạng thái đơn hàng:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -796,41 +816,35 @@ namespace BANDONGHO_TTCS
             // 
             this.nHANVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(125, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Trạng thái đơn hàng:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pHIEUDATBindingSource, "TRANGTHAI", true));
-            this.label5.Location = new System.Drawing.Point(269, 239);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 17);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "label5";
-            // 
             // simpleButton3
             // 
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(732, 676);
+            this.simpleButton3.Location = new System.Drawing.Point(680, 677);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(354, 44);
+            this.simpleButton3.Size = new System.Drawing.Size(215, 44);
             this.simpleButton3.TabIndex = 22;
-            this.simpleButton3.Text = "Xác nhận giao thành công";
+            this.simpleButton3.Text = "Giao thành công";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(929, 677);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(215, 44);
+            this.simpleButton4.TabIndex = 27;
+            this.simpleButton4.Text = "Giao thất bại";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // UCXacNhanDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -939,5 +953,6 @@ namespace BANDONGHO_TTCS
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }
