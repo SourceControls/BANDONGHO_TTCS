@@ -48,6 +48,7 @@ namespace BANDONGHO_TTCS_Client
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 30);
             this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
             this.mainPanel.Size = new System.Drawing.Size(1261, 996);
             this.mainPanel.TabIndex = 14;
             // 
@@ -85,13 +86,15 @@ namespace BANDONGHO_TTCS_Client
             // 
             // btnTaiLai
             // 
-            this.btnTaiLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTaiLai.Location = new System.Drawing.Point(1145, 0);
+            this.btnTaiLai.BackColor = System.Drawing.Color.Silver;
+            this.btnTaiLai.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaiLai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiLai.Location = new System.Drawing.Point(0, 0);
             this.btnTaiLai.Name = "btnTaiLai";
-            this.btnTaiLai.Size = new System.Drawing.Size(92, 35);
+            this.btnTaiLai.Size = new System.Drawing.Size(1261, 35);
             this.btnTaiLai.TabIndex = 1;
             this.btnTaiLai.Text = "Tải Lại";
-            this.btnTaiLai.UseVisualStyleBackColor = true;
+            this.btnTaiLai.UseVisualStyleBackColor = false;
             this.btnTaiLai.Click += new System.EventHandler(this.button2_Click);
             // 
             // UCTrangChu

@@ -101,8 +101,8 @@ D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\obj\Debug\
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\obj\Debug\BANDONGHO_TTCS_Client.csproj.CopyComplete
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\obj\Debug\BANDONGHO_TTCS_Client.exe
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\obj\Debug\BANDONGHO_TTCS_Client.pdb
-D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\bin\Debug\BANDONGHO_TTCS_Client.exe.config
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\bin\Debug\BANDONGHO_TTCS_Client.exe
+D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\bin\Debug\BANDONGHO_TTCS_Client.exe.config
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\bin\Debug\BANDONGHO_TTCS_Client.pdb
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\bin\Debug\DevExpress.BonusSkins.v19.2.dll
 D:\Learn\College\HK6\ttcs\BANDONGHO_TTCS\BANDONGHO_TTCS_Client\BANDONGHO_TTCS_Client\bin\Debug\DevExpress.Data.v19.2.dll
