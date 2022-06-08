@@ -203,13 +203,7 @@ namespace BANDONGHO_TTCS
 
         private void accordionControlElement9_Click(object sender, EventArgs e)
         {
-            if (!container.Controls.Contains(UCThongKeDoanhThu.Instance))
-            {
-                this.container.Controls.Add(UCThongKeDoanhThu.Instance);
-            }
-            UCThongKeDoanhThu.Instance.Dock = DockStyle.Fill;
-            UCThongKeDoanhThu.Instance.BringToFront();
-           
+            (new frmThongKeDoanhThu()).ShowDialog(this);
         }
     }
 }

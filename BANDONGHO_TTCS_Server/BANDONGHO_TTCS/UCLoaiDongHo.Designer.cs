@@ -36,7 +36,6 @@ namespace BANDONGHO_TTCS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLoaiDongHo));
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
@@ -120,7 +119,6 @@ namespace BANDONGHO_TTCS
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
             this.bar3,
             this.bar4});
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -139,14 +137,6 @@ namespace BANDONGHO_TTCS
             this.barManager1.MainMenu = this.bar3;
             this.barManager1.MaxItemId = 7;
             this.barManager1.StatusBar = this.bar4;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
             // 
             // bar3
             // 
@@ -247,7 +237,7 @@ namespace BANDONGHO_TTCS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1134, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1134, 30);
             // 
             // barDockControlBottom
             // 
@@ -261,17 +251,17 @@ namespace BANDONGHO_TTCS
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 665);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 686);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1134, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1134, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 665);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 686);
             // 
             // dSet
             // 
@@ -290,6 +280,7 @@ namespace BANDONGHO_TTCS
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_GIOHANGTableAdapter = null;
             this.tableAdapterManager.CT_KMTableAdapter = null;
             this.tableAdapterManager.CT_PDTableAdapter = null;
             this.tableAdapterManager.CT_PNTableAdapter = null;
@@ -311,11 +302,12 @@ namespace BANDONGHO_TTCS
             // lOAIDONGHOGridControl
             // 
             this.lOAIDONGHOGridControl.DataSource = this.lOAIDONGHOBindingSource;
-            this.lOAIDONGHOGridControl.Location = new System.Drawing.Point(0, 103);
+            this.lOAIDONGHOGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lOAIDONGHOGridControl.Location = new System.Drawing.Point(0, 30);
             this.lOAIDONGHOGridControl.MainView = this.gridView1;
             this.lOAIDONGHOGridControl.MenuManager = this.barManager1;
             this.lOAIDONGHOGridControl.Name = "lOAIDONGHOGridControl";
-            this.lOAIDONGHOGridControl.Size = new System.Drawing.Size(1134, 305);
+            this.lOAIDONGHOGridControl.Size = new System.Drawing.Size(1134, 400);
             this.lOAIDONGHOGridControl.TabIndex = 5;
             this.lOAIDONGHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -378,10 +370,11 @@ namespace BANDONGHO_TTCS
             this.ttLOAIDONGHO.Controls.Add(tENLOAILabel);
             this.ttLOAIDONGHO.Controls.Add(this.tENLOAITextEdit);
             this.ttLOAIDONGHO.Controls.Add(mOTALabel);
+            this.ttLOAIDONGHO.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ttLOAIDONGHO.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ttLOAIDONGHO.Location = new System.Drawing.Point(21, 424);
+            this.ttLOAIDONGHO.Location = new System.Drawing.Point(0, 430);
             this.ttLOAIDONGHO.Name = "ttLOAIDONGHO";
-            this.ttLOAIDONGHO.Size = new System.Drawing.Size(1092, 286);
+            this.ttLOAIDONGHO.Size = new System.Drawing.Size(1134, 286);
             this.ttLOAIDONGHO.TabIndex = 8;
             this.ttLOAIDONGHO.TabStop = false;
             this.ttLOAIDONGHO.Text = "Thông tin loại đồng hồ";
@@ -426,9 +419,9 @@ namespace BANDONGHO_TTCS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lOAIDONGHOGridControl);
             this.Controls.Add(this.ttLOAIDONGHO);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lOAIDONGHOGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -455,7 +448,6 @@ namespace BANDONGHO_TTCS
 
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarButtonItem btnThem;
         private DevExpress.XtraBars.BarButtonItem btnXoa;

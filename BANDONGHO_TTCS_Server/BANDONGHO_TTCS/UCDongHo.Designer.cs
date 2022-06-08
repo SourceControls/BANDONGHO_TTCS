@@ -554,7 +554,7 @@ namespace BANDONGHO_TTCS
             this.dONGHOGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dONGHOGridControl.MenuManager = this.barManager1;
             this.dONGHOGridControl.Name = "dONGHOGridControl";
-            this.dONGHOGridControl.Size = new System.Drawing.Size(1132, 332);
+            this.dONGHOGridControl.Size = new System.Drawing.Size(1132, 525);
             this.dONGHOGridControl.TabIndex = 5;
             this.dONGHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -584,10 +584,10 @@ namespace BANDONGHO_TTCS
             this.panelInput.Controls.Add(this.txtMaDH);
             this.panelInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInput.Enabled = false;
-            this.panelInput.Location = new System.Drawing.Point(0, 362);
+            this.panelInput.Location = new System.Drawing.Point(0, 555);
             this.panelInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInput.Name = "panelInput";
-            this.panelInput.Size = new System.Drawing.Size(1132, 684);
+            this.panelInput.Size = new System.Drawing.Size(1132, 491);
             this.panelInput.TabIndex = 9;
             // 
             // btnChonAnh

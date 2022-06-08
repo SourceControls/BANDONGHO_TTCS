@@ -51,14 +51,14 @@ namespace BANDONGHO_TTCS
             this.tableAdapterManager = new BANDONGHO_TTCS.DSetTableAdapters.TableAdapterManager();
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.bar4 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.bar4 = new DevExpress.XtraBars.Bar();
-            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.pcHD)).BeginInit();
             this.pcHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtMaPD.Properties)).BeginInit();
@@ -74,9 +74,9 @@ namespace BANDONGHO_TTCS
             // mAPHIEUDATLabel
             // 
             this.mAPHIEUDATLabel.AutoSize = true;
-            this.mAPHIEUDATLabel.Location = new System.Drawing.Point(177, 43);
+            this.mAPHIEUDATLabel.Location = new System.Drawing.Point(206, 53);
             this.mAPHIEUDATLabel.Name = "mAPHIEUDATLabel";
-            this.mAPHIEUDATLabel.Size = new System.Drawing.Size(50, 13);
+            this.mAPHIEUDATLabel.Size = new System.Drawing.Size(62, 17);
             this.mAPHIEUDATLabel.TabIndex = 3;
             this.mAPHIEUDATLabel.Text = "Mã phiếu";
             // 
@@ -96,18 +96,20 @@ namespace BANDONGHO_TTCS
             this.pcHD.Controls.Add(this.edtMaPD);
             this.pcHD.Controls.Add(this.btnLapHD);
             this.pcHD.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pcHD.Location = new System.Drawing.Point(0, 429);
+            this.pcHD.Location = new System.Drawing.Point(0, 497);
+            this.pcHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pcHD.Name = "pcHD";
-            this.pcHD.Size = new System.Drawing.Size(809, 100);
+            this.pcHD.Size = new System.Drawing.Size(944, 159);
             this.pcHD.TabIndex = 2;
             // 
             // edtMaPD
             // 
             this.edtMaPD.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPD, "MAPHIEUDAT", true));
-            this.edtMaPD.Location = new System.Drawing.Point(259, 40);
+            this.edtMaPD.Location = new System.Drawing.Point(302, 49);
+            this.edtMaPD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.edtMaPD.Name = "edtMaPD";
             this.edtMaPD.Properties.ReadOnly = true;
-            this.edtMaPD.Size = new System.Drawing.Size(143, 20);
+            this.edtMaPD.Size = new System.Drawing.Size(167, 22);
             this.edtMaPD.TabIndex = 4;
             // 
             // bdsPD
@@ -122,9 +124,10 @@ namespace BANDONGHO_TTCS
             // 
             // btnLapHD
             // 
-            this.btnLapHD.Location = new System.Drawing.Point(495, 37);
+            this.btnLapHD.Location = new System.Drawing.Point(577, 46);
+            this.btnLapHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLapHD.Name = "btnLapHD";
-            this.btnLapHD.Size = new System.Drawing.Size(75, 23);
+            this.btnLapHD.Size = new System.Drawing.Size(87, 28);
             this.btnLapHD.TabIndex = 2;
             this.btnLapHD.Text = "Lập hoá đơn";
             this.btnLapHD.UseVisualStyleBackColor = true;
@@ -134,19 +137,22 @@ namespace BANDONGHO_TTCS
             // 
             this.panelControl2.Controls.Add(this.pHIEUDATGridControl);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 24);
+            this.panelControl2.Location = new System.Drawing.Point(0, 30);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(809, 405);
+            this.panelControl2.Size = new System.Drawing.Size(944, 467);
             this.panelControl2.TabIndex = 3;
             // 
             // pHIEUDATGridControl
             // 
             this.pHIEUDATGridControl.DataSource = this.bdsPD;
             this.pHIEUDATGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pHIEUDATGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pHIEUDATGridControl.Location = new System.Drawing.Point(2, 2);
             this.pHIEUDATGridControl.MainView = this.gridView1;
+            this.pHIEUDATGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pHIEUDATGridControl.Name = "pHIEUDATGridControl";
-            this.pHIEUDATGridControl.Size = new System.Drawing.Size(805, 401);
+            this.pHIEUDATGridControl.Size = new System.Drawing.Size(940, 463);
             this.pHIEUDATGridControl.TabIndex = 0;
             this.pHIEUDATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -161,6 +167,7 @@ namespace BANDONGHO_TTCS
             this.colSDTNGUOINHAN,
             this.colHOTENNV,
             this.colNGAYDAT});
+            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.pHIEUDATGridControl;
             this.gridView1.Name = "gridView1";
             // 
@@ -168,51 +175,61 @@ namespace BANDONGHO_TTCS
             // 
             this.colMAPHIEUDAT.Caption = "Mã phiếu đặt";
             this.colMAPHIEUDAT.FieldName = "MAPHIEUDAT";
+            this.colMAPHIEUDAT.MinWidth = 23;
             this.colMAPHIEUDAT.Name = "colMAPHIEUDAT";
             this.colMAPHIEUDAT.OptionsColumn.AllowEdit = false;
             this.colMAPHIEUDAT.OptionsColumn.AllowFocus = false;
             this.colMAPHIEUDAT.Visible = true;
             this.colMAPHIEUDAT.VisibleIndex = 0;
+            this.colMAPHIEUDAT.Width = 87;
             // 
             // colHOTENNGUOINHAN
             // 
             this.colHOTENNGUOINHAN.Caption = "Người nhận";
             this.colHOTENNGUOINHAN.FieldName = "HOTENNGUOINHAN";
+            this.colHOTENNGUOINHAN.MinWidth = 23;
             this.colHOTENNGUOINHAN.Name = "colHOTENNGUOINHAN";
             this.colHOTENNGUOINHAN.OptionsColumn.AllowEdit = false;
             this.colHOTENNGUOINHAN.OptionsColumn.AllowFocus = false;
             this.colHOTENNGUOINHAN.Visible = true;
             this.colHOTENNGUOINHAN.VisibleIndex = 1;
+            this.colHOTENNGUOINHAN.Width = 87;
             // 
             // colDIACHINGUOINHAN
             // 
             this.colDIACHINGUOINHAN.Caption = "Địa chỉ";
             this.colDIACHINGUOINHAN.FieldName = "DIACHINGUOINHAN";
+            this.colDIACHINGUOINHAN.MinWidth = 23;
             this.colDIACHINGUOINHAN.Name = "colDIACHINGUOINHAN";
             this.colDIACHINGUOINHAN.OptionsColumn.AllowEdit = false;
             this.colDIACHINGUOINHAN.OptionsColumn.AllowFocus = false;
             this.colDIACHINGUOINHAN.Visible = true;
             this.colDIACHINGUOINHAN.VisibleIndex = 2;
+            this.colDIACHINGUOINHAN.Width = 87;
             // 
             // colSDTNGUOINHAN
             // 
             this.colSDTNGUOINHAN.Caption = "Số điện thoại";
             this.colSDTNGUOINHAN.FieldName = "SDTNGUOINHAN";
+            this.colSDTNGUOINHAN.MinWidth = 23;
             this.colSDTNGUOINHAN.Name = "colSDTNGUOINHAN";
             this.colSDTNGUOINHAN.OptionsColumn.AllowEdit = false;
             this.colSDTNGUOINHAN.OptionsColumn.AllowFocus = false;
             this.colSDTNGUOINHAN.Visible = true;
             this.colSDTNGUOINHAN.VisibleIndex = 3;
+            this.colSDTNGUOINHAN.Width = 87;
             // 
             // colHOTENNV
             // 
             this.colHOTENNV.Caption = "Nhân viên lập phiếu";
             this.colHOTENNV.FieldName = "HOTENNV";
+            this.colHOTENNV.MinWidth = 23;
             this.colHOTENNV.Name = "colHOTENNV";
             this.colHOTENNV.OptionsColumn.AllowEdit = false;
             this.colHOTENNV.OptionsColumn.AllowFocus = false;
             this.colHOTENNV.Visible = true;
             this.colHOTENNV.VisibleIndex = 4;
+            this.colHOTENNV.Width = 87;
             // 
             // colNGAYDAT
             // 
@@ -220,11 +237,13 @@ namespace BANDONGHO_TTCS
             this.colNGAYDAT.DisplayFormat.FormatString = "dd-MM-yyyy";
             this.colNGAYDAT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAYDAT.FieldName = "NGAYDAT";
+            this.colNGAYDAT.MinWidth = 23;
             this.colNGAYDAT.Name = "colNGAYDAT";
             this.colNGAYDAT.OptionsColumn.AllowEdit = false;
             this.colNGAYDAT.OptionsColumn.AllowFocus = false;
             this.colNGAYDAT.Visible = true;
             this.colNGAYDAT.VisibleIndex = 5;
+            this.colNGAYDAT.Width = 87;
             // 
             // PDAdapter
             // 
@@ -276,42 +295,11 @@ namespace BANDONGHO_TTCS
             this.barManager1.MaxItemId = 2;
             this.barManager1.StatusBar = this.bar4;
             // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(809, 24);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 529);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(809, 20);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 505);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(809, 24);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 505);
-            // 
             // bar3
             // 
             this.bar3.BarName = "Main menu";
             this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnReload),
@@ -320,38 +308,75 @@ namespace BANDONGHO_TTCS
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Main menu";
             // 
+            // btnReload
+            // 
+            this.btnReload.Caption = "Reload";
+            this.btnReload.Id = 1;
+            this.btnReload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReload.ImageOptions.SvgImage")));
+            this.btnReload.Name = "btnReload";
+            this.btnReload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 0;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
+            // 
             // bar4
             // 
             this.bar4.BarName = "Status bar";
             this.bar4.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
             this.bar4.DockCol = 0;
+            this.bar4.DockRow = 0;
             this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar4.OptionsBar.AllowQuickCustomization = false;
             this.bar4.OptionsBar.DrawDragBorder = false;
             this.bar4.OptionsBar.UseWholeRow = true;
             this.bar4.Text = "Status bar";
             // 
-            // btnThoat
+            // barDockControlTop
             // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 0;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(944, 30);
             // 
-            // btnReload
+            // barDockControlBottom
             // 
-            this.btnReload.Caption = "Reload";
-            this.btnReload.Id = 1;
-            this.btnReload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.btnReload.Name = "btnReload";
-            this.btnReload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 656);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(944, 20);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 626);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(944, 30);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 626);
             // 
             // UCHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.pcHD);
@@ -359,8 +384,9 @@ namespace BANDONGHO_TTCS
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UCHoaDon";
-            this.Size = new System.Drawing.Size(809, 549);
+            this.Size = new System.Drawing.Size(944, 676);
             ((System.ComponentModel.ISupportInitialize)(this.pcHD)).EndInit();
             this.pcHD.ResumeLayout(false);
             this.pcHD.PerformLayout();

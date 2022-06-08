@@ -42,7 +42,6 @@ namespace BANDONGHO_TTCS
             System.Windows.Forms.Label sOLUONGLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCXacNhanDonHang));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnDHCXN = new DevExpress.XtraBars.BarButtonItem();
             this.btnDHDG = new DevExpress.XtraBars.BarButtonItem();
@@ -231,7 +230,6 @@ namespace BANDONGHO_TTCS
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
             this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -250,14 +248,6 @@ namespace BANDONGHO_TTCS
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 7;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
             // 
             // bar2
             // 
@@ -338,7 +328,7 @@ namespace BANDONGHO_TTCS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1205, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1205, 30);
             // 
             // barDockControlBottom
             // 
@@ -352,17 +342,17 @@ namespace BANDONGHO_TTCS
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 666);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 687);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1205, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1205, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 666);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 687);
             // 
             // barButtonItem2
             // 
@@ -393,6 +383,7 @@ namespace BANDONGHO_TTCS
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_GIOHANGTableAdapter = null;
             this.tableAdapterManager.CT_KMTableAdapter = null;
             this.tableAdapterManager.CT_PDTableAdapter = this.cT_PDTableAdapter;
             this.tableAdapterManager.CT_PNTableAdapter = null;
@@ -414,11 +405,12 @@ namespace BANDONGHO_TTCS
             // pHIEUDATGridControl
             // 
             this.pHIEUDATGridControl.DataSource = this.pHIEUDATBindingSource;
-            this.pHIEUDATGridControl.Location = new System.Drawing.Point(3, 97);
+            this.pHIEUDATGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pHIEUDATGridControl.Location = new System.Drawing.Point(0, 30);
             this.pHIEUDATGridControl.MainView = this.gridView1;
             this.pHIEUDATGridControl.MenuManager = this.barManager1;
             this.pHIEUDATGridControl.Name = "pHIEUDATGridControl";
-            this.pHIEUDATGridControl.Size = new System.Drawing.Size(1182, 266);
+            this.pHIEUDATGridControl.Size = new System.Drawing.Size(1205, 334);
             this.pHIEUDATGridControl.TabIndex = 5;
             this.pHIEUDATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -504,11 +496,12 @@ namespace BANDONGHO_TTCS
             // cT_PDGridControl
             // 
             this.cT_PDGridControl.DataSource = this.cT_PDBindingSource;
-            this.cT_PDGridControl.Location = new System.Drawing.Point(3, 379);
+            this.cT_PDGridControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cT_PDGridControl.Location = new System.Drawing.Point(0, 364);
             this.cT_PDGridControl.MainView = this.gridView2;
             this.cT_PDGridControl.MenuManager = this.barManager1;
             this.cT_PDGridControl.Name = "cT_PDGridControl";
-            this.cT_PDGridControl.Size = new System.Drawing.Size(627, 318);
+            this.cT_PDGridControl.Size = new System.Drawing.Size(646, 353);
             this.cT_PDGridControl.TabIndex = 5;
             this.cT_PDGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -769,7 +762,7 @@ namespace BANDONGHO_TTCS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.label1.Location = new System.Drawing.Point(420, 54);
+            this.label1.Location = new System.Drawing.Point(430, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(444, 29);
             this.label1.TabIndex = 15;
@@ -893,7 +886,6 @@ namespace BANDONGHO_TTCS
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem btnDHCXN;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;

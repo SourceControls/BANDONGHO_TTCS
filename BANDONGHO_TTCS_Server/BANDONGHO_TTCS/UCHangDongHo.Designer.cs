@@ -34,7 +34,6 @@ namespace BANDONGHO_TTCS
             System.Windows.Forms.Label tENHANGLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCHangDongHo));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
@@ -96,7 +95,6 @@ namespace BANDONGHO_TTCS
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
             this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -115,14 +113,6 @@ namespace BANDONGHO_TTCS
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 7;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
             // 
             // bar2
             // 
@@ -223,7 +213,7 @@ namespace BANDONGHO_TTCS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1143, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1143, 30);
             // 
             // barDockControlBottom
             // 
@@ -237,17 +227,17 @@ namespace BANDONGHO_TTCS
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 628);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 649);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1143, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1143, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 628);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 649);
             // 
             // dSet
             // 
@@ -266,6 +256,7 @@ namespace BANDONGHO_TTCS
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_GIOHANGTableAdapter = null;
             this.tableAdapterManager.CT_KMTableAdapter = null;
             this.tableAdapterManager.CT_PDTableAdapter = null;
             this.tableAdapterManager.CT_PNTableAdapter = null;
@@ -283,11 +274,12 @@ namespace BANDONGHO_TTCS
             // hANGDONGHOGridControl
             // 
             this.hANGDONGHOGridControl.DataSource = this.hANGDONGHOBindingSource;
-            this.hANGDONGHOGridControl.Location = new System.Drawing.Point(0, 103);
+            this.hANGDONGHOGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hANGDONGHOGridControl.Location = new System.Drawing.Point(0, 30);
             this.hANGDONGHOGridControl.MainView = this.gridView1;
             this.hANGDONGHOGridControl.MenuManager = this.barManager1;
             this.hANGDONGHOGridControl.Name = "hANGDONGHOGridControl";
-            this.hANGDONGHOGridControl.Size = new System.Drawing.Size(1143, 273);
+            this.hANGDONGHOGridControl.Size = new System.Drawing.Size(1143, 649);
             this.hANGDONGHOGridControl.TabIndex = 5;
             this.hANGDONGHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -336,10 +328,11 @@ namespace BANDONGHO_TTCS
             this.ttHANGDONGHO.Controls.Add(this.mAHANGTextEdit);
             this.ttHANGDONGHO.Controls.Add(tENHANGLabel);
             this.ttHANGDONGHO.Controls.Add(this.tENHANGTextEdit);
+            this.ttHANGDONGHO.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ttHANGDONGHO.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ttHANGDONGHO.Location = new System.Drawing.Point(150, 392);
+            this.ttHANGDONGHO.Location = new System.Drawing.Point(0, 398);
             this.ttHANGDONGHO.Name = "ttHANGDONGHO";
-            this.ttHANGDONGHO.Size = new System.Drawing.Size(849, 281);
+            this.ttHANGDONGHO.Size = new System.Drawing.Size(1143, 281);
             this.ttHANGDONGHO.TabIndex = 7;
             this.ttHANGDONGHO.TabStop = false;
             this.ttHANGDONGHO.Text = "Thông tin hãng đồng hồ";
@@ -403,7 +396,6 @@ namespace BANDONGHO_TTCS
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem btnThem;
         private DevExpress.XtraBars.BarButtonItem btnXoa;

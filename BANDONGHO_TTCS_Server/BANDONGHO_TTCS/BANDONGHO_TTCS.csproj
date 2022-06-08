@@ -99,7 +99,19 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongKeDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeDoanhThu.Designer.cs">
+      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="rpDOANHTHU_HANG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rpDOANHTHU_HANG.Designer.cs">
+      <DependentUpon>rpDOANHTHU_HANG.cs</DependentUpon>
+    </Compile>
     <Compile Include="rpDOANHTHU_KH.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -173,12 +185,6 @@
     <Compile Include="UCBackUpRestore.Designer.cs">
       <DependentUpon>UCBackUpRestore.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCThongKeDoanhThu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCThongKeDoanhThu.Designer.cs">
-      <DependentUpon>UCThongKeDoanhThu.cs</DependentUpon>
-    </Compile>
     <Compile Include="UCXacNhanDonHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -203,6 +209,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeDoanhThu.resx">
+      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpDOANHTHU_HANG.resx">
+      <DependentUpon>rpDOANHTHU_HANG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rpDOANHTHU_KH.resx">
       <DependentUpon>rpDOANHTHU_KH.cs</DependentUpon>
@@ -249,9 +261,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCBackUpRestore.resx">
       <DependentUpon>UCBackUpRestore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCThongKeDoanhThu.resx">
-      <DependentUpon>UCThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCXacNhanDonHang.resx">
       <DependentUpon>UCXacNhanDonHang.cs</DependentUpon>
