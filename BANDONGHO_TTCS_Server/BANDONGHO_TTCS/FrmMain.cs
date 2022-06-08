@@ -200,5 +200,16 @@ namespace BANDONGHO_TTCS
             UCXacNhanDonHang.Instance.Dock = DockStyle.Fill;
             UCXacNhanDonHang.Instance.BringToFront();
         }
+
+        private void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            if (!container.Controls.Contains(UCThongKeDoanhThu.Instance))
+            {
+                this.container.Controls.Add(UCThongKeDoanhThu.Instance);
+            }
+            UCThongKeDoanhThu.Instance.Dock = DockStyle.Fill;
+            UCThongKeDoanhThu.Instance.BringToFront();
+           
+        }
     }
 }

@@ -33,23 +33,24 @@ namespace BANDONGHO_TTCS
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement15 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement15 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.stt = new System.Windows.Forms.StatusStrip();
             this.sttMaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.sttHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.sttChucVu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.stt.SuspendLayout();
@@ -85,7 +86,9 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement5,
             this.accordionControlElement10,
-            this.accordionControlElement13});
+            this.accordionControlElement13,
+            this.accordionControlElement9});
+            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Quản Lý";
             this.accordionControlElement1.Click += new System.EventHandler(this.accordionControlElement1_Click);
@@ -97,26 +100,19 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement5.Text = "Quản Lý Nhân Viên";
             this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
-            // accordionControlElement6
+            // accordionControlElement10
             // 
-            this.accordionControlElement6.Name = "accordionControlElement6";
-            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement6.Text = "Đồng Hồ";
-            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
+            this.accordionControlElement10.Name = "accordionControlElement10";
+            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement10.Text = "Sao lưu và Phục Hồi";
+            this.accordionControlElement10.Click += new System.EventHandler(this.accordionControlElement10_Click);
             // 
-            // accordionControlElement7
+            // accordionControlElement13
             // 
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement7.Text = "Đổi mật khẩu";
-            this.accordionControlElement7.Click += new System.EventHandler(this.accordionControlElement7_Click);
-            // 
-            // accordionControlElement11
-            // 
-            this.accordionControlElement11.Name = "accordionControlElement11";
-            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement11.Text = "Đăng Xuất";
-            this.accordionControlElement11.Click += new System.EventHandler(this.accordionControlElement11_Click);
+            this.accordionControlElement13.Name = "accordionControlElement13";
+            this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement13.Text = "Khuyến Mại";
+            this.accordionControlElement13.Click += new System.EventHandler(this.accordionControlElement13_Click);
             // 
             // accordionControlElement2
             // 
@@ -131,12 +127,12 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Nhập Liệu";
             // 
-            // accordionControlElement4
+            // accordionControlElement15
             // 
-            this.accordionControlElement4.Name = "accordionControlElement4";
-            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement4.Text = "Phiếu Nhập";
-            this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
+            this.accordionControlElement15.Name = "accordionControlElement15";
+            this.accordionControlElement15.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement15.Text = "Đơn Hàng";
+            this.accordionControlElement15.Click += new System.EventHandler(this.accordionControlElement15_Click);
             // 
             // accordionControlElement8
             // 
@@ -145,28 +141,19 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement8.Text = "Lập hoá đơn";
             this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
-            // accordionControlElement10
+            // accordionControlElement4
             // 
-            this.accordionControlElement10.Name = "accordionControlElement10";
-            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement10.Text = "Sao lưu và Phục Hồi";
-            this.accordionControlElement10.Click += new System.EventHandler(this.accordionControlElement10_Click);
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Phiếu Nhập";
+            this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
             // 
-            // accordionControlElement3
+            // accordionControlElement6
             // 
-            this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement7,
-            this.accordionControlElement11});
-            this.accordionControlElement3.Expanded = true;
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Text = "Tài Khoản";
-            // 
-            // accordionControlElement13
-            // 
-            this.accordionControlElement13.Name = "accordionControlElement13";
-            this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement13.Text = "Khuyến Mại";
-            this.accordionControlElement13.Click += new System.EventHandler(this.accordionControlElement13_Click);
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Text = "Đồng Hồ";
+            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
             // 
             // accordionControlElement12
             // 
@@ -182,12 +169,28 @@ namespace BANDONGHO_TTCS
             this.accordionControlElement14.Text = "Loại Đồng Hồ";
             this.accordionControlElement14.Click += new System.EventHandler(this.accordionControlElement14_Click);
             // 
-            // accordionControlElement15
+            // accordionControlElement3
             // 
-            this.accordionControlElement15.Name = "accordionControlElement15";
-            this.accordionControlElement15.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement15.Text = "Đơn Hàng";
-            this.accordionControlElement15.Click += new System.EventHandler(this.accordionControlElement15_Click);
+            this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement7,
+            this.accordionControlElement11});
+            this.accordionControlElement3.Expanded = true;
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Text = "Tài Khoản";
+            // 
+            // accordionControlElement7
+            // 
+            this.accordionControlElement7.Name = "accordionControlElement7";
+            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement7.Text = "Đổi mật khẩu";
+            this.accordionControlElement7.Click += new System.EventHandler(this.accordionControlElement7_Click);
+            // 
+            // accordionControlElement11
+            // 
+            this.accordionControlElement11.Name = "accordionControlElement11";
+            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement11.Text = "Đăng Xuất";
+            this.accordionControlElement11.Click += new System.EventHandler(this.accordionControlElement11_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -229,6 +232,13 @@ namespace BANDONGHO_TTCS
             this.sttChucVu.Name = "sttChucVu";
             this.sttChucVu.Size = new System.Drawing.Size(151, 20);
             this.sttChucVu.Text = "toolStripStatusLabel1";
+            // 
+            // accordionControlElement9
+            // 
+            this.accordionControlElement9.Name = "accordionControlElement9";
+            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Text = "Thống Kê Doanh Thu";
+            this.accordionControlElement9.Click += new System.EventHandler(this.accordionControlElement9_Click);
             // 
             // FrmMain
             // 
@@ -281,5 +291,6 @@ namespace BANDONGHO_TTCS
         private System.Windows.Forms.ToolStripStatusLabel sttMaNV;
         private System.Windows.Forms.ToolStripStatusLabel sttHoTen;
         private System.Windows.Forms.ToolStripStatusLabel sttChucVu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
     }
 }

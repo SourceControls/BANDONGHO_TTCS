@@ -54,8 +54,12 @@ namespace BANDONGHO_TTCS_Client
                 d.moTa = ((DataRowView)bdsDongHo[i])[7].ToString();
                 d.giaSauGiam = double.Parse(((DataRowView)bdsDongHo[i])[8].ToString());
                 d.giamGia = double.Parse(((DataRowView)bdsDongHo[i])[9].ToString());
-                d.initUI();
-                this.mainPanel.Controls.Add(d);
+                if(d.slTon > 0)
+                {
+                    d.initUI();
+                    this.mainPanel.Controls.Add(d);
+                }
+
             }
         }
 

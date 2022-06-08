@@ -19,6 +19,7 @@ namespace BANDONGHO_TTCS_Client
 
         public void phanQuyen()
         {
+            container.Controls.Clear();
             sttHoTenKH.Text = "Họ tên: " + Program.hoTen;
             if (Program.maKH.Length == 0)
             {

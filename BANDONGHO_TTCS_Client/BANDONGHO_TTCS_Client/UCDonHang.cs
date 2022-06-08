@@ -83,6 +83,7 @@ namespace BANDONGHO_TTCS_Client
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.pHIEUDATTableAdapter.Fill(this.dSet.PHIEUDAT);
+            bdsPhieuDat.Filter = "MAKH = '" + Program.maKH.Trim() + "'";
 
         }
 
