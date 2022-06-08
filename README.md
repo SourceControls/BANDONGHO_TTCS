@@ -11,7 +11,7 @@
   + Thêm sản phẩm vào giỏ hàng.
   + Theo dõi và huỷ đơn hàng.
 - Phần mềm được thiết kế và xây dựng dựa trên .NET framework v4.7.2 và công cụ DevExpress v19.2.
-- Thiết kế và quản lý cơ sở dữ liệu trên MS SQL Server 2014.
+- Thiết kế và quản lý cơ sở dữ liệu trên MS SQL Server.
 - IDE dùng trong quá trình xây dựng phần mềm: Visual studio 2019.
 - Các bước cài đặt để chạy được dự án:
   + Cài đặt MS SQL Server https://www.microsoft.com/en-us/sql-server/sql-server-downloads.
