@@ -90,7 +90,7 @@ namespace BANDONGHO_TTCS
             else
             {
                 simpleButton3.Enabled = true;
-                simpleButton4.Enabled = false;
+                simpleButton4.Enabled = true;
                 simpleButton1.Enabled = true;
                 simpleButton2.Enabled = true;
             }    
