@@ -4,6 +4,7 @@
   + Quản lý khuyến mãi.
   + Quản lý phiếu nhập, phiếu đặt của khách.
   + Duyệt phiếu đặt.
+  + Lập hoá đơn.
   + Backup, restore.
 - Phía khách hàng có các nghiệp vụ:
   + Xem các sản phẩm.
