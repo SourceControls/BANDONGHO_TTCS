@@ -182,7 +182,7 @@ namespace BANDONGHO_TTCS_Client
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1537, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1227, 30);
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 831);
@@ -262,7 +262,7 @@ namespace BANDONGHO_TTCS_Client
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1264, 433);
+            this.gridControl1.Size = new System.Drawing.Size(934, 433);
             this.gridControl1.TabIndex = 18;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -328,7 +328,7 @@ namespace BANDONGHO_TTCS_Client
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1537, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1227, 30);
             // 
             // barDockControlBottom
             // 
@@ -337,7 +337,7 @@ namespace BANDONGHO_TTCS_Client
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 861);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1537, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1227, 0);
             // 
             // barDockControlLeft
             // 
@@ -352,7 +352,7 @@ namespace BANDONGHO_TTCS_Client
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(1537, 30);
+            this.barDockControl1.Location = new System.Drawing.Point(1227, 30);
             this.barDockControl1.Manager = this.barManager1;
             this.barDockControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControl1.Size = new System.Drawing.Size(0, 831);
@@ -459,7 +459,7 @@ namespace BANDONGHO_TTCS_Client
             this.pHIEUDATGridControl.MainView = this.gridView3;
             this.pHIEUDATGridControl.MenuManager = this.barManager1;
             this.pHIEUDATGridControl.Name = "pHIEUDATGridControl";
-            this.pHIEUDATGridControl.Size = new System.Drawing.Size(1537, 350);
+            this.pHIEUDATGridControl.Size = new System.Drawing.Size(1227, 350);
             this.pHIEUDATGridControl.TabIndex = 16;
             this.pHIEUDATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -504,7 +504,7 @@ namespace BANDONGHO_TTCS_Client
             // pbHinhAnh1
             // 
             this.pbHinhAnh1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbHinhAnh1.Location = new System.Drawing.Point(1270, 498);
+            this.pbHinhAnh1.Location = new System.Drawing.Point(951, 513);
             this.pbHinhAnh1.Name = "pbHinhAnh1";
             this.pbHinhAnh1.Size = new System.Drawing.Size(261, 345);
             this.pbHinhAnh1.TabIndex = 19;
@@ -515,7 +515,7 @@ namespace BANDONGHO_TTCS_Client
             // 
             this.lbTongTien.AutoSize = true;
             this.lbTongTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongTien.Location = new System.Drawing.Point(1270, 428);
+            this.lbTongTien.Location = new System.Drawing.Point(951, 443);
             this.lbTongTien.Name = "lbTongTien";
             this.lbTongTien.Size = new System.Drawing.Size(60, 24);
             this.lbTongTien.TabIndex = 26;
@@ -537,7 +537,7 @@ namespace BANDONGHO_TTCS_Client
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UCDonDatHang";
-            this.Size = new System.Drawing.Size(1537, 861);
+            this.Size = new System.Drawing.Size(1227, 861);
             this.Load += new System.EventHandler(this.UCDonDatHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbHinhAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
