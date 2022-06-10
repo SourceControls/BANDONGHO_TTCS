@@ -30,7 +30,7 @@ namespace BANDONGHO_TTCS
 
         // Đường dẫn tới thư mục project
         public static string URL_BACKUP = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + 
-            "\\backup\\";
+            "\\backup";
         public static string FULL_BK_FILE_NAME = "full_bk.bak";
         public static string DIFF_BK_FILE_NAME = "diff_bk.bak";
         public static string LOG_BK_FILE_NAME = "log_bk.trn";
