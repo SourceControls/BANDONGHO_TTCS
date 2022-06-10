@@ -74,7 +74,6 @@ namespace BANDONGHO_TTCS
             }
 
             Program.closeConnection();
-            Program.setSingleUser();
 
             try
             {
@@ -88,7 +87,6 @@ namespace BANDONGHO_TTCS
             finally
             {
                 Program.connectToDB();
-                Program.setMultiUser();
             }
         }
 
@@ -100,7 +98,6 @@ namespace BANDONGHO_TTCS
             }
 
             Program.closeConnection();
-            Program.setSingleUser();
 
             try
             {
@@ -112,7 +109,6 @@ namespace BANDONGHO_TTCS
             } finally
             {
                 Program.connectToDB();
-                Program.setMultiUser();
             }
         }
 

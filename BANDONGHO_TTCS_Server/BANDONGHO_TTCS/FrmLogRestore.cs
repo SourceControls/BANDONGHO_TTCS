@@ -29,7 +29,6 @@ namespace BANDONGHO_TTCS
             }
 
             Program.closeConnection();
-            Program.setSingleUser();
 
             string restoreCmd = "RESTORE LOG " + Program.database + " FROM DISK = '" +
                Program.URL_BACKUP + "\\" + Program.LOG_BK_FILE_NAME + "' WITH STOPAT = '" +
@@ -81,7 +80,6 @@ namespace BANDONGHO_TTCS
                         } finally
                         {
                             Program.connectToDB();
-                            Program.setMultiUser();
                         }
                     }
                     if(isSuccess)
