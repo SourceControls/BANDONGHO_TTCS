@@ -350,13 +350,13 @@ namespace BANDONGHO_TTCS
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_GIOHANGTableAdapter = null;
             this.tableAdapterManager.CT_KMTableAdapter = null;
             this.tableAdapterManager.CT_PDTableAdapter = null;
             this.tableAdapterManager.CT_PNTableAdapter = null;
             this.tableAdapterManager.DONGHOTableAdapter = null;
             this.tableAdapterManager.HANGDONGHOTableAdapter = null;
             this.tableAdapterManager.HOADONTableAdapter = null;
-            //this.tableAdapterManager.HOTENNVTableAdapter = null;
             this.tableAdapterManager.KHACHHANGTableAdapter = null;
             this.tableAdapterManager.KHUYENMAITableAdapter = null;
             this.tableAdapterManager.LOAIDONGHOTableAdapter = null;
@@ -532,7 +532,7 @@ namespace BANDONGHO_TTCS
             this.txtSDT.Location = new System.Drawing.Point(563, 151);
             this.txtSDT.MenuManager = this.barManager1;
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Properties.Mask.EditMask = "\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d";
+            this.txtSDT.Properties.Mask.EditMask = "0\\d{8,9}";
             this.txtSDT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtSDT.Properties.Mask.PlaceHolder = '-';
             this.txtSDT.Size = new System.Drawing.Size(286, 22);

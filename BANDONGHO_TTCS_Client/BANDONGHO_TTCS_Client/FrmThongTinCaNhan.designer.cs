@@ -191,7 +191,7 @@ namespace BANDONGHO_TTCS_Client
             this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKhachHang, "SDT", true));
             this.txtSDT.Location = new System.Drawing.Point(124, 125);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Properties.Mask.EditMask = "\\d{9,10}";
+            this.txtSDT.Properties.Mask.EditMask = "0\\d{8,9}";
             this.txtSDT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtSDT.Size = new System.Drawing.Size(245, 22);
             this.txtSDT.TabIndex = 11;

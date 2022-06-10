@@ -132,7 +132,7 @@ namespace BANDONGHO_TTCS_Client
             // 
             this.txtSDT.Location = new System.Drawing.Point(61, 158);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Properties.Mask.EditMask = "\\d{9,10}";
+            this.txtSDT.Properties.Mask.EditMask = "0\\d{8,9}";
             this.txtSDT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtSDT.Size = new System.Drawing.Size(237, 22);
             this.txtSDT.TabIndex = 24;
