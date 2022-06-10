@@ -40,7 +40,7 @@ namespace BANDONGHO_TTCS_Client
             try
             {
                 // Khoi tao connection string
-                connstr = "Data Source= MYLAPTOP;Initial Catalog=" + Program.database + ";User ID=" +
+                connstr = "Data Source= 2B12-M08;Initial Catalog=" + Program.database + ";User ID=" +
                     Program.login + ";Password=" + Program.password + "; MultipleActiveResultSets = true;";
                 Program.conn.ConnectionString = connstr;
                 conn.Open();
