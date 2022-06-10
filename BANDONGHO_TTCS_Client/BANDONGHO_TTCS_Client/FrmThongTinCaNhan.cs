@@ -73,7 +73,7 @@ namespace BANDONGHO_TTCS_Client
                 }
 
             }
-            if(email.Length != 0)
+            if (email.Length != 0)
             if (!IsValidEmail(email))
             {
                 MessageBox.Show("Email không đúng định dạng!");

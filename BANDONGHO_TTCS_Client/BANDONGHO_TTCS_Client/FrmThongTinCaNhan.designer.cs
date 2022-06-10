@@ -235,6 +235,7 @@ namespace BANDONGHO_TTCS_Client
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgaySinh.Properties.MaxValue = new System.DateTime(2022, 6, 10, 0, 0, 0, 0);
             this.txtNgaySinh.Size = new System.Drawing.Size(125, 22);
             this.txtNgaySinh.TabIndex = 16;
             // 

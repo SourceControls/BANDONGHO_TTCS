@@ -492,9 +492,9 @@ namespace BANDONGHO_TTCS
             this.panelInput.Controls.Add(this.txtMaNV);
             this.panelInput.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelInput.Enabled = false;
-            this.panelInput.Location = new System.Drawing.Point(0, 278);
+            this.panelInput.Location = new System.Drawing.Point(0, 254);
             this.panelInput.Name = "panelInput";
-            this.panelInput.Size = new System.Drawing.Size(1032, 282);
+            this.panelInput.Size = new System.Drawing.Size(1032, 306);
             this.panelInput.TabIndex = 10;
             this.panelInput.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 

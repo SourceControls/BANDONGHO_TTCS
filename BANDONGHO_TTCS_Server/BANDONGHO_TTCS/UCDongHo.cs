@@ -91,10 +91,10 @@ namespace BANDONGHO_TTCS
         }
         private void giaDuLieu()
         {
-            txtMaDH.Text = "TESTDH" + (bdsDongHo.Count-1).ToString();
+            txtMaDH.Text = "TESTDH" + (bdsDongHo.Count - 1).ToString();
             txtTenDongHo.Text = "Casio AE";
             txtGia.Text = "1299000";
-            txtSoLuongTon.Value = 10;
+            txtSoLuongTon.Value = 0;
         }
         private void dONGHOBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

@@ -307,7 +307,7 @@ namespace BANDONGHO_TTCS
             this.lOAIDONGHOGridControl.MainView = this.gridView1;
             this.lOAIDONGHOGridControl.MenuManager = this.barManager1;
             this.lOAIDONGHOGridControl.Name = "lOAIDONGHOGridControl";
-            this.lOAIDONGHOGridControl.Size = new System.Drawing.Size(1134, 400);
+            this.lOAIDONGHOGridControl.Size = new System.Drawing.Size(1134, 344);
             this.lOAIDONGHOGridControl.TabIndex = 5;
             this.lOAIDONGHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -372,9 +372,9 @@ namespace BANDONGHO_TTCS
             this.ttLOAIDONGHO.Controls.Add(mOTALabel);
             this.ttLOAIDONGHO.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ttLOAIDONGHO.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ttLOAIDONGHO.Location = new System.Drawing.Point(0, 430);
+            this.ttLOAIDONGHO.Location = new System.Drawing.Point(0, 374);
             this.ttLOAIDONGHO.Name = "ttLOAIDONGHO";
-            this.ttLOAIDONGHO.Size = new System.Drawing.Size(1134, 286);
+            this.ttLOAIDONGHO.Size = new System.Drawing.Size(1134, 342);
             this.ttLOAIDONGHO.TabIndex = 8;
             this.ttLOAIDONGHO.TabStop = false;
             this.ttLOAIDONGHO.Text = "Thông tin loại đồng hồ";

@@ -96,10 +96,10 @@ namespace BANDONGHO_TTCS
             this.pcHD.Controls.Add(this.edtMaPD);
             this.pcHD.Controls.Add(this.btnLapHD);
             this.pcHD.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pcHD.Location = new System.Drawing.Point(0, 497);
+            this.pcHD.Location = new System.Drawing.Point(0, 439);
             this.pcHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pcHD.Name = "pcHD";
-            this.pcHD.Size = new System.Drawing.Size(944, 159);
+            this.pcHD.Size = new System.Drawing.Size(944, 217);
             this.pcHD.TabIndex = 2;
             // 
             // edtMaPD
@@ -140,7 +140,7 @@ namespace BANDONGHO_TTCS
             this.panelControl2.Location = new System.Drawing.Point(0, 30);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(944, 467);
+            this.panelControl2.Size = new System.Drawing.Size(944, 409);
             this.panelControl2.TabIndex = 3;
             // 
             // pHIEUDATGridControl
@@ -152,7 +152,7 @@ namespace BANDONGHO_TTCS
             this.pHIEUDATGridControl.MainView = this.gridView1;
             this.pHIEUDATGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pHIEUDATGridControl.Name = "pHIEUDATGridControl";
-            this.pHIEUDATGridControl.Size = new System.Drawing.Size(940, 463);
+            this.pHIEUDATGridControl.Size = new System.Drawing.Size(940, 405);
             this.pHIEUDATGridControl.TabIndex = 0;
             this.pHIEUDATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
