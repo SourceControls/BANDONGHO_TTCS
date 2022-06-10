@@ -38,7 +38,7 @@ namespace BANDONGHO_TTCS_Client
                 MessageBox.Show("Mật khẩu cũ không đúng!");
                 return;
             }
-            if(Program.execSqlNonQuery("EXEC SP_DOI_MAT_KHAU '" +Program.maKH+"', '" + matKhauMoi))
+            if(Program.execSqlNonQuery("EXEC SP_DOI_MAT_KHAU '" +Program.maKH+"', '" + matKhauMoi +"'"))
             {
                 MessageBox.Show("Đổi mật khẩu thành công!");
                 Program.matKhau = matKhauMoi;

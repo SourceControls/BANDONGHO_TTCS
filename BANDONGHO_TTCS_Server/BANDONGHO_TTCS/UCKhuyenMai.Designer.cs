@@ -313,7 +313,7 @@ namespace BANDONGHO_TTCS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1503, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1101, 30);
             // 
             // barDockControlBottom
             // 
@@ -321,7 +321,7 @@ namespace BANDONGHO_TTCS
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 738);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1503, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1101, 20);
             // 
             // barDockControlLeft
             // 
@@ -335,7 +335,7 @@ namespace BANDONGHO_TTCS
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1503, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1101, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 708);
             // 
@@ -399,7 +399,7 @@ namespace BANDONGHO_TTCS
             this.panelControl1.Controls.Add(this.ttCT_KM);
             this.panelControl1.Controls.Add(this.ttKM);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(1037, 30);
+            this.panelControl1.Location = new System.Drawing.Point(635, 30);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(466, 708);
             this.panelControl1.TabIndex = 14;
@@ -531,7 +531,7 @@ namespace BANDONGHO_TTCS
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl3.Location = new System.Drawing.Point(0, 30);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1033, 708);
+            this.panelControl3.Size = new System.Drawing.Size(656, 708);
             this.panelControl3.TabIndex = 15;
             // 
             // label2
@@ -553,7 +553,7 @@ namespace BANDONGHO_TTCS
             this.cT_KMGridControl.MainView = this.gridView2;
             this.cT_KMGridControl.MenuManager = this.barManager1;
             this.cT_KMGridControl.Name = "cT_KMGridControl";
-            this.cT_KMGridControl.Size = new System.Drawing.Size(1029, 377);
+            this.cT_KMGridControl.Size = new System.Drawing.Size(652, 377);
             this.cT_KMGridControl.TabIndex = 19;
             this.cT_KMGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -595,7 +595,7 @@ namespace BANDONGHO_TTCS
             this.kHUYENMAIGridControl.MainView = this.gridView1;
             this.kHUYENMAIGridControl.MenuManager = this.barManager1;
             this.kHUYENMAIGridControl.Name = "kHUYENMAIGridControl";
-            this.kHUYENMAIGridControl.Size = new System.Drawing.Size(1029, 278);
+            this.kHUYENMAIGridControl.Size = new System.Drawing.Size(652, 278);
             this.kHUYENMAIGridControl.TabIndex = 16;
             this.kHUYENMAIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -673,7 +673,7 @@ namespace BANDONGHO_TTCS
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UCKhuyenMai";
-            this.Size = new System.Drawing.Size(1503, 758);
+            this.Size = new System.Drawing.Size(1101, 758);
             this.Load += new System.EventHandler(this.UCKhuyenMai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSet)).EndInit();
