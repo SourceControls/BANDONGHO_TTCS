@@ -30,7 +30,6 @@ namespace BANDONGHO_TTCS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCKhuyenMai));
             System.Windows.Forms.Label mAKMLabel1;
             System.Windows.Forms.Label mADONGHOLabel;
             System.Windows.Forms.Label tYLEGIAMGIALabel;
@@ -38,6 +37,7 @@ namespace BANDONGHO_TTCS
             System.Windows.Forms.Label tENKMLabel;
             System.Windows.Forms.Label nGAYBDLabel;
             System.Windows.Forms.Label nGAYKTLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCKhuyenMai));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThemKM = new DevExpress.XtraBars.BarButtonItem();
@@ -73,18 +73,18 @@ namespace BANDONGHO_TTCS
             this.nGAYBDDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.nGAYKTDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.label2 = new System.Windows.Forms.Label();
             this.cT_KMGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMADONGHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTYLEGIAMGIA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.kHUYENMAIGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYBD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYKT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             mAKMLabel1 = new System.Windows.Forms.Label();
             mADONGHOLabel = new System.Windows.Forms.Label();
             tYLEGIAMGIALabel = new System.Windows.Forms.Label();
@@ -117,6 +117,69 @@ namespace BANDONGHO_TTCS
             ((System.ComponentModel.ISupportInitialize)(this.kHUYENMAIGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mAKMLabel1
+            // 
+            mAKMLabel1.AutoSize = true;
+            mAKMLabel1.Location = new System.Drawing.Point(94, 77);
+            mAKMLabel1.Name = "mAKMLabel1";
+            mAKMLabel1.Size = new System.Drawing.Size(105, 17);
+            mAKMLabel1.TabIndex = 0;
+            mAKMLabel1.Text = "Mã khuyến mãi:";
+            // 
+            // mADONGHOLabel
+            // 
+            mADONGHOLabel.AutoSize = true;
+            mADONGHOLabel.Location = new System.Drawing.Point(94, 105);
+            mADONGHOLabel.Name = "mADONGHOLabel";
+            mADONGHOLabel.Size = new System.Drawing.Size(142, 17);
+            mADONGHOLabel.TabIndex = 2;
+            mADONGHOLabel.Text = "Đồng hồ khuyến mãi:";
+            // 
+            // tYLEGIAMGIALabel
+            // 
+            tYLEGIAMGIALabel.AutoSize = true;
+            tYLEGIAMGIALabel.Location = new System.Drawing.Point(94, 133);
+            tYLEGIAMGIALabel.Name = "tYLEGIAMGIALabel";
+            tYLEGIAMGIALabel.Size = new System.Drawing.Size(96, 17);
+            tYLEGIAMGIALabel.TabIndex = 4;
+            tYLEGIAMGIALabel.Text = "Tỷ lệ giảm giá:";
+            // 
+            // mAKMLabel
+            // 
+            mAKMLabel.AutoSize = true;
+            mAKMLabel.Location = new System.Drawing.Point(77, 59);
+            mAKMLabel.Name = "mAKMLabel";
+            mAKMLabel.Size = new System.Drawing.Size(105, 17);
+            mAKMLabel.TabIndex = 0;
+            mAKMLabel.Text = "Mã khuyến mãi:";
+            // 
+            // tENKMLabel
+            // 
+            tENKMLabel.AutoSize = true;
+            tENKMLabel.Location = new System.Drawing.Point(77, 87);
+            tENKMLabel.Name = "tENKMLabel";
+            tENKMLabel.Size = new System.Drawing.Size(111, 17);
+            tENKMLabel.TabIndex = 2;
+            tENKMLabel.Text = "Tên khuyến mãi:";
+            // 
+            // nGAYBDLabel
+            // 
+            nGAYBDLabel.AutoSize = true;
+            nGAYBDLabel.Location = new System.Drawing.Point(77, 115);
+            nGAYBDLabel.Name = "nGAYBDLabel";
+            nGAYBDLabel.Size = new System.Drawing.Size(96, 17);
+            nGAYBDLabel.TabIndex = 4;
+            nGAYBDLabel.Text = "Ngày bắt đầu:";
+            // 
+            // nGAYKTLabel
+            // 
+            nGAYKTLabel.AutoSize = true;
+            nGAYKTLabel.Location = new System.Drawing.Point(77, 143);
+            nGAYKTLabel.Name = "nGAYKTLabel";
+            nGAYKTLabel.Size = new System.Drawing.Size(100, 17);
+            nGAYKTLabel.TabIndex = 6;
+            nGAYKTLabel.Text = "Ngày kết thúc:";
             // 
             // barManager1
             // 
@@ -370,15 +433,6 @@ namespace BANDONGHO_TTCS
             this.comboBox1.TabIndex = 6;
             this.comboBox1.ValueMember = "MADONGHO";
             // 
-            // mAKMLabel1
-            // 
-            mAKMLabel1.AutoSize = true;
-            mAKMLabel1.Location = new System.Drawing.Point(94, 77);
-            mAKMLabel1.Name = "mAKMLabel1";
-            mAKMLabel1.Size = new System.Drawing.Size(105, 17);
-            mAKMLabel1.TabIndex = 0;
-            mAKMLabel1.Text = "Mã khuyến mãi:";
-            // 
             // mAKMTextEdit1
             // 
             this.mAKMTextEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cT_KMBindingSource, "MAKM", true));
@@ -387,24 +441,6 @@ namespace BANDONGHO_TTCS
             this.mAKMTextEdit1.Name = "mAKMTextEdit1";
             this.mAKMTextEdit1.Size = new System.Drawing.Size(125, 22);
             this.mAKMTextEdit1.TabIndex = 1;
-            // 
-            // mADONGHOLabel
-            // 
-            mADONGHOLabel.AutoSize = true;
-            mADONGHOLabel.Location = new System.Drawing.Point(94, 105);
-            mADONGHOLabel.Name = "mADONGHOLabel";
-            mADONGHOLabel.Size = new System.Drawing.Size(142, 17);
-            mADONGHOLabel.TabIndex = 2;
-            mADONGHOLabel.Text = "Đồng hồ khuyến mãi:";
-            // 
-            // tYLEGIAMGIALabel
-            // 
-            tYLEGIAMGIALabel.AutoSize = true;
-            tYLEGIAMGIALabel.Location = new System.Drawing.Point(94, 133);
-            tYLEGIAMGIALabel.Name = "tYLEGIAMGIALabel";
-            tYLEGIAMGIALabel.Size = new System.Drawing.Size(96, 17);
-            tYLEGIAMGIALabel.TabIndex = 4;
-            tYLEGIAMGIALabel.Text = "Tỷ lệ giảm giá:";
             // 
             // tYLEGIAMGIASpinEdit
             // 
@@ -440,15 +476,6 @@ namespace BANDONGHO_TTCS
             this.ttKM.TabStop = false;
             this.ttKM.Text = "Thông tin khuyến mãi";
             // 
-            // mAKMLabel
-            // 
-            mAKMLabel.AutoSize = true;
-            mAKMLabel.Location = new System.Drawing.Point(77, 59);
-            mAKMLabel.Name = "mAKMLabel";
-            mAKMLabel.Size = new System.Drawing.Size(105, 17);
-            mAKMLabel.TabIndex = 0;
-            mAKMLabel.Text = "Mã khuyến mãi:";
-            // 
             // mAKMTextEdit
             // 
             this.mAKMTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHUYENMAIBindingSource, "MAKM", true));
@@ -458,15 +485,6 @@ namespace BANDONGHO_TTCS
             this.mAKMTextEdit.Size = new System.Drawing.Size(125, 22);
             this.mAKMTextEdit.TabIndex = 1;
             // 
-            // tENKMLabel
-            // 
-            tENKMLabel.AutoSize = true;
-            tENKMLabel.Location = new System.Drawing.Point(77, 87);
-            tENKMLabel.Name = "tENKMLabel";
-            tENKMLabel.Size = new System.Drawing.Size(111, 17);
-            tENKMLabel.TabIndex = 2;
-            tENKMLabel.Text = "Tên khuyến mãi:";
-            // 
             // tENKMTextEdit
             // 
             this.tENKMTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHUYENMAIBindingSource, "TENKM", true));
@@ -475,15 +493,6 @@ namespace BANDONGHO_TTCS
             this.tENKMTextEdit.Name = "tENKMTextEdit";
             this.tENKMTextEdit.Size = new System.Drawing.Size(125, 22);
             this.tENKMTextEdit.TabIndex = 3;
-            // 
-            // nGAYBDLabel
-            // 
-            nGAYBDLabel.AutoSize = true;
-            nGAYBDLabel.Location = new System.Drawing.Point(77, 115);
-            nGAYBDLabel.Name = "nGAYBDLabel";
-            nGAYBDLabel.Size = new System.Drawing.Size(96, 17);
-            nGAYBDLabel.TabIndex = 4;
-            nGAYBDLabel.Text = "Ngày bắt đầu:";
             // 
             // nGAYBDDateEdit
             // 
@@ -498,15 +507,6 @@ namespace BANDONGHO_TTCS
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nGAYBDDateEdit.Size = new System.Drawing.Size(125, 22);
             this.nGAYBDDateEdit.TabIndex = 5;
-            // 
-            // nGAYKTLabel
-            // 
-            nGAYKTLabel.AutoSize = true;
-            nGAYKTLabel.Location = new System.Drawing.Point(77, 143);
-            nGAYKTLabel.Name = "nGAYKTLabel";
-            nGAYKTLabel.Size = new System.Drawing.Size(100, 17);
-            nGAYKTLabel.TabIndex = 6;
-            nGAYKTLabel.Text = "Ngày kết thúc:";
             // 
             // nGAYKTDateEdit
             // 
@@ -533,6 +533,17 @@ namespace BANDONGHO_TTCS
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1033, 708);
             this.panelControl3.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label2.Location = new System.Drawing.Point(2, 303);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 23);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Chi tiết khuyến mãi";
             // 
             // cT_KMGridControl
             // 
@@ -575,17 +586,6 @@ namespace BANDONGHO_TTCS
             this.colTYLEGIAMGIA.Visible = true;
             this.colTYLEGIAMGIA.VisibleIndex = 1;
             this.colTYLEGIAMGIA.Width = 94;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label1.Location = new System.Drawing.Point(2, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 23);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Danh sách khuyến mãi";
             // 
             // kHUYENMAIGridControl
             // 
@@ -651,16 +651,16 @@ namespace BANDONGHO_TTCS
             this.colNGAYKT.VisibleIndex = 3;
             this.colNGAYKT.Width = 94;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label2.Location = new System.Drawing.Point(2, 303);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 23);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Chi tiết khuyến mãi";
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label1.Location = new System.Drawing.Point(2, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Danh sách khuyến mãi";
             // 
             // UCKhuyenMai
             // 
